@@ -62,7 +62,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     public String caseId;
     public String accId;
 
-    public void API_Precondition_Delete_Dups_Patient_and_Case_in_Salesforce_as_SysAdmin(String firstName, String lastName, String Email){
+    public void API_Precondition_Delete_Dups_Patient_and_Case_in_Salesforce_as_SysAdmin(String firstName, String lastName, String Email) throws InterruptedException {
         //log("/*0.---Pre-Condition API Remove 'Sandy Prior' or 'Hollis Violette' with the Case from SF --*/");
         //1.find personContactID
         APISelect sqlQuery1 = new APISelect();
@@ -76,13 +76,16 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
             log("/*---'"+firstName+ "' '"+lastName+"' with 'accountToDelete@phsa.ca' has founded");
         } catch (Exception e) {
             log("/*---No '"+firstName+ "' '"+lastName+"' with 'accountToDelete@phsa.ca' at all in SF");
+            Thread.sleep(1000);
             //throw e;
         }
         if(personContactId==null){
             log("Finish API Preconditioning because no Patient '"+firstName+ "' Dups. ");
+            Thread.sleep(1000);
         }
         else {
             //2. find Patient ID
+            log("DEBUG: ------ --WHY I AM EVEN HERE FOR HOLLIS");
             APISelect sqlQuery2 = new APISelect();
             log("Select AccID for '"+firstName+ "' from Account.");
             String patientAccID = sqlQuery2.selectPersonAccountIDSQL("SELECT Id from Account " +
