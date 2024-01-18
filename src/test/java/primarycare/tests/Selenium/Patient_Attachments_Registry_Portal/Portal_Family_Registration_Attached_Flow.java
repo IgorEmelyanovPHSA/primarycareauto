@@ -18,7 +18,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-1140 Windermere\"";
+    private String streetAddress = "307-1140 Windermere";
     private String City = "East Kootenay";
     private String province = "BC";
     private String postalCode = "V0A 0A2";
@@ -65,6 +65,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     public void API_Precondition_Delete_Dups_Patient_and_Case_in_Salesforce_as_SysAdmin(String firstName, String lastName, String Email) throws InterruptedException {
         //log("/*0.---Pre-Condition API Remove 'Sandy Prior' or 'Hollis Violette' with the Case from SF --*/");
         //1.find personContactID
+        personContactId = null;//need to reset to null before start searching for 'Hollis Violette' after 'Sandy Prior'.
         APISelect sqlQuery1 = new APISelect();
         log("Select PersonContactID for '"+firstName+"' from Account.");
         try {
@@ -85,7 +86,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         }
         else {
             //2. find Patient ID
-            log("DEBUG: ------ --WHY I AM EVEN HERE FOR HOLLIS");
+            //log("DEBUG: ------ --WHY I AM EVEN HERE FOR HOLLIS");
             APISelect sqlQuery2 = new APISelect();
             log("Select AccID for '"+firstName+ "' from Account.");
             String patientAccID = sqlQuery2.selectPersonAccountIDSQL("SELECT Id from Account " +
