@@ -41,21 +41,21 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement case_reason_actual_field_value;
     private By case_reason_actual_field_value_1 = By.xpath(".//flexipage-field[@data-field-id='RecordReasonField']//slot[1]//slot[1]/lightning-formatted-text");
 
-    @FindBy(xpath = "(//span[text() ='Sandy Prior'])[2]")
+    @FindBy(xpath = "(//span[text() ='Sandy Prior'])[3]")
     private WebElement contact_name_actual_field_value;
-    private By contact_name_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[2]");
+    private By contact_name_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[3]");
 
-    @FindBy(xpath = "(//span[text() ='Kenton Troup'])[2]")
+    @FindBy(xpath = "(//span[text() ='Kenton Troup'])[3]")
     private WebElement contact_name_Attached_actual_field_value;
-    private By contact_name_Attached_actual_field_value_1 = By.xpath("(//span[text() ='Kenton Troup'])[2]");
+    private By contact_name_Attached_actual_field_value_1 = By.xpath("(//span[text() ='Kenton Troup'])[3]");
 
     @FindBy(xpath = "(.//lightning-formatted-text[text() ='Less than 5 km'])")
     private WebElement distance_able_to_travel_Attached_actual_value;
     private By distance_able_to_travel_Attached_actual_value_1 = By.xpath("(.//lightning-formatted-text[text() ='Less than 5 km'])");
 
-    @FindBy(xpath = ".//flexipage-field[@data-field-id='RecordPrimary_Care_Network_cField']//slot[1]//slot[1]//slot[1]//span[text()]")
+    @FindBy(xpath = "//span[text() ='Western Communities']")
     private WebElement primary_care_network_actual_field_value;
-    private By primary_care_network_actual_field_value_1 = By.xpath(".//flexipage-field[@data-field-id='RecordPrimary_Care_Network_cField']//slot[1]//slot[1]//slot[1]//span[text()]");
+    private By primary_care_network_actual_field_value_1 = By.xpath("//span[text() ='Western Communities']");
 
     @FindBy(xpath = "//span[text() ='A person in my care']")
     private WebElement person_in_my_care_radiobutton;
@@ -218,58 +218,58 @@ public class HealthCloudConsolePage extends BasePage {
     @FindBy(xpath = ".//div/p[text() = 'Successfully registered!']")
     private static WebElement successfully_registered_page_validation;
 
-    @FindBy(xpath = ".//th[@data-label='Contact']//span//a[@title='SELENIUM Social']//slot[text()]")
+    @FindBy(xpath = "//span[text() ='SELENIUM Social']")
     private WebElement caller_name_actual_field_value;
-    private By caller_name_actual_field_value_1 = By.xpath(".//th[@data-label='Contact']//span//a[@title='SELENIUM Social']//slot[text()]");
+    private By caller_name_actual_field_value_1 = By.xpath("//span[text() ='SELENIUM Social']");
 
-    @FindBy(xpath = "(//slot[text() ='SELENIUM Social'])[2]")
+    @FindBy(xpath = "(//span[text() ='SELENIUM Social'])[2]")
     private WebElement case_caller_name_actual_field_value;
-    private By case_caller_name_actual_field_value_1 = By.xpath("(//slot[text() ='SELENIUM Social'])[2]");
+    private By case_caller_name_actual_field_value_1 = By.xpath("(//span[text() ='SELENIUM Social'])[2]");
 
 
-    @FindBy(xpath = ".//th[@data-label='Contact']//span//a[@title='Igor PrimaryContactName']//slot[text()]")
+    @FindBy(xpath = "//span[text() ='Igor PrimaryContactName']")
     private WebElement primary_contact_name_actual_field_value;
-    private By primary_contact_name_actual_field_value_1 = By.xpath(".//th[@data-label='Contact']//span//a[@title='Igor PrimaryContactName']//slot[text()]");
+    private By primary_contact_name_actual_field_value_1 = By.xpath("//span[text() ='Igor PrimaryContactName']");
 
     @FindBy(xpath = "//span[text() ='Lori-Ann May Bus']")
     private WebElement case_practitioner_contact_name_actual_field_value;
     private By case_practitioner_contact_name_actual_field_value_1 = By.xpath("//span[text() ='Lori-Ann May Bus']");
 
-    @FindBy(xpath = ".//td[@data-label='Related Role']//span//a[@title='Social Worker']//slot[text()]")
+    @FindBy(xpath = ".//a[@title = 'Social Worker']")
     private WebElement caller_related_role_actual_field_value;
-    private By caller_related_role_actual_field_value_1 = By.xpath(".//td[@data-label='Related Role']//span//a[@title='Social Worker']//slot[text()]");
+    private By caller_related_role_actual_field_value_1 = By.xpath(".//a[@title = 'Social Worker']");
 
-    @FindBy(xpath = "//span[@title='Submitted By']")
+    @FindBy(xpath = ".//span[@title='Submitted By']")
     private WebElement case_caller_role_actual_field_value;
-    private By case_caller_role_actual_field_value_1 = By.xpath("//span[@title='Submitted By']");
+    private By case_caller_role_actual_field_value_1 = By.xpath(".//span[@title='Submitted By']");
 
-    @FindBy(xpath = ".//td[@data-label='Related Role']//span//a[@title='Primary Contact']//slot[text()]")
+    @FindBy(xpath = ".//a[@title ='Primary Contact']")
     private WebElement primary_contact_related_role_actual_field_value;
-    private By primary_contact_related_role_actual_field_value_1 = By.xpath(".//td[@data-label='Related Role']//span//a[@title='Primary Contact']//slot[text()]");
+    private By primary_contact_related_role_actual_field_value_1 = By.xpath(".//a[@title ='Primary Contact']");
 
-    @FindBy(xpath = ".//lst-formatted-text[text() ='Current Practitioner']")
+    @FindBy(xpath = ".//span[@title='Current Practitioner']")
     private WebElement case_contact_practitioner_role_actual_field_value;
-    private By case_contact_practitioner_role_actual_field_value_1 = By.xpath(".//lst-formatted-text[text() ='Current Practitioner']");
+    private By case_contact_practitioner_role_actual_field_value_1 = By.xpath(".//span[@title='Current Practitioner']");
 
-    @FindBy(xpath = "//span[text() ='Current Practitioner Location: Richmond']")
+    @FindBy(xpath = "//span[text() ='Current Practitioner Location: Sooke']")
     private WebElement case_comment_actual_field_value;
-    private By case_comment_actual_field_value_1 = By.xpath("//span[text() ='Current Practitioner Location: Richmond']");
+    private By case_comment_actual_field_value_1 = By.xpath("//span[text() ='Current Practitioner Location: Sooke']");
 
-    @FindBy(xpath = "//tr[2]//th[@data-label='Contact']//span//a[@title='Sandy Prior']//slot[text()]")
+    @FindBy(xpath = "(//span[text() ='Sandy Prior'])[2]")
     private WebElement caller_name_Sandy_Prior_2_actual_field_value;
-    private By caller_name_Sandy_Prior_2_actual_field_value_1 = By.xpath("//tr[2]//th[@data-label='Contact']//span//a[@title='Sandy Prior']//slot[text()]");
+    private By caller_name_Sandy_Prior_2_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[2]");
 
-    @FindBy(xpath = ".//td[@data-label='Related Role']//span//a[@title='Child']//slot[text()]")
+    @FindBy(xpath = ".//a[@title = 'Child']")
     private WebElement caller_related_role_Child_actual_field_value;
-    private By caller_related_role_Child_actual_field_value_1 = By.xpath(".//td[@data-label='Related Role']//span//a[@title='Child']//slot[text()]");
+    private By caller_related_role_Child_actual_field_value_1 = By.xpath(".//a[@title = 'Child']");
 
-    @FindBy(xpath = "//tr[1]//th[@data-label='Contact']//span//a[@title='Sandy Prior']//slot[text()]")
+    @FindBy(xpath = "(//span[text() ='Sandy Prior'])[1]")
     private WebElement primary_contact_name_Sandy_Prior_1_actual_field_value;
-    private By primary_contact_name_Sandy_Prior_1_actual_field_value_1 = By.xpath("//tr[1]//th[@data-label='Contact']//span//a[@title='Sandy Prior']//slot[text()]");
+    private By primary_contact_name_Sandy_Prior_1_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[1]");
 
-    @FindBy(xpath = "(//span[text() ='Hollis Violette'])[2]")
+    @FindBy(xpath = "(//span[text() ='Hollis Violette'])[3]")
     private WebElement contact_name_Attached_Hollis_Violette_actual_field_value;
-    private By contact_name_Attached_actual_Hollis_Violette_field_value_1 = By.xpath("(//span[text() ='Hollis Violette'])[2]");
+    private By contact_name_Attached_actual_Hollis_Violette_field_value_1 = By.xpath("(//span[text() ='Hollis Violette'])[3]");
 
 
     /*---------Constructor-------*/
@@ -460,7 +460,7 @@ public class HealthCloudConsolePage extends BasePage {
     public void enterPatientPHN(String patientPHN) throws InterruptedException {
         waitForElementToBeLocated(driver, patient_phn_1, 10);
         Thread.sleep(1000);
-        log("/*----jump to component --*/");
+        log("/*----scroll a bit --*/");
         WebElement element = driver.findElement(patient_phn_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(1000);
@@ -538,10 +538,10 @@ public class HealthCloudConsolePage extends BasePage {
     public void enterProvince(String Province) throws InterruptedException {
         waitForElementToBeLocated(driver, province_dropdown_component_1, 10);
         Thread.sleep(1000);
-        log("/*----jump to component --*/");
+        log("/*----scroll down --*/");
         WebElement element = driver.findElement(province_dropdown_component_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         province_dropdown_component.click();
         Thread.sleep(1000);
         province_optin_selection.click();
@@ -550,10 +550,11 @@ public class HealthCloudConsolePage extends BasePage {
 
     public void enterPostalCode(String postalCode) throws InterruptedException {
         waitForElementToBeLocated(driver, postal_code_1, 10);
-        log("/*----jump to component --*/");
+        Thread.sleep(2000);
+        log("/*----scroll down --*/");
         WebElement element = driver.findElement(postal_code_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         postal_code.click();
         //JavascriptExecutor js = (JavascriptExecutor) driver;
         //js.executeScript("arguments[0].value  = 'V6Y 1A3';", postal_code);
@@ -726,6 +727,12 @@ public class HealthCloudConsolePage extends BasePage {
     }
 
     public String getCallerRelatedRoleActualForValidation() throws InterruptedException {
+        //waitForElementToBeLocated(driver, caller_related_role_actual_field_value_1, 10);
+        //Thread.sleep(2000);
+        //caller_related_role_actual_field_value.isDisplayed();
+        //Thread.sleep(2000);
+        //return (caller_related_role_actual_field_value.getText());
+
         WebElement element = driver.findElement(caller_related_role_actual_field_value_1);
         Thread.sleep(2000);
         caller_related_role_actual_field_value.isDisplayed();
@@ -826,9 +833,6 @@ public class HealthCloudConsolePage extends BasePage {
         priority_actual_field_value.isDisplayed();
         return (status_actual_field_value.getText());
     }
-
-
-
 
 
 

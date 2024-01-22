@@ -13,7 +13,6 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public abstract class BasePage<T>  {
@@ -29,7 +28,7 @@ public abstract class BasePage<T>  {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    protected static WebElement find(By locator) {
+    protected WebElement find(By locator) {
         return driver.findElement(locator);
     }
 
@@ -42,7 +41,7 @@ public abstract class BasePage<T>  {
         find(locator).click();
     }
 
-    protected static Boolean isDisplayed(By locator) {
+    protected Boolean isDisplayed(By locator) {
         try {
             return find(locator).isDisplayed();
         } catch (NoSuchElementException exc) {
@@ -131,6 +130,11 @@ public abstract class BasePage<T>  {
         wait.until(ExpectedConditions.textToBePresentInElement(e, text));
     }
 
+    //public static void waitForTextToBePresentInTable(WebDriver driver, List<WebElement> e, int seconds, String text) {
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        //wait.until(WaitConditions.textToBePresentInElements(e, text));
+    //}
+
     protected static WebElement waitForElementToBeLocated(WebDriver driver, By xpath, int seconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
@@ -214,7 +218,6 @@ public abstract class BasePage<T>  {
         }
         return (T) this;
     }
-
     public void moveToElement(WebElement element){
         Actions actions = new Actions(driver);
         try {

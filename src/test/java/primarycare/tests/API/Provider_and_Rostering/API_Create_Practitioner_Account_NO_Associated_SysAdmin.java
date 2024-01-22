@@ -18,8 +18,8 @@ public class API_Create_Practitioner_Account_NO_Associated_SysAdmin extends API_
     public String recordTypeId = "0125f000000qtflAAA";
     public String MSP = "54321";
     ///REFRESH
-    public String healthCloudGA__SourceSystem__c = "Health1-00DAq000003UI0z";
-    public String healthCloudGA__SourceSystem__pc = "Health1-00DAq000003UI0z";
+    public String healthCloudGA__SourceSystem__c = "Health1-00DAs000002hhVZ";
+    public String healthCloudGA__SourceSystem__pc = "Health1-00DAs000002hhVZ";
     ///REFRESH
 
     public String accId;
@@ -38,7 +38,7 @@ public class API_Create_Practitioner_Account_NO_Associated_SysAdmin extends API_
 
 
     @Test(priority = 2)
-    public void API_Delete_Practitioner_MOA_Account_No_Associated_in_Salesforce_as_SysAdmin(){
+    public void API_Delete_Practitioner_MOA_Account_No_Associated_in_Salesforce_Status_Code_204_as_SysAdmin(){
         TestcaseID = "252885"; //C252885
         APIDelete apidelete = new APIDelete();
         log("Delete Practitioner account from Account.");
@@ -46,5 +46,6 @@ public class API_Create_Practitioner_Account_NO_Associated_SysAdmin extends API_
         log("Deleted Practitioner Account from Account is: " +accId);
         log(apiResponse);
         //Assert.assertEquals(accountNameReturned, name);
+        log("Status Code 204- Delete success");
     }
 }

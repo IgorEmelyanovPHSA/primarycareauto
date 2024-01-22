@@ -9,8 +9,6 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     /*---------Properties-------*/
     @FindBy(xpath = "//div/h1[text()='Register to get a family doctor or nurse practitioner']")
     private static WebElement register_to_get_doctor_page_validation;
-    @FindBy(xpath = "//div/h1[text()='Register to get a family doctor or nurse practitioner']")
-    private static By is_register_to_get_doctor_page_displayed_1 = By.xpath("//div/h1[text()='Register to get a family doctor or nurse practitioner']");
 
     @FindBy(xpath = ".//span[text() = 'Next']")
     private WebElement next_button;
@@ -179,6 +177,7 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     private WebElement select_from_language_dropdown_list;
     private By select_from_language_dropdown_list_1 = By.xpath("//span[text() ='Portuguese']");
 
+
     /*---------Constructor-------*/
     public PortalHealthConnectRegistryPage(WebDriver driver) {
         super(driver);
@@ -198,31 +197,9 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         return false;
     }
 
-    public static boolean isRegisterToGetDoctorPageDisplayed() throws InterruptedException {
-        boolean PortalRegisterToGetDoctorPageDisplayed = false;
-        for(int i = 1; i <= 40; i++ ) {
-            if (!isDisplayed(is_register_to_get_doctor_page_displayed_1)) {
-                log(i +"-try to see The Register 'to get doctors' Page: "  +  " the page is not showing up yet, re-try!");
-                log( "wait for 10 sec");
-                Thread.sleep(10000);
-                log( "Refresh the browser");
-                refreshBrowser();
-                Thread.sleep(5000);
-            } else {
-                log("/*---The Register 'to get doctors' Page "  + "has shown up " + " --*/");
-                PortalRegisterToGetDoctorPageDisplayed = true;
-                break;
-            }
-        }
-        return PortalRegisterToGetDoctorPageDisplayed;
-    }
-
-    public static void refreshBrowser() throws InterruptedException {
-        driver.navigate().refresh();
-    }
-
     public void clickNextButton() throws InterruptedException {
         waitForElementToBeVisible(driver, next_button, 10);
+        WebElement element = driver.findElement(next_button_1);
         next_button.click();
     }
 
@@ -239,6 +216,7 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     public void clickRegisterMyHouseholdButton() throws InterruptedException {
         waitForElementToBeVisible(driver, register_my_household_button, 10);
+        WebElement element = driver.findElement(register_my_household_button_1);
         register_my_household_button.click();
     }
 
@@ -277,17 +255,12 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     public void clickContinueButton() throws InterruptedException {
         waitForElementToBeVisible(driver, continue_button, 10);
-        Thread.sleep(1000);
-        log("/*----jump to component --*/");
-        WebElement element = driver.findElement(continue_button_1);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(3000);
         continue_button.click();
     }
 
     public void enterStreetAddress(String streetAddress) throws InterruptedException {
         waitForElementToBeLocated(driver, street_address_1, 10);
-        Thread.sleep(1000);
         street_address.sendKeys(streetAddress);
     }
 
@@ -358,25 +331,28 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     public void clickNoFamilyDoctorRadiobutton() throws InterruptedException {
         waitForElementToBeVisible(driver, no_family_doctor_radio, 10);
+        WebElement element = driver.findElement(no_family_doctor_radio_1);
         no_family_doctor_radio.click();
     }
 
     public void clickNoNeedTranslatorRadiobutton() throws InterruptedException {
         waitForElementToBeVisible(driver, no_need_translator_radio, 10);
+        WebElement element = driver.findElement(no_need_translator_radio_1);
         no_need_translator_radio.click();
     }
 
     public void clickSubmitRegistrationButton() throws InterruptedException {
         waitForElementToBeVisible(driver, submit_registration_button, 10);
+        WebElement element = driver.findElement(submit_registration_button_1);
         submit_registration_button.click();
     }
 
     public static boolean validateRegisterSuccessfulPageDisplayed() throws InterruptedException {
         try {
             waitForElementToBeVisible(driver, registration_successful_page_validation, 10);
-            System.out.println("/*---Successfully registered! page - shown up");
+            System.out.println("/*---Registration successful page - shown up");
         } catch (NoSuchElementException e) {
-            System.out.println("/*---Successfully registered! page page has NOT show up");
+            System.out.println("/*---Registration successful page page has NOT show up");
             throw e;
         }
         return false;

@@ -2,6 +2,7 @@ package primarycare.tests;
 
 import primarycare.pages.TestRailManager;
 import primarycare.pages.Utils;
+import com.google.common.collect.ImmutableMap;
 import org.apache.commons.io.output.TeeOutputStream;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -13,6 +14,7 @@ import java.io.PrintStream;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.Map;
 
 
 public class API_BaseTest_PrimaryCare {

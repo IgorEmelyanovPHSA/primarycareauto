@@ -29,12 +29,7 @@ public class Tables extends BasePage {
     }
 
     /*-------------Methods--------------*/
-    public GenericTable getPractitionerFacilityCurrentStaffMoATable() {
-        waitForTextToBePresent(driver, practitioner_facility_current_staff_Table ,30, "Medical Office Assistant");
-        return new GenericTable(practitioner_facility_current_staff_Table);
-    }
-
-    public GenericTable getPractitionerFacilityCurrentStaffProviderTable() {
+    public GenericTable getPractitionerFacilityCurrentStaffTable() {
         waitForTextToBePresent(driver, practitioner_facility_current_staff_Table ,30, "Provider");
         return new GenericTable(practitioner_facility_current_staff_Table);
     }
@@ -60,8 +55,8 @@ public class Tables extends BasePage {
     }
 
     //@Step
-    public void getPractitionerFacilityCurrentStaffProviderActions(Map<String, String> searchCriteria) throws InterruptedException {
-        WebElement element = getPractitionerFacilityCurrentStaffRowProvider(searchCriteria).get("Actions");
+    public void getPractitionerFacilityCurrentStaffActions(Map<String, String> searchCriteria) throws InterruptedException {
+        WebElement element = getPractitionerFacilityCurrentStaffRow(searchCriteria).get("Actions");
         Thread.sleep(2000);
         moveToElement(element);
         Thread.sleep(2000);
@@ -91,12 +86,8 @@ public class Tables extends BasePage {
     }
 
     // ------  TABLE ROWS -------
-    public Map<String, WebElement> getPractitionerFacilityCurrentStaffRowProvider(Map<String, String> searchCriteria) {
-        return getTableRow(searchCriteria, getPractitionerFacilityCurrentStaffProviderTable());
-    }
-
-    public Map<String, WebElement> getPractitionerFacilityCurrentStaffRowMoA(Map<String, String> searchCriteria) {
-        return getTableRow(searchCriteria, getPractitionerFacilityCurrentStaffProviderTable());
+    public Map<String, WebElement> getPractitionerFacilityCurrentStaffRow(Map<String, String> searchCriteria) {
+        return getTableRow(searchCriteria, getPractitionerFacilityCurrentStaffTable());
     }
 
     public Map<String, WebElement> getPractitionerFacilityPreviousStaffRow(Map<String, String> searchCriteria) {
@@ -115,10 +106,9 @@ public class Tables extends BasePage {
         return getTableRow(searchCriteria, getGrantedAccessByTable());
     }
 
-
     // ------  TABLE ACTIONS -------
-    public void clickOnPractitionerFacilityTableRowMoA(Map<String, String> searchCriteria) throws InterruptedException {
-        WebElement element = getPractitionerFacilityCurrentStaffRowMoA(searchCriteria).get("Practitioner Facility Name");
+    public void clickOnPractitionerFacilityTableRow(Map<String, String> searchCriteria) throws InterruptedException {
+        WebElement element = getPractitionerFacilityCurrentStaffRow(searchCriteria).get("Practitioner Facility Name");
         Thread.sleep(2000);
         moveToElement(element);
         Thread.sleep(2000);
@@ -148,7 +138,6 @@ public class Tables extends BasePage {
     private Map<String, WebElement> getTableRow(Map<String, String> searchCriteria, GenericTable table) {
         return table.getMappedRow(searchCriteria);
     }
-
 
 
 }

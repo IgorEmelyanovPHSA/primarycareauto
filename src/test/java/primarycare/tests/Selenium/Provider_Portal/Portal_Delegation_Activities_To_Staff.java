@@ -14,15 +14,14 @@ import java.util.Random;
 import static org.testng.Assert.assertEquals;
 
 @Listeners({TestListener.class})
-public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
-{
+public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare {
     //Pre setup -  for select and Delete Practitioner Facility and Facility Network
-    private String MoA_practitionerFacilityName = "Agnes Phillip | CASTLEGAR MED FAMILY CLINIC";
+    private String MoA_practitionerFacilityName = "Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME";
     public String practitionerFacility_accId;
     private String practitioner_MoA = "Agnes Phillip";
     private String practitionerMoASystemRole = "Medical Office Assistant";
     private String practitionerRole = "Medical Office Assistant";
-    private String practitionerGrantedByFacilityPanelName = "Lori-Ann May Bus Panel";
+    private String practitionerGrantedByFacilityPanelName = "Karen F. Beegan Panel";
     private String practitionerGrantedByRole = "Director";
 
     /////////prep for Test3 - Accept New Patients and Max New Request
@@ -33,7 +32,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
     //////////
 
     public void API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin(){
-        //log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC'--*/");
+        //log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME'--*/");
         APISelect sqlQuery = new APISelect();
         log("Select Practitioner Facility Id from HealthcarePractitionerFacility.");
         String practitionerFacilityID = sqlQuery.selectPractitionerFacilityIdIDSQL("SELECT Id from HealthcarePractitionerFacility WHERE Name = '"+MoA_practitionerFacilityName+"'", "Id");
@@ -68,12 +67,13 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         }
     }
 
+
     @Test(priority = 1)
     public void Pre_Add_MoA_Agnes_Phillip_To_Clinics_Current_Staff_in_Portal () throws Exception {
         TestcaseID = "272337"; //C272337
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
-        log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC'--*/");
+        log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME'--*/");
         API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin();
 
         log("/*1.---Login to Provider Portal Home page as an Director --*/");
@@ -92,7 +92,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*3.----Click on facility 'CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*3.----Click on facility 'NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnFacility();
         Thread.sleep(5000);
 
@@ -112,7 +112,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         providerPortalHomePage.clickSaveNewStaffMember();
         Thread.sleep(2000);
 
-        log("/*8.---- Validate that Practitioner Facility Name 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC' appears in Current Staff  ---*/");
+        log("/*8.---- Validate that Practitioner Facility Name 'Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME' appears in Current Staff  ---*/");
         String practitionerFacilityNameActual = providerPortalHomePage.getActualMoAPractitionerFacilityNameForValidation();
         log("/*---Practitioner Facility Name actual is: " + practitionerFacilityNameActual + " --*/");
         assertEquals(practitionerFacilityNameActual, MoA_practitionerFacilityName);
@@ -129,7 +129,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         Thread.sleep(5000);
 
         log("/*1.1.----Verify that Provider Portal Home page displayed --*/");
-        boolean isPortalProviderHomePageDisplayed =  providerPortalHomePage.isPortalProviderHomePageDisplayed();
+        boolean isPortalProviderHomePageDisplayed =  providerPortalHomePage.isPortalProviderHomePageDisplayed_MoA();
         if (!isPortalProviderHomePageDisplayed){
             throw new RuntimeException("Exception: Portal Provider Home Page "  + "has not shown up!!!");
         }
@@ -139,7 +139,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*3.----Click 'Panel Sharing' link of the 'CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*3.----Click 'Panel Sharing' link of the 'NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickPanelSharing();
         Thread.sleep(5000);
 
@@ -152,6 +152,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         log("/-------and Set to True 'Manage My Panel & Profile' Delegation Checkbox --*/");
         providerPortalHomePage.setToTrueDelegationCheckBox(practitioner_MoA, practitionerRole);
         Thread.sleep(5000);
+
     }
 
     @Test(priority = 3)
@@ -174,11 +175,11 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*3.----Click on FlexCard 'CASTLEGAR MED FAMILY CLINIC' -> 'Panel Sharing' link  --*/");
+        log("/*3.----Click on FlexCard 'NORTH SHORE PRIMARY CARE MED HOME' -> 'Panel Sharing' link  --*/");
         providerPortalHomePage.clickMoAPanelSharing();
         Thread.sleep(5000);
 
-        log("/*4.----Click on Panel Sharing Tab -> GrantedAccessBy column link 'Lori-Ann May Bus Panel' --*/");
+        log("/*4.----Click on Panel Sharing Tab -> GrantedAccessBy column link 'Karen F. Beegan Panel' --*/");
         providerPortalHomePage.clickOnPractitionerGrantedAccessByTableRow(practitionerGrantedByFacilityPanelName,practitionerGrantedByRole);
         Thread.sleep(5000);
 
@@ -195,7 +196,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         Thread.sleep(1000);
 
         log("/*8.----Click Save --*/");
-        providerPortalHomePage.clickSaveMaxNewPatientsForm();
+        providerPortalHomePage.clickSave();
         Thread.sleep(5000);
 
         log("/*9.---- Validate isAccepting new Patients  ---*/");
@@ -227,5 +228,6 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
     public void  As_Delegated_MoA_By_Director_Can_NOT_Assign_More_Delegates_On_My_Behalf_In_Portal () throws Exception {
         TestcaseID = "272564"; //C272564
     }
+
 
 }

@@ -11,14 +11,14 @@ public class APIEstablishSFConnection {
                 given().
                     urlEncodingEnabled(true)
                     .param("grant_type","password")
-                    .param("client_id","3MVG9gtjsZa8aaSXkoiszTyiFqvjA9lUT23kNr_sw6_u5Bm0KvewtzZSVx0l1EdDpglb0ZCs1ZZj8zMJ.r7tN")
-                    .param("client_secret","9AB13B0BE09B9D954594F3C7579B5A325FF0AC16ED42784EF41F5093A06BAFB6")
-                    .param("username","igor.emelyanov@phsa.ca.spr24qa")
+                    .param("client_id","3MVG9696SH3dTknLdxuyvOkfQHlveCntxVDW8aZsAvg7yaCMhaOc6UlkaypTrTfFdmzgqqrwRydRxHgSSbYEG")
+                    .param("client_secret","967774932E4FF0C271A3111192498DC70A90332F682732606E7B10EAB015DC89")
+                    .param("username","igor.emelyanov@phsa.ca.hlthbcuatx")
                     .param("password","Technology1990!!!!!!")
                     .header("Accept","application/json")
                     .header("Content-type","application/x-www-form-urlencoded").
                     when().
-                    post("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/oauth2/token")
+                    post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/oauth2/token")
                     .then()
                     .assertThat().statusCode(200).log().body().extract().path("access_token");
     }

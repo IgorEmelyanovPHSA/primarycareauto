@@ -27,9 +27,9 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     public String preferredCommunicationChannel = "Email";
     public String mobile = "7788793897";
     public String email = "accountToDelete@phsa.ca";
-    public String street = "307-1140 Windermere";
-    public String city = "East Kootenay";
-    public String postalcode = "V0A0A2";
+    public String street = "501-6609 Goodmere Road";//"307-7631 Francis Rd";
+    public String city = "Sooke";//"Richmond";
+    public String postalcode = "V9Z1P5";//"V6Y1A3";
     public String isActive = "true";
 
     public String accId;
@@ -40,10 +40,10 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     //3.Case
     public String caseRecordTypeId = "0125f000000qtfjAAA";
     ////REFRESH
-    public String caseAccountId = "001Aq00000KoEdWIAV"; //"1140 Windermere";
-    public String casePrimaryCareNetwork__c = "001Aq00000KoYqQIAV"; //"East Kootenay";
+    public String caseAccountId = "001As00000JTVYPIA5";//4124 Sooke ;
+    public String casePrimaryCareNetwork__c = "001As00000JTVUsIAP";//Western Communities ;
     ////REFRESH
-    public String caseReason = "Unattached - Requires attachment to family doctor or nurse practitione";
+    public String caseReason = "Unattached - Requires attachment to family doctor or nurse practitioner";
     public String caseOrigin = "Web";
     //public String caseContactName = "Sandy3_Patient_NOT_Attached";
     public String caseStatus = "Active";
@@ -67,7 +67,7 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     public void API_Can_Select_Patient_PersonContactID_From_Account_Salesforce_as_SysAdmin(){
         TestcaseID = "260763"; //C260763
         APISelect sqlQuery = new APISelect();
-        log("Select PersonContactID from Account.");
+        log("Select PersonAccountID from Account.");
         String personContactID = sqlQuery.selectPersonAccountIDSQL("SELECT PersonContactId from Account WHERE id = '"+accId+"'", "PersonContactId");
         log("Selected PersonContactID from Account is: " +personContactID);
         //Assert.assertEquals(accountNameReturned, name);

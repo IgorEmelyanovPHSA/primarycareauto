@@ -21,8 +21,8 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
     public String isActive = "true";
     public String recordTypeId = "0125f000000qtflAAA";
     ///REFRESH
-    public String healthCloudGA__SourceSystem__c = "Health1-00DAq000003UI0z";
-    public String healthCloudGA__SourceSystem__pc = "Health1-00DAq000003UI0z";
+    public String healthCloudGA__SourceSystem__c = "Health1-00DAs000002hhVZ";
+    public String healthCloudGA__SourceSystem__pc = "Health1-00DAs000002hhVZ";
     ///REFRESH
 
     public String accId;
@@ -58,7 +58,6 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
     //public String role = "Provider";
     //public String role = "Medical Office Assistant";
     public String isActive_associated = "true";
-    //public String recordTypeId_associated = "0125f000000zJEcAAM";//removed in Sprint 20
     public String MSP = "09876";
 
     //5 for delete HCPF
@@ -109,6 +108,7 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
         clinicAccountId = accountClinicID;
     }
 
+
     @Test(priority = 4)
     public void API_Can_Create_Practitioner_DIRECTORs_Facility_Associated_in_Salesforce_Status_Code_201_as_SysAdmin(){
         TestcaseID = "252895"; //252895
@@ -120,6 +120,7 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
         log("Status Code 201 - Director's Associated Health Practitioner Facility has Created  - successfully");
         practitionerFacility_accId = accountID;
     }
+
 
     @Test(priority = 5)
     public void API_Delete_Practitioner_DIRECTORs_Facility_Associated_in_Salesforce_as_SysAdmin(){
@@ -133,7 +134,7 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
     }
 
     @Test(priority = 6)
-    public void API_Delete_the_Clinic_Account_in_Salesforce_as_SysAdmin(){
+    public void API_Delete_the_Clinic_Account_in_Salesforce__Status_Code_204_as_SysAdmin(){
         TestcaseID = "255859"; //C255859
         APIDelete apidelete_Clinic = new APIDelete();
         log("Delete Clinic from Account");
@@ -144,7 +145,7 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
     }
 
     @Test(priority = 7)
-    public void API_Delete_the_Practitioner_Account_in_Salesforce_as_SysAdmin(){
+    public void API_Delete_the_Practitioner_Account_in_Salesforce__Status_Code_204_as_SysAdmin(){
         TestcaseID = "252885"; //C252885
         APIDelete apidelete_Practitioner = new APIDelete();
         log("Delete Practitioner from Account");
@@ -155,7 +156,7 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
     }
 
     @Test(priority = 8)
-    public void API_Can_Select_HealthcareFacilityNetworkID_in_Salesforce_as_SysAdmin(){
+    public void API_Can_Select_HealthcareFacilityNetworkID_in_Salesforce__Status_Code_200_as_SysAdmin(){
         TestcaseID = "262533"; //C262533
         APISelect sqlQuery = new APISelect();
         log("Select Healthcare Facility Network Id from HealthcareFacilityNetwork.");

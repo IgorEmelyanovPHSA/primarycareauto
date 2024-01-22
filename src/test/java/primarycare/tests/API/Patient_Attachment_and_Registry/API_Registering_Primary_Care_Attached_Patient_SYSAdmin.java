@@ -19,9 +19,9 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     public String preferredCommunicationChannel = "Email";
     public String mobile = "7788793897";
     public String email = "accountToDelete@phsa.ca";
-    public String street = "307-1140 Windermere";
-    public String city = "East Kootenay";
-    public String postalcode = "V0A0A2";
+    public String street = "501-6609 Goodmere Road";
+    public String city = "Sooke";
+    public String postalcode = "V9Z1P5";
     public String isActive = "true";
 
     public String accId;
@@ -33,13 +33,13 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     public String contactRelationsFirstName = "API_Primary3";
     public String contactRelationsLastName = "API_CareContact3";
     ////REFRESH
-    public String contactRecordTypeId = "0125f0000003ekBAAQ"; //from Igor PrimaryContactName "Account"
+    public String contactRecordTypeId = "0125f0000002f6sAAA"; // from Igor PrimaryContactName Account
     ////REFRESH
     //public String contactRecordPersonContactId = "003Aq00000BIdKkIAL";
     ////REFRESH
-    public String contactRecord_healthCloudGA__sourceSystem__c = "Health1-00DAq000003UI0z"; //from Igor PrimaryContactName "Account"
-    public String contactRecord_healthCloudGA__sourceSystem__pc = "Health1-00DAq000003UI0z";
+    public String contactRecord_healthCloudGA__sourceSystem__c = "Health1-00DAs000002hhVZ";//from Igor PrimaryContactName Account
     ////REFRESH
+    public String contactRecord_healthCloudGA__sourceSystem__pc = "Health1-00DAs000002hhVZ";
     public String primaryContactAccountID;//id
 
     //4.select Primary Care PersonContactID from Account
@@ -50,7 +50,7 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //public String healthCloudGA__RelatedContact__c = "003Aq00000BOVabIAH"; //API_Kenton's -> PesoContactID
     //public String healthCloudGA__Contact__c = "003Aq00000BOXFpIAP"; // PesoContactID -> API_Primary3 API_CareContact3
     ////REFRESH
-    public String healthCloudGA__Role__c = "a16Aq000000TSx3IAG"; //"Primary Contact" record role ->Contact Relation Name role from 'HealthCloudGA__ContactContactRelation__c' Object
+    public String healthCloudGA__Role__c = "a16As000000K9PBIA0"; //"Primary Contact" record role ->Contact Relation Name role from 'HealthCloudGA__ContactContactRelation__c' Object
     ////REFRESH
     public String contactContactRelationId;
 
@@ -59,23 +59,23 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //6. Create Attached Case
     public String caseRecordTypeId = "0125f000000qtfjAAA";
     ////REFRESH
-    public String caseAccountId = "001Aq00000KoEdWIAV"; //"1140 Windermere";
-    public String casePrimaryCareNetwork__c = "001Aq00000KoYqQIAV"; //"East Kootenay";
+    public String caseAccountId = "001As00000JTVYPIA5"; //"4124 Sooke";
+    public String casePrimaryCareNetwork__c = "001As00000JTVUsIAP"; //"Western Communities";
     ////REFRESH
     public String caseReason = "Attached - Family doctor or nurse practitioner is not accepting additional family members";
     public String caseOrigin = "Web";
     //public String caseContactName = "Sandy3_Patient_NOT_Attached";
     ////REFRESH
-    public String practitionerAttached__c = "001Aq00000Kob26IAB";//from "Case" Lori-Ann May Bus
-    public String caseStatus = "Attached";
+    public String practitionerAttached__c = "001As00000JTbnHIAT";// from "Case" Lori-Ann May Bus
     ////REFRESH
+    public String caseStatus = "Attached";
 
     public String caseId;
 
     //7. Create Case Contact Role
     public String role = "Current Practitioner";
     ////REFRESH
-    public String practitionerContactId = "003Aq00000LJoxcIAD";//Lori-Ann May Bus from "CaseContactRole" Object
+    public String practitionerContactId = "003As00000FNBt1IAH";// from "CaseContactRole" ContactId Lori-Ann May Bus
     ////REFRESH
     public String caseContactRoleID;
 
@@ -240,4 +240,5 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
         log(apiResponse);
         //Assert.assertEquals(accountNameReturned, name);
     }
+
 }

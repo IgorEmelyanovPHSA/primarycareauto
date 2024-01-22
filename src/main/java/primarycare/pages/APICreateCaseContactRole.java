@@ -33,7 +33,7 @@ public class APICreateCaseContactRole {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/CaseContactRole").
+                        post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/CaseContactRole").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;

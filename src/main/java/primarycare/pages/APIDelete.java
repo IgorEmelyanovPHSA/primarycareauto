@@ -16,7 +16,7 @@ public class APIDelete {
                 given().
                 header("Authorization", "Bearer " + acc_token).
                 when().
-                delete("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account/" + accId)
+                delete("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account/" + accId)
                 //then().statusCode(204).log().body().extract().path("id");
                 .then().statusCode(204).log().all()
                 );
@@ -36,7 +36,7 @@ public class APIDelete {
                         given().
                                 header("Authorization", "Bearer " + acc_token).
                                 when().
-                                delete("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthcarePractitionerFacility/" + practitionerFacility_accId)
+                                delete("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthcarePractitionerFacility/" + practitionerFacility_accId)
                                 //then().statusCode(204).log().body().extract().path("id");
                                 .then().statusCode(204).log().all()
                 );
@@ -56,7 +56,7 @@ public class APIDelete {
                         given().
                                 header("Authorization", "Bearer " + acc_token).
                                 when().
-                                delete("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case/" + caseId)
+                                delete("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case/" + caseId)
                                 //then().statusCode(204).log().body().extract().path("id");
                                 .then().statusCode(204).log().all()
                 );
@@ -76,7 +76,7 @@ public class APIDelete {
                         given().
                                 header("Authorization", "Bearer " + acc_token).
                                 when().
-                                delete("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/CaseContactRole/" + caseContactRoleID)
+                                delete("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/CaseContactRole/" + caseContactRoleID)
                                 //then().statusCode(204).log().body().extract().path("id");
                                 .then().statusCode(204).log().all()
                 );
@@ -96,7 +96,7 @@ public class APIDelete {
                         given().
                                 header("Authorization", "Bearer " + acc_token).
                                 when().
-                                delete("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthCloudGA__ContactContactRelation__c/" + contactContactRelationId)
+                                delete("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthCloudGA__ContactContactRelation__c/" + contactContactRelationId)
                                 //then().statusCode(204).log().body().extract().path("id");
                                 .then().statusCode(204).log().all()
                 );
@@ -116,7 +116,7 @@ public class APIDelete {
                         given().
                                 header("Authorization", "Bearer " + acc_token).
                                 when().
-                                delete("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthcareFacilityNetwork/" + practitionerFacility_accId)
+                                delete("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthcareFacilityNetwork/" + practitionerFacility_accId)
                                 //then().statusCode(204).log().body().extract().path("id");
                                 .then().statusCode(204).log().all()
                 );
@@ -135,12 +135,11 @@ public class APIDelete {
                         given().
                                 header("Authorization", "Bearer " + acc_token).
                                 when().
-                                delete("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Panel_Member__c/" + empaneledPatientRecord_Id)
+                                delete("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Panel_Member__c/" + empaneledPatientRecord_Id)
                                 //then().statusCode(204).log().body().extract().path("id");
                                 .then().statusCode(204).log().all()
                 );
         return responseforDelete;
     }
-
 
 }

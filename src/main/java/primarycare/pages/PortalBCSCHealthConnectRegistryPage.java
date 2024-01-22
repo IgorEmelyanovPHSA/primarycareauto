@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class PortalBCSCHealthConnectRegistryPage extends BasePage{
-
     /*---------Properties-------*/
     @FindBy(xpath = ".//button[text() = 'BCSC Login']")
     private WebElement bcsc_login_button;
@@ -90,5 +89,4 @@ public class PortalBCSCHealthConnectRegistryPage extends BasePage{
         }
         return false;
     }
-
 }
