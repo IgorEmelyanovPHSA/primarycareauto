@@ -202,7 +202,7 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
 
         log("/*4.----Click on 'Inactive' Tab --*/");
         providerPortalHomePage.clickPreviousStaffTab();
-        Thread.sleep(5000);
+        Thread.sleep(7000);
 
         log("/*5.----Click on Practitioner's Facility 'Kristine Facility' dropdown menu --*/");
         providerPortalHomePage.clickOnPractitionerFacilityPreviousTabDropDownMenu(practitionerFacilityName, practitionerRole);

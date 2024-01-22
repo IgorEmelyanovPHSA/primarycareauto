@@ -370,6 +370,10 @@ public class ProviderPortalHomePage extends BasePage{
     public void clickEdit() throws InterruptedException {
         waitForElementToBeVisible(driver, edit_button, 10);
         Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(edit_button_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
         edit_button.click();
     }
 
