@@ -876,6 +876,9 @@ public class ProviderPortalHomePage extends BasePage{
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
         Thread.sleep(2000);
         WebElement cellPanelSharing = flexCardsRows.get(h).findElement(By.xpath(".//span[text()='Panel Sharing']"));
+        log("/*----jump to component --*/");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", cellPanelSharing);
+        Thread.sleep(2000);
         //String cellText = cellPanelSharing.getText();
         cellPanelSharing.click();
         Thread.sleep(2000);
