@@ -487,7 +487,12 @@ public class HealthCloudConsolePage extends BasePage {
         Thread.sleep(1000);
         patient_date_of_birth_YYYY.sendKeys(dateOfBirth_yy);
         Thread.sleep(1000);
-        patient_date_of_birth_DD.click(); //just temporary to not clicking on Continue buttons two times.
+        //DHSOPR-7560
+        patient_date_of_birth_DD.click(); //1click.just temporary to not clicking on EMPI buttons two times.
+        Thread.sleep(1000);
+        patient_date_of_birth_YYYY.click(); //2click. again to not clicking on EMPI buttons two times.
+        Thread.sleep(1000);
+        patient_phn.click(); //3click. again to not clicking on EMPI buttons two times.
         Thread.sleep(1000);
     }
 
