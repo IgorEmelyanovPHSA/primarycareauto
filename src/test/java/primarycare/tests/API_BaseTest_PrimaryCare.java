@@ -16,7 +16,6 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 
-
 public class API_BaseTest_PrimaryCare {
     public final static SimpleDateFormat LOG_TIMESTAMP_FORMAT = new SimpleDateFormat("HH:mm:ss.SSS");
     protected DecimalFormat df = new DecimalFormat("0.00");

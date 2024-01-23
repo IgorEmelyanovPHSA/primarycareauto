@@ -33,7 +33,7 @@ public class CommonMethods extends BasePage {
 
     @FindBy(xpath = "(//a[@title='Sandy Prior'])[2]")
     private WebElement patient_founded;
-    private By patient_founded_1 = By.xpath("(//a[@title='Sandy Prior'])[2]");
+    private By patient_Sandy_Prior_founded_1 = By.xpath("(//a[@title='Sandy Prior'])[2]");
 
     @FindBy(xpath = "(//a[@title='Kenton Troup'])[2]")
     private WebElement patient_Kenton_founded;
@@ -110,7 +110,7 @@ public class CommonMethods extends BasePage {
         navigator_menu_dropdown.click();
         Thread.sleep(5000);
         waitForElementToBeVisible(driver, select_Home_from_dropdown, 10);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         select_Home_from_dropdown.click();
         Thread.sleep(2000);
     }
@@ -152,8 +152,42 @@ public class CommonMethods extends BasePage {
         Thread.sleep(2000);
     }
 
+    public void SearchForCitizen(String citizen) throws InterruptedException {
+        waitForElementToBeVisible(driver, search_assistant, 10);
+        Thread.sleep(2000);
+        WebElement search_navigator = driver.findElement(search_assistant1);
+        Thread.sleep(3000);
+        search_navigator.click();
+        Thread.sleep(3000);
+        waitForElementToBeVisible(driver, search_input, 10);
+        Thread.sleep(2000);
+        WebElement search_input = driver.findElement(search_input1);
+        search_input.sendKeys(citizen);
+        Thread.sleep(2000);
+        search_input.sendKeys(Keys.RETURN);
+        Thread.sleep(5000);
+    }
+
+    public void SearchForCitizenAlternativeWay(String citizen) throws InterruptedException {
+        waitForElementToBeVisible(driver, search_assistant, 10);
+        Thread.sleep(2000);
+        WebElement search_navigator = driver.findElement(search_assistant1);
+        Thread.sleep(3000);
+        search_navigator.click();
+        Thread.sleep(3000);
+        waitForElementToBeVisible(driver, search_input, 10);
+        Thread.sleep(2000);
+        WebElement search_input = driver.findElement(search_input1);
+        search_input.sendKeys(citizen);
+        Thread.sleep(2000);
+        waitForElementToBeVisible(driver, profile_in_search_dropdown, 10);
+        Thread.sleep(2000);
+        profile_in_search_dropdown.click();
+    }
+
+
     public void clickOnFondedPatient(String legalFirstName, String legalLastName) throws InterruptedException {
-        waitForElementToBeLocated(driver, patient_founded_1, 10);
+        waitForElementToBeLocated(driver, patient_Sandy_Prior_founded_1, 10);
         Thread.sleep(2000);
         patient_founded.click();
     }
@@ -177,7 +211,7 @@ public class CommonMethods extends BasePage {
     public boolean isPatientFoundValidation(String legalFirstName, String legalLastName) throws InterruptedException {
         boolean isPatientFound = false;
         By patientFoundWithParameter = By.xpath("//a[@title='" + legalFirstName + " " + legalLastName + "']");
-        for(int i = 1; i <= 20; i++ ) {
+        for(int i = 1; i <= 40; i++ ) {
             if (!isDisplayed(patientFoundWithParameter)) {
                 log(i +"-try to find Patient in list: " + legalFirstName + " " + legalLastName + " not found, re-try!");
                 log("wait for 10 sec");

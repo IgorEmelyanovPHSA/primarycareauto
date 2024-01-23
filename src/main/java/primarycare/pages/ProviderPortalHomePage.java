@@ -2,6 +2,7 @@ package primarycare.pages;
 
 import com.google.common.collect.ImmutableMap;
 import io.qameta.allure.Step;
+import org.openqa.selenium.NoSuchElementException;
 import primarycare.pages.Tables;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
 
 public class ProviderPortalHomePage extends BasePage{
     /*---------Properties-------*/
@@ -34,13 +34,13 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement rostering_link;
     private By rostering_link_1 = By.xpath("(//span[text()='My Panel'])[1]");
 
-    @FindBy(xpath = "(//span[text()='Current Staff'])[2]")
+    @FindBy(xpath = "(//span[text()='Current Staff'])[1]")
     private WebElement current_staff_link;
-    private By current_staff_link_1 = By.xpath("(//span[text()='Current Staff'])[2]");
+    private By current_staff_link_1 = By.xpath("(//span[text()='Current Staff'])[1]");
 
-    @FindBy(xpath = "(//span[text()='NORTH SHORE PRIMARY CARE MED HOME'])[1]")
+    @FindBy(xpath = "(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[1]")
     private WebElement facility_link;
-    private By facility_link_1 = By.xpath("(//span[text()='NORTH SHORE PRIMARY CARE MED HOME'])[1]");
+    private By facility_link_1 = By.xpath("(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[1]");
 
     @FindBy(xpath = "//span[text()='Edit']")
     private WebElement edit_button;
@@ -57,6 +57,7 @@ public class ProviderPortalHomePage extends BasePage{
     @FindBy(xpath = "//span[@class][text()='Yes']")
     private WebElement select_yes_from_accepting_new_patient_options;
     private By select_yes_from_accepting_new_patient_options_1 = By.xpath("//span[@class][text()='Yes']");
+
 
     @FindBy(xpath = "//input[@omnistudio-maskedinput_maskedinput_slds]")
     private WebElement max_new_requests_component;
@@ -132,7 +133,7 @@ public class ProviderPortalHomePage extends BasePage{
 
     @FindBy(xpath = "//span[text()='Providers & Other PAS Users']")
     private WebElement current_staff_tab;
-    private By current_staff_tab_1 = By.xpath("//span[text()='Providers & Other PAS Users']");
+    private By current_staff_tab_1 = By.xpath("Providers & Other PAS Users");
 
     @FindBy(xpath = "(.//div[@class='slds-table_header-fixed_container slds-scrollable_x'])[2]")
     private WebElement practitioner_facility_previous_staff_tab_table;
@@ -170,9 +171,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement yes_on_modal_remove_patients_form_button;
     private By yes_on_modal_remove_patients_form_button_1 = By.xpath("//button[@name='Yes']");
 
-    @FindBy(xpath = "//div[@class='slds-tile__detail slds-text-body_small']")
+    @FindBy(xpath = "(//div[@class='slds-tile__detail slds-text-body_small']//span[text()='Active'])[1]")
     private WebElement panels_filter_dropdown_component;
-    private By panels_filter_dropdown_component_1 = By.xpath("//div[@class='slds-tile__detail slds-text-body_small']");
+    private By panels_filter_dropdown_component_1 = By.xpath("(//div[@class='slds-tile__detail slds-text-body_small']//span[text()='Active'])[1]");
 
     @FindBy(xpath = "//div[@data-filter='Removed']")
     private WebElement select_removed_option_for_dropdown_component;
@@ -182,9 +183,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement empaneled_patient_status_dropdown;
     private By empaneled_patient_status_dropdown_1 = By.xpath("//button[@aria-label='Select Panel Status, Select...']");
 
-    @FindBy(xpath = "(.//span[text()='Active'])[2]")
+    @FindBy(xpath = "(.//span[@title='Active'])[2]")
     private WebElement select_active_from_panel_status_options;
-    private By select_active_from_panel_status_options_1 = By.xpath("(.//span[text()='Active'])[2]");
+    private By select_active_from_panel_status_options_1 = By.xpath("(.//span[@title='Active'])[2]");
 
     @FindBy(xpath = "//button[@name='Proceed']")
     private WebElement proceed_on_modal_update_panel_status_form_button;
@@ -210,7 +211,7 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement rostering_second_clinic_link;
     private By rostering_second_clinic_link_1 = By.xpath("(//span[text()='My Panel'])[2]");
 
-    @FindBy(xpath = "//a[contains(text(),'Agnes two canada')]")
+    @FindBy(xpath = "//a[contains(text(),'Agnes Phillip')]")
     private WebElement moa_practitioner_facility_name_link;
     private By moa_practitioner_facility_name_link_1 = By.xpath("//a[contains(text(),'Agnes Phillip')]");
 
@@ -273,17 +274,20 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement practitioner_granted_access_by_tab_table;
     private By practitioner_granted_access_by_tab_table_1 = By.xpath(".//div[@class='slds-table_header-fixed_container slds-scrollable_x']");
 
-    @FindBy(xpath = ".//a[text()='Karen F. Beegan Panel']")
+    @FindBy(xpath = ".//a[text()='Lori-Ann May Bus Panel']")
     private WebElement practitioner_panel_name_link;
-    private By practitioner_panel_name_link_1 = By.xpath(".//a[text()='Karen F. Beegan Panel']");
+    private By practitioner_panel_name_link_1 = By.xpath(".//a[text()='Lori-Ann May Bus Panel']");
 
     @FindBy(xpath = "(.//span[text()='Clinic Details'])[1]")
     private WebElement current_details_link;
     private By current_details_link_1 = By.xpath("(.//span[text()='Clinic Details'])[1]");
 
+    @FindBy(xpath = "//span[text()='CASTLEGAR MED FAMILY CLINIC']")
+    private WebElement riverview_med_family_facility_link;
+    private By riverview_med_family_facility_link_1 = By.xpath("//span[text()='CASTLEGAR MED FAMILY CLINIC']");
+
     @FindBy(xpath = ".//h1[text()='Account Details']")
     private WebElement edit_clinic_page_displayed_validation;
-
 
     //////////////////////////////////////////////////////////////////////////////////
     Tables tables;
@@ -299,7 +303,7 @@ public class ProviderPortalHomePage extends BasePage{
     /*-------------Methods--------------*/
     public boolean isPortalProviderHomePageDisplayed() throws InterruptedException {
         boolean isPortalProviderHomePageDisplayed = false;
-        for(int i = 1; i <= 20; i++ ) {
+        for(int i = 1; i <= 40; i++ ) {
             if (!isDisplayed(is_provider_portal_home_page_displayed_1)) {
                 log(i +"-try to see Provider Home Page: "  +  " Home Page not showing up yet, re-try!");
                 log( "wait for 10 sec");
@@ -337,9 +341,9 @@ public class ProviderPortalHomePage extends BasePage{
 
     public void clickHomeLink() throws InterruptedException {
         waitForElementToBeVisible(driver, home_link, 10);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         WebElement element = driver.findElement(home_link_1);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         home_link.click();
     }
 
@@ -422,7 +426,7 @@ public class ProviderPortalHomePage extends BasePage{
 
     public String getActualIsAcceptingNewPatientsForValidation() throws InterruptedException {
         waitForElementToBeLocated(driver, isAccepting_actual_field_value_1, 10);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         isAccepting_actual_field_value.isDisplayed();
         return (isAccepting_actual_field_value.getText());
     }
@@ -478,7 +482,11 @@ public class ProviderPortalHomePage extends BasePage{
         Thread.sleep(1000);
         save_new_staff_member_button.click();
     }
+
     public String getActualPractitionerFacilityNameForValidation() throws InterruptedException {
+        log("/*----scroll down a bit --*/");
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
+        Thread.sleep(2000);
         waitForElementToBeLocated(driver, practitioner_facility_name_actual_field_value_1, 10);
         Thread.sleep(2000);
         practitioner_facility_name_actual_field_value.isDisplayed();
@@ -532,18 +540,16 @@ public class ProviderPortalHomePage extends BasePage{
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(2000);
         Map<String,String> practitionerFacility = ImmutableMap.of("Practitioner Facility Name", practitionerFacilityName, "System Role", role);
-        tables.getPractitionerFacilityCurrentStaffActions(practitionerFacility);
+        tables.getPractitionerFacilityCurrentStaffProviderActions(practitionerFacility);
     }
 
     //@Step
     public void selectRemoveFromDropDownMenu() throws InterruptedException {
         selectActionFromDropDown("Remove");
     }
-
     public void selectEditFromDropDownMenu() throws InterruptedException {
         selectActionFromDropDown("Edit");
     }
-
     public void selectChangeClinicFromDropDownMenu() throws InterruptedException {
         selectActionFromDropDown("Change Clinic");
     }
@@ -569,7 +575,7 @@ public class ProviderPortalHomePage extends BasePage{
 
     public void clickOnPractitionerFacilityPreviousTabDropDownMenu(String practitionerFacilityName, String role) throws InterruptedException {
         waitForElementToBeVisible(driver, practitioner_facility_previous_staff_tab_table, 10);
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         log("/*----jump to component --*/");
         WebElement element = driver.findElement(practitioner_facility_name_link_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
@@ -596,6 +602,10 @@ public class ProviderPortalHomePage extends BasePage{
     public void clickAddPatient() throws InterruptedException {
         waitForElementToBeVisible(driver, add_patient_button, 10);
         Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(add_patient_button_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
         add_patient_button.click();
     }
 
@@ -627,7 +637,11 @@ public class ProviderPortalHomePage extends BasePage{
         Thread.sleep(1000);
         close_modal_form_button.click();
     }
+
     public String getActualEmpaneledPatientFirstNameForValidation() throws InterruptedException {
+        //log("/*----scroll down a bit --*/");
+        //((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
+        //Thread.sleep(2000);
         waitForElementToBeLocated(driver, empaneled_patient_first_name_actual_field_value_1, 10);
         Thread.sleep(2000);
         empaneled_patient_first_name_actual_field_value.isDisplayed();
@@ -725,9 +739,9 @@ public class ProviderPortalHomePage extends BasePage{
         log("/*----jump to component --*/");
         WebElement element = driver.findElement(moa_practitioner_facility_name_link_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         Map<String,String> moa_practitionerFacility = ImmutableMap.of("Practitioner Facility Name", practitionerMoAFacilityName, "System Role", role);
-        tables.clickOnPractitionerFacilityTableRow(moa_practitionerFacility);
+        tables.clickOnPractitionerFacilityTableRowMoA(moa_practitionerFacility);
     }
 
     public void clickDetailsTab() throws InterruptedException {
@@ -865,7 +879,7 @@ public class ProviderPortalHomePage extends BasePage{
         for (int i = 0; i < numberOfRows; i++) {
             String flexCardRowText = flexCardsRows.get(i).getText();
             //log("get Text: " +'\n' + flexCardRowText);
-            if (flexCardRowText.contains("NORTH SHORE PRIMARY CARE MED HOME"))
+            if (flexCardRowText.contains("CASTLEGAR MED FAMILY CLINIC"))
             {
                 log("Related Flex Card has founded: " + '\n' + flexCardRowText);
                 h = i;
@@ -873,9 +887,12 @@ public class ProviderPortalHomePage extends BasePage{
         }
         log("Click related 'Panel Shared' link");
         log("/*----scroll down a bit --*/");
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,900)");
         Thread.sleep(2000);
         WebElement cellPanelSharing = flexCardsRows.get(h).findElement(By.xpath(".//span[text()='Panel Sharing']"));
+        log("/*----jump to component --*/");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", cellPanelSharing);
+        Thread.sleep(2000);
         //String cellText = cellPanelSharing.getText();
         cellPanelSharing.click();
         Thread.sleep(2000);
@@ -898,6 +915,9 @@ public class ProviderPortalHomePage extends BasePage{
     public boolean isEmpaneledPatientFoundValidation(String empaneledPatientFirstName) throws InterruptedException {
         boolean isPatientFound = false;
         for(int i = 1; i <= 40; i++ ) {
+            log("/*----scroll down --*/");
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
+            Thread.sleep(2000);
             if (!isDisplayed(empaneled_patient_first_name_actual_field_value_1)) {
                 log(i +"-try to find Empaneled: " + empaneledPatientFirstName + " " + " not found, re-try!");
                 log( "wait for 10 sec");
@@ -912,6 +932,16 @@ public class ProviderPortalHomePage extends BasePage{
             }
         }
         return isPatientFound;
+    }
+
+    public void clickOnRiverViewMedFamilyFacility() throws InterruptedException {
+        waitForElementToBeVisible(driver, riverview_med_family_facility_link, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(riverview_med_family_facility_link_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        riverview_med_family_facility_link.click();
     }
 
     public void clickOnClinicDetailsLink() throws InterruptedException {

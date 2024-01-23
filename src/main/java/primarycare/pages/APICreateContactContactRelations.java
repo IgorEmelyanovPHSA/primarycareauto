@@ -12,7 +12,7 @@ public class APICreateContactContactRelations {
     public String insertPrimaryContactContactRelations (String healthCloudGA__RelatedContact__c,
                                                         String healthCloudGA__Contact__c,
                                                         String healthCloudGA__Role__c
-    ){
+                                        ){
         APIEstablishSFConnection sfConnection = new APIEstablishSFConnection();
         String acc_token = sfConnection.establishConnection();
         System.out.println("Connection for SF Establish with Status code 200");
@@ -34,7 +34,7 @@ public class APICreateContactContactRelations {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthCloudGA__ContactContactRelation__c").
+                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthCloudGA__ContactContactRelation__c").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;

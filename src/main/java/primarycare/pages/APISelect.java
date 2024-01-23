@@ -21,7 +21,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().extract().path("records");
         // then().log().body();
 
@@ -42,7 +42,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -64,7 +64,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -80,6 +80,7 @@ public class APISelect {
 
         //return null;
     }
+
     public String selectPatientAccountIdByPHN (String sql_request, String patientAccountId)
     {
         APIEstablishSFConnection sfConnection = new APIEstablishSFConnection();
@@ -92,7 +93,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -113,7 +114,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -127,6 +128,5 @@ public class APISelect {
         return fieldEmpaneledPatientValue;
         //return null;
     }
-
 
 }

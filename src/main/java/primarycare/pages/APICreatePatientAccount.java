@@ -31,8 +31,8 @@ public class APICreatePatientAccount {
         mapper.put("PersonOtherPostalCode", postalcode);
         mapper.put("IsActive", isActive);
         mapper.put("EMPI_Verified__pc", "Verified");
-        mapper.put("HealthCloudGA__SourceSystem__c", "Health1-00D590000008iln");
-        mapper.put("HealthCloudGA__SourceSystem__pc", "Health1-00D590000008iln");
+        mapper.put("HealthCloudGA__SourceSystem__c", "Health1-00DAq000001hzUH");
+        mapper.put("HealthCloudGA__SourceSystem__pc", "Health1-00DAq000001hzUH");
 
 
         JSONObject requester = new JSONObject(mapper);
@@ -46,7 +46,7 @@ public class APICreatePatientAccount {
             header("Content-Type", "application/json").
             body(requester.toString()).
             when().
-            post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
+            post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
                 then().statusCode(201).log().body().extract().path("id");
                 //then().log().body();
             //return null;

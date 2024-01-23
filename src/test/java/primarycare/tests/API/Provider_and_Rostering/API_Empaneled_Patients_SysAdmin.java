@@ -9,10 +9,10 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
     private String empaneledPatientPHN = "9698672105"; //Mariano Brakus
     public String empaneledId;
 
-    //for Test 3. insert
+    //for Test 3.insert
     ///REFRESH
-    public String patient__c = "001As00000JTbCMIA1";////Mariano Brakus ID - the same as Patient_ID__c in Account.
-    public String healthcare_facility_network__c = "0bYAs0000002bQNMAY";//"Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork"
+    public String patient__c = "001As00000JObR9IAL";////Mariano Brakus ID - the same as Patient_ID__c in Account.
+    public String healthcare_facility_network__c = "0bYAs0000002Zg3MAE";//Lori-Ann Bus | Panel | CASTLEGAR MED FAMILY CLINIC
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
@@ -32,19 +32,19 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
     public void API_Can_Remove_Empaneled_Patient_Record_in_Salesforce_Status_Code_204_as_SysAdmin(){
         TestcaseID = "275927"; //C275927
         if(empaneledId==null){
-                log("No Empaneled Patients records for 'Mariano Brakus'.");
-                log("Nothings to delete - do nothing.");
+            log("No Empaneled Patients records for 'Mariano Brakus'.");
+            log("Nothings to delete - do nothing.");
         }
         else {
-                log("Empaneled Patients records for 'Mariano Brakus' has founded.");
-                log("lets Delete it");
-                //remove Empaneled Patient from "Panel_Member_c" Table
-                APIDelete api_delete_empaneled_patient = new APIDelete();
-                log("Delete Empaneled Patient record from 'Panel_Member_c'.");
-                String apiResponse= api_delete_empaneled_patient.deleteEmpaneledPatientRecord(empaneledId);
-                log("Deleted Empaneled Patient record from 'Panel_Member_c' is: " + empaneledId);
-                log(apiResponse);
-                log("Status Code 204 - Empaneled Patient 'Mariano Brakus' Deleted - successfully");
+            log("Empaneled Patients records for 'Mariano Brakus' has founded.");
+            log("lets Delete it");
+            //remove Empaneled Patient from "Panel_Member_c" Table
+            APIDelete api_delete_empaneled_patient = new APIDelete();
+            log("Delete Empaneled Patient record from 'Panel_Member_c'.");
+            String apiResponse= api_delete_empaneled_patient.deleteEmpaneledPatientRecord(empaneledId);
+            log("Deleted Empaneled Patient record from 'Panel_Member_c' is: " + empaneledId);
+            log(apiResponse);
+            log("Status Code 204 - Empaneled Patient 'Mariano Brakus' Deleted - successfully");
         }
     }
 

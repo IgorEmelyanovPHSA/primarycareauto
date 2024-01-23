@@ -21,10 +21,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "501-6609 Goodmere Road";
-    private String City = "Sooke";
+    private String streetAddress = "307-7631 Francis Rd";
+    private String City = "Richmond";
     private String province = "BC";
-    private String postalCode = "V9Z 1P5";
+    private String postalCode = "V6Y 1A3";
     private String email = "accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
@@ -37,8 +37,8 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberDateOfBirth_MM = "04";//March
     private String familyMemberDateOfBirth_DD = "12";
     private String familyMemberDateOfBirth_YYYY = "1947";
-    private String familyMemberStreetAddress = "501-6609 Goodmere Road";
-    private String familyMemberCity = "Sooke";
+    private String familyMemberStreetAddress = "307-7631 Francis Rd";
+    private String familyMemberCity = "Richmond";
     private String familyMemberProvince = "BC";
     private String familyMembePpostalCode = "V6Y 1A3";
     private String familyMemberEmail = "accountToDelete@phsa.ca";
@@ -47,10 +47,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";
     private String statusExpected = "Active";
-    private String accountNameExpected = "4124 Sooke";
-    private String primaryCareNetworkExpected = "Western Communities";
+    private String accountNameExpected = "3113 Broadmoor";
+    private String primaryCareNetworkExpected = "Richmond - East";
     private String caseReasonExpected = "Family doctor or nurse practitioner is not accepting additional family members";
-    private String caseCommentExpected = "Current Practitioner Location: Sooke";
+    private String caseCommentExpected = "Current Practitioner Location: Richmond";
     private String language = "Portuguese";
     //Contact-Contact Relations
     private String primaryContactName = "Sandy Prior";
@@ -58,7 +58,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberContactName = "Sandy Prior";
     //Case Contact Role - Current Practitioner
     private String currentFamilyDoctor = "Lori-Ann May Bus";
-    private String currentFamilyDoctorCityOrTown = "Sooke";
+    private String currentFamilyDoctorCityOrTown = "Richmond";
 
     @Test(priority = 1)
     public void Can_do_Family_Member_Registration_Attached_in_Portal () throws Exception {
@@ -117,11 +117,11 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
 
         log("/*11.---Enter Date of Birth - Year: " + dateOfBirth_YYYY +"--*/");
         portalHealthConnectRegistryPage.enterYear(dateOfBirth_YYYY);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         log("/*12.---Click Continue--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         log("/*13.---Enter Street address: " + streetAddress +"----*/");
         portalHealthConnectRegistryPage.enterStreetAddress(streetAddress);
@@ -297,8 +297,8 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         common.selectHomeFromNavigationMenuDropdown();
         Thread.sleep(5000);
 
-        //log("/* ----Wait for 40 sec before Searching the family member Hillis Violette --*/");
-        //Thread.sleep(40000);
+        //log("/* ----Wait for 30 sec before Searching the family member Hillis Violette --*/");
+        //Thread.sleep(30000);
 
         //log("/* ----Refresh page --*/");
         //common.refreshBrowser();
@@ -366,13 +366,13 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*63.---- Validate Account name - '4124 Sooke'  ---*/");
+        log("/*63.---- Validate Account name - '3113 Broadmoor'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*64.---- Validate Primary Care Network - 'Western Communities'  ---*/");
+        log("/*64.---- Validate Primary Care Network - 'Richmond - East'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);
@@ -394,7 +394,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         healthCloudConsolePage.clickOnCaseRelatedTab();
         Thread.sleep(5000);
 
-        log("/*68.----all broken with DHSOPR-4795 - Validate Case Comments - 'Current Practitioner Location: Sooke'  ---*/");
+        log("/*68.----all broken with DHSOPR-4795 - Validate Case Comments - 'Current Practitioner Location: Richmond'  ---*/");
         //String caseCommentActual = healthCloudConsolePage.getCaseCommentActualForValidation();
         //log("/*---Case Comment actual is: " + caseCommentActual + " --*/");
         //assertEquals(caseCommentActual, caseCommentExpected);

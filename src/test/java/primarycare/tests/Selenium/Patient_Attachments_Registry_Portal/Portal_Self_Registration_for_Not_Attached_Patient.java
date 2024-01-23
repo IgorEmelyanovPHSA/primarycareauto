@@ -20,10 +20,10 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "501-6609 Goodmere Road";//"307-7631 Francis Rd";
-    private String City = "Sooke"; //"Richmond";
+    private String streetAddress = "307-7631 Francis Rd";
+    private String City = "Richmond";
     private String province = "BC";
-    private String postalCode = "V9Z 1P5";//"V6Y 1A3";
+    private String postalCode = "V6Y 1A3";
     private String email = "accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
@@ -31,7 +31,8 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";//"Medium" for UAT;
     private String statusExpected = "Active";
-    private String accountNameExpected = "4124 Sooke";//"3113 Broadmoor";
+    private String accountNameExpected = "3113 Broadmoor";
+    //private String caseReasonExpected = "Unattached - Requires attachment to family doctor or nurse practitioner";
     private String caseReasonExpected = "Unattached";
 
     @Test(priority = 1)
@@ -87,11 +88,11 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
 
         log("/*11.---Enter Date of Birth - Year" +dateOfBirth_YYYY +"--*/");
         portalHealthConnectRegistryPage.enterYear(dateOfBirth_YYYY);
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         log("/*12.---Click Continue--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
         log("/*13.---Enter Street address " +streetAddress +"----*/");
         portalHealthConnectRegistryPage.enterStreetAddress(streetAddress);
@@ -168,7 +169,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
 
         log("/*29.----Close All previously opened Tab's --*/");
         common.closeAllHealthCloudConsoleTabs();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         log("/*29_1.----Select Home from Navigation Menu Dropdown --*/");
         common.selectHomeFromNavigationMenuDropdown();
@@ -186,6 +187,9 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         log("/*30.---Search for Patient by PHN " + legalFirstName + " "+ legalLastName +"--*/");
         common.globalSearch(personalHealthNumber);
         Thread.sleep(2000);
+
+        //common.SearchForCitizenAlternativeWay();
+        //common.SearchForCitizen();
 
         log("/*31.---Click on founded Patient--*/");
         ///////////////////
@@ -219,7 +223,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*36.---- Validate Account name - '4124 Sooke'  ---*/");
+        log("/*36.---- Validate Account name - '3113 Broadmoor'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);

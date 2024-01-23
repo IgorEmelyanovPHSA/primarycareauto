@@ -46,7 +46,7 @@ public class APICreatePractitionerAccount {
             header("Content-Type", "application/json").
             body(requester.toString()).
             when().
-            post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
+            post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
                 then().statusCode(201).log().body().extract().path("id");
                 //then().log().body();
             //return null;
@@ -70,7 +70,7 @@ public class APICreatePractitionerAccount {
         //mapper.put("MOHBC_PRV_Max_New_Requests__c", maxNewRequests);
         mapper.put("MOHBC_PRV_Role__c", role);
         mapper.put("IsActive", isActive);
-
+        //mapper.put("RecordTypeId", recordTypeId);
 
         JSONObject requester = new JSONObject(mapper);
         System.out.println("Account JSON is:" +requester.toString());
@@ -83,7 +83,7 @@ public class APICreatePractitionerAccount {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthcarePractitionerFacility").
+                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthcarePractitionerFacility").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;

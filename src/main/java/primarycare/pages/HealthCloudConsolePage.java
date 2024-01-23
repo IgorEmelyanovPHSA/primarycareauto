@@ -53,9 +53,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement distance_able_to_travel_Attached_actual_value;
     private By distance_able_to_travel_Attached_actual_value_1 = By.xpath("(.//lightning-formatted-text[text() ='Less than 5 km'])");
 
-    @FindBy(xpath = "//span[text() ='Western Communities']")
+    @FindBy(xpath = "//span[text() ='Richmond - East']")
     private WebElement primary_care_network_actual_field_value;
-    private By primary_care_network_actual_field_value_1 = By.xpath("//span[text() ='Western Communities']");
+    private By primary_care_network_actual_field_value_1 = By.xpath("//span[text() ='Richmond - East']");
 
     @FindBy(xpath = "//span[text() ='A person in my care']")
     private WebElement person_in_my_care_radiobutton;
@@ -239,21 +239,21 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement caller_related_role_actual_field_value;
     private By caller_related_role_actual_field_value_1 = By.xpath(".//a[@title = 'Social Worker']");
 
-    @FindBy(xpath = ".//span[@title='Submitted By']")
+    @FindBy(xpath = "//span[@title='Submitted By']")
     private WebElement case_caller_role_actual_field_value;
-    private By case_caller_role_actual_field_value_1 = By.xpath(".//span[@title='Submitted By']");
+    private By case_caller_role_actual_field_value_1 = By.xpath("//span[@title='Submitted By']");
 
     @FindBy(xpath = ".//a[@title ='Primary Contact']")
     private WebElement primary_contact_related_role_actual_field_value;
     private By primary_contact_related_role_actual_field_value_1 = By.xpath(".//a[@title ='Primary Contact']");
 
-    @FindBy(xpath = ".//span[@title='Current Practitioner']")
+    @FindBy(xpath = ".//lst-formatted-text[text() ='Current Practitioner']")
     private WebElement case_contact_practitioner_role_actual_field_value;
-    private By case_contact_practitioner_role_actual_field_value_1 = By.xpath(".//span[@title='Current Practitioner']");
+    private By case_contact_practitioner_role_actual_field_value_1 = By.xpath(".//lst-formatted-text[text() ='Current Practitioner']");
 
-    @FindBy(xpath = "//span[text() ='Current Practitioner Location: Sooke']")
+    @FindBy(xpath = "//span[text() ='Current Practitioner Location: Richmond']")
     private WebElement case_comment_actual_field_value;
-    private By case_comment_actual_field_value_1 = By.xpath("//span[text() ='Current Practitioner Location: Sooke']");
+    private By case_comment_actual_field_value_1 = By.xpath("//span[text() ='Current Practitioner Location: Richmond']");
 
     @FindBy(xpath = "(//span[text() ='Sandy Prior'])[2]")
     private WebElement caller_name_Sandy_Prior_2_actual_field_value;
@@ -460,7 +460,7 @@ public class HealthCloudConsolePage extends BasePage {
     public void enterPatientPHN(String patientPHN) throws InterruptedException {
         waitForElementToBeLocated(driver, patient_phn_1, 10);
         Thread.sleep(1000);
-        log("/*----scroll a bit --*/");
+        log("/*----jump to component --*/");
         WebElement element = driver.findElement(patient_phn_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(1000);
@@ -538,10 +538,10 @@ public class HealthCloudConsolePage extends BasePage {
     public void enterProvince(String Province) throws InterruptedException {
         waitForElementToBeLocated(driver, province_dropdown_component_1, 10);
         Thread.sleep(1000);
-        log("/*----scroll down --*/");
+        log("/*----jump to component --*/");
         WebElement element = driver.findElement(province_dropdown_component_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         province_dropdown_component.click();
         Thread.sleep(1000);
         province_optin_selection.click();
@@ -550,11 +550,10 @@ public class HealthCloudConsolePage extends BasePage {
 
     public void enterPostalCode(String postalCode) throws InterruptedException {
         waitForElementToBeLocated(driver, postal_code_1, 10);
-        Thread.sleep(2000);
-        log("/*----scroll down --*/");
+        log("/*----jump to component --*/");
         WebElement element = driver.findElement(postal_code_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         postal_code.click();
         //JavascriptExecutor js = (JavascriptExecutor) driver;
         //js.executeScript("arguments[0].value  = 'V6Y 1A3';", postal_code);
@@ -727,12 +726,6 @@ public class HealthCloudConsolePage extends BasePage {
     }
 
     public String getCallerRelatedRoleActualForValidation() throws InterruptedException {
-        //waitForElementToBeLocated(driver, caller_related_role_actual_field_value_1, 10);
-        //Thread.sleep(2000);
-        //caller_related_role_actual_field_value.isDisplayed();
-        //Thread.sleep(2000);
-        //return (caller_related_role_actual_field_value.getText());
-
         WebElement element = driver.findElement(caller_related_role_actual_field_value_1);
         Thread.sleep(2000);
         caller_related_role_actual_field_value.isDisplayed();
@@ -833,6 +826,9 @@ public class HealthCloudConsolePage extends BasePage {
         priority_actual_field_value.isDisplayed();
         return (status_actual_field_value.getText());
     }
+
+
+
 
 
 

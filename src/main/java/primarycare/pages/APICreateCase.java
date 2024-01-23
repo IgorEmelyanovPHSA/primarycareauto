@@ -41,20 +41,20 @@ public class APICreateCase {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
+                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;
     }
 
     public String insertAttachedCase (String caseRecordTypeId,
-                                      String caseAccountId,
-                                      String casePrimaryCareNetwork__c,
-                                      String caseReason,
-                                      String caseOrigin,
-                                      String personContactId,
-                                      String caseStatus,
-                                      String practitionerAttached__c){
+                                        String caseAccountId,
+                                        String casePrimaryCareNetwork__c,
+                                        String caseReason,
+                                        String caseOrigin,
+                                        String personContactId,
+                                        String caseStatus,
+                                        String practitionerAttached__c){
         APIEstablishSFConnection sfConnection = new APIEstablishSFConnection();
         String acc_token = sfConnection.establishConnection();
         System.out.println("Connection for SF Establish with Status code 200");
@@ -81,7 +81,7 @@ public class APICreateCase {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
+                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;

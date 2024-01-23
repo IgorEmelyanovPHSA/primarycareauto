@@ -130,11 +130,6 @@ public abstract class BasePage<T>  {
         wait.until(ExpectedConditions.textToBePresentInElement(e, text));
     }
 
-    //public static void waitForTextToBePresentInTable(WebDriver driver, List<WebElement> e, int seconds, String text) {
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        //wait.until(WaitConditions.textToBePresentInElements(e, text));
-    //}
-
     protected static WebElement waitForElementToBeLocated(WebDriver driver, By xpath, int seconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
@@ -218,6 +213,7 @@ public abstract class BasePage<T>  {
         }
         return (T) this;
     }
+
     public void moveToElement(WebElement element){
         Actions actions = new Actions(driver);
         try {

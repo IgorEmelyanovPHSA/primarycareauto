@@ -10,10 +10,10 @@ import static io.restassured.RestAssured.given;
 
 public class APICreatePrimaryContactAccount {
     public String insertPrimaryContactAccount (String contactRelationsFirstName,
-                                               String contactRelationsLastName,
-                                               String contactRecordTypeId,
-                                               String contactRecord_healthCloudGA__sourceSystem__c,
-                                               String contactRecord_healthCloudGA__sourceSystem__pc
+                                                        String contactRelationsLastName,
+                                                        String contactRecordTypeId,
+                                                        String contactRecord_healthCloudGA__sourceSystem__c,
+                                                        String contactRecord_healthCloudGA__sourceSystem__pc
     ){
         APIEstablishSFConnection sfConnection = new APIEstablishSFConnection();
         String acc_token = sfConnection.establishConnection();
@@ -38,7 +38,7 @@ public class APICreatePrimaryContactAccount {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcuatx.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
+                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;
