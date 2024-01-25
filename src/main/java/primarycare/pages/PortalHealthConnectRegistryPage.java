@@ -264,6 +264,7 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     public void enterCity(String City) throws InterruptedException {
         waitForElementToBeLocated(driver, city_1, 10);
+        Thread.sleep(1000);
         //city.sendKeys(City);
         city.click();
         Thread.sleep(1000);

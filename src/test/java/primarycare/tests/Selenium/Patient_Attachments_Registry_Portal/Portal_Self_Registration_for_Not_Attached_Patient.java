@@ -96,7 +96,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
 
         log("/*13.---Enter Street address " +streetAddress +"----*/");
         portalHealthConnectRegistryPage.enterStreetAddress(streetAddress);
-        //Thread.sleep(1000);
+        Thread.sleep(5000);
 
         log("/*14.---Enter City " +City +"----*/");
         portalHealthConnectRegistryPage.enterCity(City);
