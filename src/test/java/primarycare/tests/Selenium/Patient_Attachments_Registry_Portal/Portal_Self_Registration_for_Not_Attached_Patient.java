@@ -20,10 +20,10 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-7631 Francis Rd";
-    private String City = "Richmond";
+    private String streetAddress = "307-1140 Windermere";
+    private String City = "East Kootenay";
     private String province = "BC";
-    private String postalCode = "V6Y 1A3";
+    private String postalCode = "V0A 0A2";
     private String email = "accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
@@ -31,7 +31,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";//"Medium" for UAT;
     private String statusExpected = "Active";
-    private String accountNameExpected = "3113 Broadmoor";
+    private String accountNameExpected = "1140 Windermere";
     //private String caseReasonExpected = "Unattached - Requires attachment to family doctor or nurse practitioner";
     private String caseReasonExpected = "Unattached";
 
@@ -223,7 +223,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*36.---- Validate Account name - '3113 Broadmoor'  ---*/");
+        log("/*36.---- Validate Account name - '1140 Windermere'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);

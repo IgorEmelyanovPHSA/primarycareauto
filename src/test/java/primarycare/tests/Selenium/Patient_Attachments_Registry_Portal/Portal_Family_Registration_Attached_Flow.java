@@ -21,10 +21,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-7631 Francis Rd";
-    private String City = "Richmond";
+    private String streetAddress = "307-1140 Windermere";
+    private String City = "East Kootenay";
     private String province = "BC";
-    private String postalCode = "V6Y 1A3";
+    private String postalCode = "V0A 0A2";
     private String email = "accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
@@ -37,18 +37,18 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberDateOfBirth_MM = "04";//March
     private String familyMemberDateOfBirth_DD = "12";
     private String familyMemberDateOfBirth_YYYY = "1947";
-    private String familyMemberStreetAddress = "307-7631 Francis Rd";
-    private String familyMemberCity = "Richmond";
+    private String familyMemberStreetAddress = "307-1140 Windermere";
+    private String familyMemberCity = "East Kootenay";
     private String familyMemberProvince = "BC";
-    private String familyMembePpostalCode = "V6Y 1A3";
+    private String familyMembePpostalCode = "V0A 0A2";
     private String familyMemberEmail = "accountToDelete@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
     private String familyMemberCommunicationPreference = "Email";
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";
     private String statusExpected = "Active";
-    private String accountNameExpected = "3113 Broadmoor";
-    private String primaryCareNetworkExpected = "Richmond - East";
+    private String accountNameExpected = "1140 Windermere";
+    private String primaryCareNetworkExpected = "East Kootenay";
     private String caseReasonExpected = "Family doctor or nurse practitioner is not accepting additional family members";
     private String caseCommentExpected = "Current Practitioner Location: Richmond";
     private String language = "Portuguese";
@@ -366,13 +366,13 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*63.---- Validate Account name - '3113 Broadmoor'  ---*/");
+        log("/*63.---- Validate Account name - '1140 Windermere'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*64.---- Validate Primary Care Network - 'Richmond - East'  ---*/");
+        log("/*64.---- Validate Primary Care Network - 'East Kootenay'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);
