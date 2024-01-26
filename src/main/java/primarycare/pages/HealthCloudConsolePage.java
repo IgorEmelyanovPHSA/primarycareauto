@@ -57,6 +57,10 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement primary_care_network_actual_field_value;
     private By primary_care_network_actual_field_value_1 = By.xpath("//span[text() ='East Kootenay']");
 
+    @FindBy(xpath = "(//span[text() ='East Kootenay'])[2]")
+    private WebElement primary_care_network_family_case_actual_field_value;
+    private By primary_care_network_family_case_actual_field_value_1 = By.xpath("(//span[text() ='East Kootenay'])[2]");
+
     @FindBy(xpath = "//span[text() ='A person in my care']")
     private WebElement person_in_my_care_radiobutton;
     private By person_in_my_care_radiobutton_1 = By.xpath("//span[text() ='A person in my care']");
@@ -370,10 +374,10 @@ public class HealthCloudConsolePage extends BasePage {
     }
 
     public String getPrimaryCareNetworkActualForValidation() throws InterruptedException {
-        waitForElementToBeLocated(driver, primary_care_network_actual_field_value_1, 10);
+        waitForElementToBeLocated(driver, primary_care_network_family_case_actual_field_value_1, 10);
         Thread.sleep(2000);
-        primary_care_network_actual_field_value.isDisplayed();
-        return (primary_care_network_actual_field_value.getText());
+        primary_care_network_family_case_actual_field_value.isDisplayed();
+        return (primary_care_network_family_case_actual_field_value.getText());
     }
 
     public String getCaseReasonActualForValidation() throws InterruptedException {
