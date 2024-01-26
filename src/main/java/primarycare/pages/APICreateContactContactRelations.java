@@ -34,7 +34,7 @@ public class APICreateContactContactRelations {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthCloudGA__ContactContactRelation__c").
+                        post("https://healthbc--hotfixqa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/HealthCloudGA__ContactContactRelation__c").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;

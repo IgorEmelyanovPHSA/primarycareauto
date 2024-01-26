@@ -30,7 +30,7 @@ public class APIInsertContact {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Contact").
+                        post("https://healthbc--hotfixqa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Contact").
                         then().statusCode(201).log().body().extract().path("id");
                          //then().log().body();
         //return null;
