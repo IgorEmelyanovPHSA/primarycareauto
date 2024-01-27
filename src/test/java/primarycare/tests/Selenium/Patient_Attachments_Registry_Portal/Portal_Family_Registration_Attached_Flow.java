@@ -22,7 +22,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
     private String streetAddress = "307-1140 Windermere";
-    private String City = "East Kootenay";
+    private String City = "Kootenay";
     private String province = "BC";
     private String postalCode = "V0A 0A2";
     private String email = "accountToDelete@phsa.ca";
@@ -38,7 +38,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberDateOfBirth_DD = "12";
     private String familyMemberDateOfBirth_YYYY = "1947";
     private String familyMemberStreetAddress = "307-1140 Windermere";
-    private String familyMemberCity = "East Kootenay";
+    private String familyMemberCity = "Kootenay";
     private String familyMemberProvince = "BC";
     private String familyMembePpostalCode = "V0A 0A2";
     private String familyMemberEmail = "accountToDelete@phsa.ca";

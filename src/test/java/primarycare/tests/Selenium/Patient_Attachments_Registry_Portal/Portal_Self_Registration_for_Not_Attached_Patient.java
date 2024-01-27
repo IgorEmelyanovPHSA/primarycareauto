@@ -21,7 +21,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
     private String streetAddress = "307-1140 Windermere";
-    private String City = "East Kootenay";
+    private String City = "Kootenay";
     private String province = "BC";
     private String postalCode = "V0A 0A2";
     private String email = "accountToDelete@phsa.ca";

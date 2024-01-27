@@ -37,7 +37,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
     private String email = "accountToDelete@phsa.ca";
     private String mobilePhone = "7788797899";
     private String currentFamilyDoctor = "Lori-Ann May Bus";
-    private String cityOrTown = "East Kootenay";
+    private String cityOrTown = "Kootenay";
     private String language = "French";
 
     private String caseOriginExpectedValue = "Phone";
