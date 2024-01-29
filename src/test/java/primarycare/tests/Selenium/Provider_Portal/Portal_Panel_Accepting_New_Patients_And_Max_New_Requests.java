@@ -13,14 +13,14 @@ import static org.testng.Assert.assertEquals;
 
 @Listeners({TestListener.class})
 public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends BaseTest_PrimaryCare {
-    private String clinicName_1 = "CASTLEGAR MED FAMILY CLINIC";
-    private String physicalAddress_Street_1 = "1840 8 AVE,";
-    private String physicalAddress_City_PostCode_1 = "Castlegar, BC, V1N 2Y2";
+    private String clinicName_1 = "NORTH SHORE PRIMARY CARE MED HOME";
+    private String physicalAddress_Street_1 = "103, 376 TRANQUILLE RD,";
+    private String physicalAddress_City_PostCode_1 = "Kamloops, BC V2B 3G7";
     private String clinicPhoneNumber_1 = "2503652161";
     private String Role = "Director";
     //private String isPrimary = "True"; is it Primary for Practitioner?
 
-    //private String clinic_Name_2 = "CASTLEGAR MED ASSOCIATES11111";
+    //private String clinic_Name_2 = "NORTH SHORE PRIMARY CARE MED HOME CLINIC11111";
 
     //private String desiredPanelSize = "77777";
     //private int desiredPanelSize = ((1 + new Random().nextInt(2)) * 10000) + new Random().nextInt(10000);
@@ -53,7 +53,7 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        //log("/*3.----Click 'View' in CASTLEGAR MED FAMILY CLINIC Panel --*/");
+        //log("/*3.----Click 'View' in NORTH SHORE PRIMARY CARE MED HOME Panel --*/");
         //providerPortalHomePage.clickView();
         //Thread.sleep(1000);
 
