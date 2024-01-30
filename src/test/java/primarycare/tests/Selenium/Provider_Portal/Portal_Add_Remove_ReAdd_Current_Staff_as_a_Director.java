@@ -16,7 +16,7 @@ import static org.testng.Assert.assertEquals;
 public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTest_PrimaryCare {
     //Pre setup -  for select and Delete Practitioner Facility and Facility Network
     private String practitionerFacilityName = "Kristine Fisher | NORTH SHORE PRIMARY CARE MED HOME";
-    private String healthcareFacilityNetworkName = "Kristine Fisher | Panel | NORTH SHORE PRIMARY CARE MED HOMEC";
+    private String healthcareFacilityNetworkName = "Kristine Fisher | Panel | NORTH SHORE PRIMARY CARE MED HOME";
     public String practitionerFacility_accId;
     public String healthCareFacilityNetwork_Id;
     private String practitionerRole = "Provider";
