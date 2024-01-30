@@ -13,18 +13,18 @@ import static org.testng.Assert.assertEquals;
 
 @Listeners({TestListener.class})
 public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_PrimaryCare {
-    private String MoA_practitionerFacilityName = "Agnes Phillip | CASTLEGAR MED FAMILY CLINIC";
+    private String MoA_practitionerFacilityName = "Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME";
     private String practitionerMoASystemRole = "Medical Office Assistant";
 
     //Pre setup -  for select and Delete Practitioner Facility and Facility Network
-    //private String healthcareFacilityNetworkName = "Agnes Phillip | Panel | CASTLEGAR MED FAMILY CLINIC";
+    //private String healthcareFacilityNetworkName = "Agnes Phillip | Panel | NORTH SHORE PRIMARY CARE MED HOME";
     public String practitionerFacility_accId;
     public String healthCareFacilityNetwork_Id;
 
     private String practitioner_MoA = "Agnes Phillip";
 
     public void API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin(){
-        //log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC'--*/");
+        //log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME'--*/");
         APISelect sqlQuery = new APISelect();
         log("Select Practitioner Facility Id from HealthcarePractitionerFacility.");
         String practitionerFacilityID = sqlQuery.selectPractitionerFacilityIdIDSQL("SELECT Id from HealthcarePractitionerFacility WHERE Name = '"+MoA_practitionerFacilityName+"'", "Id");
@@ -64,7 +64,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
         TestcaseID = "269648"; //C269648
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
-        log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC'--*/");
+        log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME'--*/");
         API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin();
 
         log("/*1.---Login to Provider Portal Home page as an Director --*/");
@@ -82,7 +82,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(10000);
 
-        log("/*3.----Click on facility 'CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*3.----Click on facility 'NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnFacility();
         Thread.sleep(5000);
 
@@ -102,7 +102,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
         providerPortalHomePage.clickSaveNewStaffMember();
         Thread.sleep(2000);
 
-        log("/*8.---- Validate that Practitioner Facility Name 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC' appears in Current Staff  ---*/");
+        log("/*8.---- Validate that Practitioner Facility Name 'Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME' appears in Current Staff  ---*/");
         String practitionerFacilityNameActual = providerPortalHomePage.getActualMoAPractitionerFacilityNameForValidation();
         log("/*---Practitioner Facility Name actual is: " + practitionerFacilityNameActual + " --*/");
         assertEquals(practitionerFacilityNameActual, MoA_practitionerFacilityName);
@@ -114,10 +114,10 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
         TestcaseID = "269648"; //C269648
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
-        //log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Kristine Hnatyshyn Fisher | CASTLEGAR MED FAMILY CLINIC'--*/");
+        //log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Kristine Hnatyshyn Fisher | NORTH SHORE PRIMARY CARE MED HOME'--*/");
         //API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin();
 
-        log("/*1.---Login to Provider Portal Home page as an Director: Lori-Ann May Bus --*/");
+        log("/*1.---Login to Provider Portal Home page as an Director: Karen F. Beegan --*/");
         ProviderPortalHomePage providerPortalHomePage= loginPage.loginProviderPortalHomePageAsDirector();
         Thread.sleep(5000);
 
@@ -133,11 +133,11 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*3.----Click on facility 'CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*3.----Click on facility 'NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnFacility();
         Thread.sleep(5000);
 
-        log("/*4.----Click on Practitioner Facility 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*4.----Click on Practitioner Facility 'Agnes Phillip | NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnMoAPractitionerFacilityCurrentStaffTableRow(MoA_practitionerFacilityName, practitionerMoASystemRole);
         Thread.sleep(7000);
 
@@ -175,7 +175,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*3.----Click on facility 'CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*3.----Click on facility 'NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnRiverViewMedFamilyFacility();
         Thread.sleep(5000);
 

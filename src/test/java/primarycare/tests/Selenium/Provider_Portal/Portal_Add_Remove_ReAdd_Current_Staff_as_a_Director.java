@@ -15,8 +15,8 @@ import static org.testng.Assert.assertEquals;
 @Listeners({TestListener.class})
 public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTest_PrimaryCare {
     //Pre setup -  for select and Delete Practitioner Facility and Facility Network
-    private String practitionerFacilityName = "Kristine Fisher | CASTLEGAR MED FAMILY CLINIC";
-    private String healthcareFacilityNetworkName = "Kristine Fisher | Panel | CASTLEGAR MED FAMILY CLINIC";
+    private String practitionerFacilityName = "Kristine Fisher | NORTH SHORE PRIMARY CARE MED HOME";
+    private String healthcareFacilityNetworkName = "Kristine Fisher | Panel | NORTH SHORE PRIMARY CARE MED HOMEC";
     public String practitionerFacility_accId;
     public String healthCareFacilityNetwork_Id;
     private String practitionerRole = "Provider";
@@ -66,7 +66,7 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         TestcaseID = "261425"; //C261425
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
-        log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Kristine Fisher | CASTLEGAR MED FAMILY CLINIC'--*/");
+        log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'Kristine Hnatyshyn Fisher | NORTH SHORE PRIMARY CARE MED HOME'--*/");
         API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin();
 
         log("/*1.---Login to Provider Portal Home page as an Director --*/");
@@ -85,7 +85,7 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*3.----Click on facility 'CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*3.----Click on facility 'NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnFacility();
         Thread.sleep(5000);
 
@@ -105,7 +105,7 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         providerPortalHomePage.clickSaveNewStaffMember();
         Thread.sleep(2000);
 
-        log("/*8.---- Validate that Practitioner Facility Name 'Kristine Fisher | CASTLEGAR MED FAMILY CLINIC' appears in Current Staff  ---*/");
+        log("/*8.---- Validate that Practitioner Facility Name 'Kristine Fisher | NORTH SHORE PRIMARY CARE MED HOME' appears in Current Staff  ---*/");
         String practitionerFacilityNameActual = providerPortalHomePage.getActualPractitionerFacilityNameForValidation();
         log("/*---Practitioner Facility Name actual is: " + practitionerFacilityNameActual + " --*/");
         assertEquals(practitionerFacilityNameActual, practitionerFacilityName);
@@ -133,11 +133,11 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(7000);
 
-        log("/*3.----Click 'CASTLEGAR MED FAMILY CLINIC' Associated Facility --*/");
+        log("/*3.----Click 'NORTH SHORE PRIMARY CARE MED HOME' Associated Facility --*/");
         providerPortalHomePage.clickOnFacility();
         Thread.sleep(10000);
 
-        log("/*4.----Click on Practitioner Facility 'Kristine Fisher | CASTLEGAR MED FAMILY CLINIC' --*/");
+        log("/*4.----Click on Practitioner Facility 'Kristine Fisher | NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnPractitionerFacilityNameLink();
         Thread.sleep(15000);
 
@@ -158,7 +158,7 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*9.----Click on facility 'CASTLEGAR MEDICAL CLINIC' --*/");
+        log("/*9.----Click on facility 'NORTH SHORE PRIMARY CARE MED HOME' --*/");
         providerPortalHomePage.clickOnFacility();
         Thread.sleep(7000);
         //log("/*9.----Click 'Current Staff' for Directors Associated Facility --*/");
@@ -196,7 +196,7 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*3.----Click 'CASTLEGAR MED FAMILY CLINIC' link for Associated Facility --*/");
+        log("/*3.----Click 'NORTH SHORE PRIMARY CARE MED HOME' link for Associated Facility --*/");
         providerPortalHomePage.clickOnFacility();
         Thread.sleep(10000);
 
@@ -220,7 +220,7 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         providerPortalHomePage.refreshBrowser();
         Thread.sleep(2000);
 
-        log("/*9.---- Validate that Re-Added 'Kristine Hnatyshyn Fisher | PONDEROSA PRIMARY CARE CENTRE' is in Current Staff  ---*/");
+        log("/*9.---- Validate that Re-Added 'Kristine Hnatyshyn Fisher | NORTH SHORE PRIMARY CARE MED HOME' is in Current Staff  ---*/");
         String practitionerFacilityNameActual = providerPortalHomePage.getActualPractitionerFacilityNameForValidation();
         log("/*---Practitioner Facility Name actual is: " + practitionerFacilityNameActual + " --*/");
         assertEquals(practitionerFacilityNameActual, practitionerFacilityName);

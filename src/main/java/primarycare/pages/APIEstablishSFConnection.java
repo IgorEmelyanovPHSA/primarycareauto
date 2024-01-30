@@ -13,7 +13,7 @@ public class APIEstablishSFConnection {
                     .param("grant_type","password")
                     .param("client_id","3MVG9696SH3dTknIGlzhu6yTksuL3MI.o0cS0AXUpAIAc99.9kn8cPaDpQhdVqQDWthNqU6ihqVch5vy3otQq")
                     .param("client_secret","9A968C4279F36173D5021AB257E467D918D3E97B08EFB5CFB1A9154103C862B2")
-                    .param("username","igor.emelyanov@phsa.ca.hlthbcqax")
+                    .param("username","igor.emelyanov@phsa.ca.hotfixqa")
                     .param("password","Technology1990!!!!!!")
                     .header("Accept","application/json")
                     .header("Content-type","application/x-www-form-urlencoded").

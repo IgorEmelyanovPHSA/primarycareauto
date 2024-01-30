@@ -38,9 +38,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement current_staff_link;
     private By current_staff_link_1 = By.xpath("(//span[text()='Current Staff'])[1]");
 
-    @FindBy(xpath = "(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[1]")
+    @FindBy(xpath = "(//span[text()='NORTH SHORE PRIMARY CARE MED HOME'])[1]")
     private WebElement facility_link;
-    private By facility_link_1 = By.xpath("(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[1]");
+    private By facility_link_1 = By.xpath("(//span[text()='NORTH SHORE PRIMARY CARE MED HOME'])[1]");
 
     @FindBy(xpath = "//span[text()='Edit']")
     private WebElement edit_button;
@@ -274,17 +274,17 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement practitioner_granted_access_by_tab_table;
     private By practitioner_granted_access_by_tab_table_1 = By.xpath(".//div[@class='slds-table_header-fixed_container slds-scrollable_x']");
 
-    @FindBy(xpath = ".//a[text()='Lori-Ann May Bus Panel']")
+    @FindBy(xpath = ".//a[text()='Karen F. Beegan Panel']")
     private WebElement practitioner_panel_name_link;
-    private By practitioner_panel_name_link_1 = By.xpath(".//a[text()='Lori-Ann May Bus Panel']");
+    private By practitioner_panel_name_link_1 = By.xpath(".//a[text()='Karen F. Beegan Panel']");
 
     @FindBy(xpath = "(.//span[text()='Clinic Details'])[1]")
     private WebElement current_details_link;
     private By current_details_link_1 = By.xpath("(.//span[text()='Clinic Details'])[1]");
 
-    @FindBy(xpath = "//span[text()='CASTLEGAR MED FAMILY CLINIC']")
+    @FindBy(xpath = "//span[text()='NORTH SHORE PRIMARY CARE MED HOME']")
     private WebElement riverview_med_family_facility_link;
-    private By riverview_med_family_facility_link_1 = By.xpath("//span[text()='CASTLEGAR MED FAMILY CLINIC']");
+    private By riverview_med_family_facility_link_1 = By.xpath("//span[text()='NORTH SHORE PRIMARY CARE MED HOME']");
 
     @FindBy(xpath = ".//h1[text()='Account Details']")
     private WebElement edit_clinic_page_displayed_validation;

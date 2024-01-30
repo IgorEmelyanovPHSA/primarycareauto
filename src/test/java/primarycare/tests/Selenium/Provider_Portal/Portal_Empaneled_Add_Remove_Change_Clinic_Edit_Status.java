@@ -18,8 +18,8 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
 
     //for API Insert EmpaneledPanel Member in Current Staff
     ///REFRESH
-    public String patient__c = "001As00000JObO4IAL";////Prosacco Garth ID
-    public String healthcare_facility_network__c = "0bYAs0000002Zg3MAE";//Lori-Ann Bus | Panel | CASTLEGAR MED FAMILY CLINIC
+    public String patient__c = "001As00000KAxNtIAL";////Prosacco Garth ID
+    public String healthcare_facility_network__c = "0bYAs000000314hMAA";//Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
@@ -235,7 +235,7 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(10000);
 
-        log("/*3.----Click on the 'CASTLEGAR MED FAMILY CLINIC' 'My Panel' link --*/");
+        log("/*3.----Click on the 'NORTH SHORE PRIMARY CARE MED HOME' 'My Panel' link --*/");
         providerPortalHomePage.clickRostering();
         Thread.sleep(5000);
 
@@ -247,7 +247,7 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
         providerPortalHomePage.selectChangeClinicFromDropDownMenu();
         Thread.sleep(5000);
 
-        log("/*6.----Select the first available option like 'CASTLEGAR MED ASSOCIATES' on Modal 'Change Clinic' Form. --*/");
+        log("/*6.----Select the first available option like 'CAPRI MED HOME' on Modal 'Change Clinic' Form. --*/");
         providerPortalHomePage.selectChangeClinicFirstAvailableOption();
         Thread.sleep(5000);
 
@@ -263,7 +263,7 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
         providerPortalHomePage.clickHomeLink();
         Thread.sleep(5000);
 
-        log("/*10.----Click on the second Clinic's 'CASTLEGAR MED ASSOCIATES' 'My Panel' link --*/");
+        log("/*10.----Click on the second Clinic's 'CAPRI MED HOME' 'My Panel' link --*/");
         providerPortalHomePage.clickOnSecondClinicRosteringLink();
         Thread.sleep(5000);
 
