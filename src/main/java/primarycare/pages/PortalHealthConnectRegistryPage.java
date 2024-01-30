@@ -260,10 +260,15 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         waitForElementToBeLocated(driver, street_address_1, 10);
         Thread.sleep(1000);
         street_address.sendKeys(streetAddress);
+        Thread.sleep(2000);
+        waitForElementToBeLocated(driver, postal_code_1, 10);// just to click somewhere
+        postal_code.click();
+        Thread.sleep(2000);
     }
 
     public void enterCity(String City) throws InterruptedException {
         waitForElementToBeLocated(driver, city_1, 10);
+        Thread.sleep(1000);
         //city.sendKeys(City);
         city.click();
         Thread.sleep(1000);

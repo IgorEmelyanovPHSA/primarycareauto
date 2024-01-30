@@ -195,7 +195,7 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         Thread.sleep(1000);
 
         log("/*8.----Click Save --*/");
-        providerPortalHomePage.clickSaveMaxNewPatientsForm();
+        providerPortalHomePage.clickSave();
         Thread.sleep(5000);
 
         log("/*9.---- Validate isAccepting new Patients  ---*/");

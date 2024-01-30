@@ -430,7 +430,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
 
     }
 
-    //@Test(priority = 9)
+    @Test(priority = 9)
     public void Can_Add_TimeSlots_As_MoA_With_Checked_Manage_Facility_In_Portal () throws Exception {
         TestcaseID = "272800"; //C272800
         log("Target Environment: "+ Utils.getTargetEnvironment());

@@ -21,7 +21,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().extract().path("records");
         // then().log().body();
 
@@ -42,7 +42,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -64,7 +64,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -93,7 +93,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -114,7 +114,7 @@ public class APISelect {
                 given().
                         contentType(ContentType.JSON).
                         header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
+                        get("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
                         then().statusCode(200).extract().path("records");
         //then().log().body();
         //then().statusCode(200).log().body().extract().path("id");
@@ -126,28 +126,6 @@ public class APISelect {
             System.out.println("Seems no empaneled Patient Records for 'Procasso Garth':" +fieldEmpaneledPatientValue);
         }
         return fieldEmpaneledPatientValue;
-        //return null;
-    }
-
-    public String selectCaseIDSql (String sql_request, String caseID)
-    {
-        APIEstablishSFConnection sfConnection = new APIEstablishSFConnection();
-        String acc_token = sfConnection.establishConnection();
-        System.out.println("access_token is:" +acc_token);
-        System.out.println("Connection for SF Establish with Status code 200");
-        System.out.println("SQL request is:" +sql_request);
-
-        List<Map<String, Object>> recordsArray =
-                given().
-                        contentType(ContentType.JSON).
-                        header("Authorization", "Bearer "+acc_token).
-                        get("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/query?q="+sql_request+"").
-                        then().statusCode(200).extract().path("records");
-        //then().log().body();
-        //then().statusCode(200).log().body().extract().path("id");
-
-        String fieldValue = (String)recordsArray.get(0).get(caseID);
-        return  fieldValue;
         //return null;
     }
 

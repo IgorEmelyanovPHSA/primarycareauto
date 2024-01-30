@@ -27,9 +27,9 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     public String preferredCommunicationChannel = "Email";
     public String mobile = "7788793897";
     public String email = "accountToDelete@phsa.ca";
-    public String street = "307-1140 Windermere";
-    public String city = "East Kootenay";
-    public String postalcode = "V0A0A2";
+    public String street = "307-7631 Francis Rd";
+    public String city = "Richmond";
+    public String postalcode = "V6Y1A3";
     public String isActive = "true";
 
     public String accId;
@@ -40,8 +40,8 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     //3.Case
     public String caseRecordTypeId = "0125f000000qtfjAAA";
     ////REFRESH
-    public String caseAccountId = "001Aq00000KoEdWIAV"; //"1140 Windermere";
-    public String casePrimaryCareNetwork__c = "001Aq00000KoYqQIAV"; //"East Kootenay";
+    public String caseAccountId = "001As00000JOZeEIAX"; //"3113 Broadmoor";
+    public String casePrimaryCareNetwork__c = "001As00000JOXyYIAX"; //"Richmond - West";
     ////REFRESH
     public String caseReason = "Unattached - Requires attachment to family doctor or nurse practitione";
     public String caseOrigin = "Web";

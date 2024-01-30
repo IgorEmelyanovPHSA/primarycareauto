@@ -1,11 +1,14 @@
 package primarycare.tests.Selenium.Patient_Attachments_Registry_Portal;
 
-import primarycare.pages.*;
+import primarycare.pages.CommonMethods;
+import primarycare.pages.HealthCloudConsolePage;
 import primarycare.tests.Utilities.ApiQueries;
 import primarycare.tests.Utilities.TestListener;
+import primarycare.pages.Utils;
 import primarycare.tests.BaseTest_PrimaryCare;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import primarycare.pages.PortalHealthConnectRegistryPage;
 
 import static org.testng.Assert.assertEquals;
 
@@ -18,10 +21,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-1140 Windermere\"";
-    private String City = "East Kootenay";
+    private String streetAddress = "307-7631 Francis Rd";
+    private String City = "Richmond";
     private String province = "BC";
-    private String postalCode = "V0A 0A2";
+    private String postalCode = "V6Y 1A3";
     private String email = "accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
@@ -34,18 +37,18 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberDateOfBirth_MM = "04";//March
     private String familyMemberDateOfBirth_DD = "12";
     private String familyMemberDateOfBirth_YYYY = "1947";
-    private String familyMemberStreetAddress = "307-1140 Windermere";
-    private String familyMemberCity = "East Kootenay";
+    private String familyMemberStreetAddress = "307-7631 Francis Rd";
+    private String familyMemberCity = "Richmond";
     private String familyMemberProvince = "BC";
-    private String familyMembePpostalCode = "V0A 0A2";
+    private String familyMembePpostalCode = "V6Y 1A3";
     private String familyMemberEmail = "accountToDelete@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
     private String familyMemberCommunicationPreference = "Email";
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";
     private String statusExpected = "Active";
-    private String accountNameExpected = "1140 Windermere";
-    private String primaryCareNetworkExpected = "East Kootenay";
+    private String accountNameExpected = "3113 Broadmoor";
+    private String primaryCareNetworkExpected = "Richmond - East";
     private String caseReasonExpected = "Family doctor or nurse practitioner is not accepting additional family members";
     private String caseCommentExpected = "Current Practitioner Location: Richmond";
     private String language = "Portuguese";
@@ -57,72 +60,6 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String currentFamilyDoctor = "Lori-Ann May Bus";
     private String currentFamilyDoctorCityOrTown = "Richmond";
 
-    //for API
-    public String personContactId;
-    public String caseId;
-    public String accId;
-
-    public void API_Precondition_Delete_Dups_Patient_and_Case_in_Salesforce_as_SysAdmin(String firstName, String lastName, String Email){
-        //log("/*0.---Pre-Condition API Remove 'Sandy Prior' or 'Hollis Violette' with the Case from SF --*/");
-        //1.find personContactID
-        APISelect sqlQuery1 = new APISelect();
-        log("Select PersonContactID for '"+firstName+"' from Account.");
-        try {
-            String personContactID = sqlQuery1.selectPersonAccountIDSQL("SELECT PersonContactId from Account " +
-                    "WHERE FirstName = '"+firstName+"' and LastName = '"+lastName+"' and PersonEmail = '"+Email+"'"  , "PersonContactId");
-            log("Selected PersonContactID for '"+firstName+"' from Account is: " +personContactID);
-            personContactId=personContactID;
-            log("Status Code 200 - Person Contact Id SELECTED request - successfully");
-            log("/*---'"+firstName+ "' '"+lastName+"' with 'accountToDelete@phsa.ca' has founded");
-        } catch (Exception e) {
-            log("/*---No '"+firstName+ "' '"+lastName+"' with 'accountToDelete@phsa.ca' at all in SF");
-            //throw e;
-        }
-        if(personContactId==null){
-            log("Finish API Preconditioning because no Patient '"+firstName+ "' Dups. ");
-        }
-        else {
-            //2. find Patient ID
-            APISelect sqlQuery2 = new APISelect();
-            log("Select AccID for '"+firstName+ "' from Account.");
-            String patientAccID = sqlQuery2.selectPersonAccountIDSQL("SELECT Id from Account " +
-                    "WHERE FirstName = '"+firstName+"' and LastName = '"+lastName+"' and PersonEmail = '"+Email+"'"  , "Id");
-            log("Selected AccID for '"+firstName+"' from Account is: " +patientAccID);
-            accId=patientAccID;
-            log("Status Code 200 - Patient AccID for '"+firstName+"' SELECTED request - successfully");
-            //3.find Case ID
-            APISelect sqlQuery3 = new APISelect();
-            try {
-                log("Select CaseId for '"+firstName+"' from  the 'Case'.");
-                String caseIDReturned = sqlQuery3.selectCaseIDSql("SELECT Id from Case " + "WHERE ContactId = '" + personContactId + "'", "Id");
-                log("Selected CaseId for '"+firstName+"' from 'Case' is: " + caseIDReturned);
-                caseId = caseIDReturned;
-            }catch (Exception e) {
-                log("/*---No 'Cases' for '"+firstName+ "' with 'accountToDelete@phsa.ca' at all in SF");
-            }
-            if(caseId==null){
-                log("Finish API Preconditioning because no 'Cases' for '"+firstName+ "' Dups. ");
-            }
-            else {
-                //4.remove 'Case' first
-                APIDelete apiDelete = new APIDelete();
-                log("Delete Patient Case for '"+firstName+"' from Cases .");
-                String apiResponse1 = apiDelete.deleteCase(caseId);
-                log("Deleted Patient Case for '"+firstName+"' from Cases is: " + caseId);
-                log("Status Code 204 -  Case for Patient '"+firstName+"' deleted - successfully");
-                log(apiResponse1);
-                //Assert.assertEquals(accountNameReturned, name);
-                //5.and remove the actual "Sandy Prior"
-                APIDelete apidelete = new APIDelete();
-                log("Delete Patient for '"+firstName+"' account from Account.");
-                String apiResponse2 = apidelete.deleteAccount(accId);
-                log("Deleted Patient Account '"+firstName+"' from Account is: " + accId);
-                log("Status Code 204 - Patient '"+firstName+"' with 'accountToDelete@phsa.ca' deleted from Account successfully.");
-                log(apiResponse2);
-            }
-        }
-    }
-
     @Test(priority = 1)
     public void Can_do_Family_Member_Registration_Attached_in_Portal () throws Exception {
         TestcaseID = "267921"; //C267921
@@ -133,12 +70,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
         log("/*01.---Pre-conditioning API call to remove duplicate Patient account (Sandy Prior) if found--*/");
-        //ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
-        API_Precondition_Delete_Dups_Patient_and_Case_in_Salesforce_as_SysAdmin(legalFirstName, legalLastName, email);
+        ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
 
         log("/*02.---Pre-conditioning API call to remove duplicate Family Member (Hollis Violette) account if found--*/");
-        //ApiQueries.apiCallToRemovePatientAccount(familyMemberEmail, familyMemberLastName, familyMemberFirstName);
-        API_Precondition_Delete_Dups_Patient_and_Case_in_Salesforce_as_SysAdmin(familyMemberFirstName, familyMemberLastName, familyMemberEmail);
+        ApiQueries.apiCallToRemovePatientAccount(familyMemberEmail, familyMemberLastName, familyMemberFirstName);
 
         log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
         PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();
@@ -392,9 +327,9 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         log("---- Validation of Contact-Contact Relations(Related Contact)  ---*/");
 
         log("/*56.---- Validate the Caller's Contact Name: 'Sandy Prior'  ---*/");
-        //String contactActualValue = healthCloudConsolePage.getContactNameSandyPriorActualForValidation();
-        //log("/*---- Contact(Caller's) Name the actual value is: " + contactActualValue + " --*/");
-        //assertEquals(contactActualValue, primaryContactName);
+        String contactActualValue = healthCloudConsolePage.getContactNameSandyPriorActualForValidation();
+        log("/*---- Contact(Caller's) Name the actual value is: " + contactActualValue + " --*/");
+        assertEquals(contactActualValue, primaryContactName);
         Thread.sleep(5000);
 
         log("/*57.---- Validate the Caller's Related Role: 'Child' ---*/");
@@ -404,9 +339,9 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         Thread.sleep(5000);
 
         log("/*58.---- Validate the Primary Contact Name: 'Sandy Prior'  ---*/");
-        //String primaryContactNameActualValue = healthCloudConsolePage.getPrimaryContactNameSandyPriorActualForValidation();
-        //log("/*---- Primary Contact Name the actual value is: " + primaryContactNameActualValue + " --*/");
-        //assertEquals(primaryContactNameActualValue, primaryContactName);
+        String primaryContactNameActualValue = healthCloudConsolePage.getPrimaryContactNameSandyPriorActualForValidation();
+        log("/*---- Primary Contact Name the actual value is: " + primaryContactNameActualValue + " --*/");
+        assertEquals(primaryContactNameActualValue, primaryContactName);
         Thread.sleep(5000);
 
         log("/*59.---- Validate the Primary Related Role: 'Primary Contact'  ---*/");
@@ -431,13 +366,13 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*63.---- Validate Account name - '1140 Windermere'  ---*/");
+        log("/*63.---- Validate Account name - '3113 Broadmoor'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*64.---- Validate Primary Care Network - 'East Kootenay'  ---*/");
+        log("/*64.---- Validate Primary Care Network - 'Richmond - East'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);

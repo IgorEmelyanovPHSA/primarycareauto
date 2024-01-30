@@ -2,6 +2,7 @@ package primarycare.pages;
 
 import com.gurock.testrail.APIClient;
 import com.gurock.testrail.APIException;
+import primarycare.pages.Utils;
 
 import java.io.IOException;
 import java.util.HashMap;

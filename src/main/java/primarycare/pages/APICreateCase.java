@@ -41,7 +41,7 @@ public class APICreateCase {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
+                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;
@@ -81,7 +81,7 @@ public class APICreateCase {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--spr24qa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
+                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Case").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;
