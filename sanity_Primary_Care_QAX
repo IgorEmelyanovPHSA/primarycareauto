@@ -3,9 +3,9 @@
 <suite name="Automation run">
     <test name="Smoke">
         <classes>
-            <!--Patient-->
+            <!--Patient SELENIUM-->
             <class name="primarycare.tests.Selenium.Patient_Attachments_Registry_Portal.Portal_Self_Registration_for_Not_Attached_Patient"/>
-            <!--Provider-->
+            <!--Provider SELENIUM-->
             <class name="primarycare.tests.Selenium.Provider_Portal.Portal_Panel_Accepting_New_Patients_And_Max_New_Requests"/>
             <class name="primarycare.tests.Selenium.Provider_Portal.Portal_Support_Users"/>
         </classes>
