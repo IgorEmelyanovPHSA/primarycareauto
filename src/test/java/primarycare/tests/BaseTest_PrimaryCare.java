@@ -40,21 +40,21 @@ public class BaseTest_PrimaryCare {
         //loginPage = new LoginPage(getDriver());
         ////
         ///// for Ubuntu GitHub Actions
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        loginPage = new LoginPage(getDriver());
-        ////
-        ///// for Windows local and Jenkins
+        //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--remote-allow-origins=*");
+        //options.addArguments("--no-sandbox");
+        //options.addArguments("--disable-dev-shm-usage");
+        //options.addArguments("--headless");
         //driver = new ChromeDriver(options);
         //driver.manage().window().maximize();
         //loginPage = new LoginPage(getDriver());
+        ////
+        ///// for Windows local and Jenkins
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        loginPage = new LoginPage(getDriver());
     }
 
     /////////////////After///////////////////

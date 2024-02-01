@@ -40,7 +40,7 @@ public class Portal_Support_Users extends BaseTest_PrimaryCare{
         providerPortalHomePage.enterClinicNameInSearchBox(clinicName);
         Thread.sleep(5000);
 
-        log("/*4.----Click Search --*/");
+        log("/*5.----Click Search --*/");
         providerPortalHomePage.clickSearchForClinics();
         Thread.sleep(5000);
 
