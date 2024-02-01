@@ -13,11 +13,13 @@ public class Demo_GoogleSearch_Dojo {
         // Set the system property for the Chrome driver
 
         //for Windows
+        //System. out. println("/*1.---Let's try to run in Windows Chrome");
         //System.setProperty("webdriver.chrome.driver", "/primarycareauto/chromedriver.exe");
         //ChromeOptions ops = new ChromeOptions();
         //ops.addArguments("--remote-allow-origins=*");
 
         //for Ubuntu GitHub-Actions
+        System. out. println("/*1.--- Let's try to run in Ubuntu GitHub Action");
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--no-sandbox");
@@ -31,9 +33,11 @@ public class Demo_GoogleSearch_Dojo {
         driver.manage().window().maximize();
 
         // Navigate to Google.com
+        System. out. println("/*2.---Navigate to Google.com");
         driver.get("https://www.google.com");
 
         // Find the search box element and enter "Dojo computer"
+        System. out. println("/*3.---Find the search box element and enter 'Dojo computer'");
         WebElement searchBox = driver.findElement(By.name("q"));
         Thread.sleep(3000);
         searchBox.sendKeys("Dojo computer");
@@ -51,6 +55,7 @@ public class Demo_GoogleSearch_Dojo {
         }
 
         // Print the title of the first search result
+        System. out. println("/*4.---Print the title of the first search result");
         WebElement firstResult = driver.findElement(By.cssSelector("h3.LC20lb.DKV0Md"));
         System.out.println(firstResult.getText());
 
