@@ -13,19 +13,10 @@ public class Demo_GoogleSearch_Dojo {
         // Set the system property for the Chrome driver
 
         //for Windows
-        //System.out.println("/*1.---Let's try to run in Windows Chrome");
-        //System.setProperty("webdriver.chrome.driver", "/primarycareauto/chromedriver.exe");
-        //ChromeOptions ops = new ChromeOptions();
-        //ops.addArguments("--remote-allow-origins=*");
-
-        //for Ubuntu GitHub-Actions
-        System.out.println("/*1.--- Let's try to run in Ubuntu GitHub Action");
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.out.println("/*1.---Let's try to run in Windows Chrome");
+        System.setProperty("webdriver.chrome.driver", "/primarycareauto/chromedriver.exe");
         ChromeOptions ops = new ChromeOptions();
-        ops.addArguments("--no-sandbox");
-        ops.addArguments("--disable-dev-shm-usage");
-        ops.addArguments("--headless");
-
+        ops.addArguments("--remote-allow-origins=*");
 
         // Create a new instance of the Chrome driver
         ChromeDriver driver = new ChromeDriver(ops);
