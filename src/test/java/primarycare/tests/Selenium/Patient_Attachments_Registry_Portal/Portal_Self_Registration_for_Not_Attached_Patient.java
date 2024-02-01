@@ -163,7 +163,6 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         Thread.sleep(15000);// wait for sf loading
 
         log("/*28.----Validate if Health Cloud Console Page displayed --*/");
-        Thread.sleep(10000);// wait for sf loading
         CommonMethods common = new CommonMethods(getDriver());
         common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
         Thread.sleep(5000);

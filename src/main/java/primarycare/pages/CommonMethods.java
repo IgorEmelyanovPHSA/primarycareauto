@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class CommonMethods extends BasePage {
     /*---------Properties-------*/
-    @FindBy(xpath = "//div[@class='slds-icon-waffle']")
-    private WebElement appsLauncher_1;
     private By appsLauncher = By.xpath("//div[@class='slds-icon-waffle']");
     private By healthCloudConsoleTitle = By.xpath(".//span[@title='Health Cloud Console']");
     private By appsHealthCloudConsole = By.xpath("//p[text()='Health Cloud Console']");
@@ -128,9 +126,7 @@ public class CommonMethods extends BasePage {
     }
 
     public void selectHealthCloudConsoleApp() throws InterruptedException {
-        Thread.sleep(5000);
-        waitForElementToBeVisible(driver, appsLauncher_1, 10);
-        //waitForElementToBeLocated(driver, appsLauncher, 10);
+        waitForElementToBeLocated(driver, appsLauncher, 10);
         WebElement element = driver.findElement(appsLauncher);
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
