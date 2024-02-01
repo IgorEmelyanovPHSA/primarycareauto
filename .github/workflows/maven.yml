@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Sanity QAX Patient
+name: Sanity PrimaryCare - the core of Patient & Provider
 
 on:
   push:
