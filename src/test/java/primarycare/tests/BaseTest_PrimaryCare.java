@@ -34,11 +34,11 @@ public class BaseTest_PrimaryCare {
         /////only for Mac
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         /////
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--remote-allow-origins=*");
-        //driver = new ChromeDriver(options);
-        //driver.manage().window().maximize();
-        //loginPage = new LoginPage(getDriver());
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        loginPage = new LoginPage(getDriver());
     }
 
     /////////////////After///////////////////
