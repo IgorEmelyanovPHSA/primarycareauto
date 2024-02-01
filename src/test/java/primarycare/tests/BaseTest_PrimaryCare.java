@@ -41,7 +41,7 @@ public class BaseTest_PrimaryCare {
         ////
         ///// for Ubuntu GitHub Actions
         System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome/chromedriver");
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
