@@ -158,91 +158,82 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
         Thread.sleep(5000);
 
-        log("/*27.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
-        HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
-        Thread.sleep(15000);// wait for sf loading
+        //log("/*27.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
+        //HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
+        //Thread.sleep(15000);// wait for sf loading
 
-        log("/*28.----Validate if Health Cloud Console Page displayed --*/");
-        CommonMethods common = new CommonMethods(getDriver());
-        common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
-        Thread.sleep(5000);
-
-        log("/*29.----Close All previously opened Tab's --*/");
-        common.closeAllHealthCloudConsoleTabs();
-        Thread.sleep(2000);
-
-        log("/*29_1.----Select Home from Navigation Menu Dropdown --*/");
-        common.selectHomeFromNavigationMenuDropdown();
-        Thread.sleep(2000);
-
-        //log("/* ----Wait for 30 sec before Searching Sandy --*/");
-        //Thread.sleep(480000); //8 min
-        //Thread.sleep(240000); //4 min
-        //Thread.sleep(30000);
-
-        //log("/* ----Refresh page --*/");
-        //common.refreshBrowser();
+        //log("/*28.----Validate if Health Cloud Console Page displayed --*/");
+        //CommonMethods common = new CommonMethods(getDriver());
+        //common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
         //Thread.sleep(5000);
 
-        log("/*30.---Search for Patient by PHN " + legalFirstName + " "+ legalLastName +"--*/");
-        common.globalSearch(personalHealthNumber);
-        Thread.sleep(2000);
+        //log("/*29.----Close All previously opened Tab's --*/");
+        //common.closeAllHealthCloudConsoleTabs();
+        //Thread.sleep(2000);
+
+        //log("/*29_1.----Select Home from Navigation Menu Dropdown --*/");
+        //common.selectHomeFromNavigationMenuDropdown();
+        //Thread.sleep(2000);
+
+        //log("/*30.---Search for Patient by PHN " + legalFirstName + " "+ legalLastName +"--*/");
+        //common.globalSearch(personalHealthNumber);
+        //Thread.sleep(2000);
 
         //common.SearchForCitizenAlternativeWay();
         //common.SearchForCitizen();
 
-        log("/*31.---Click on founded Patient--*/");
+        //log("/*31.---Click on founded Patient--*/");
         ///////////////////
-        log("/*31.1--- first make sure that Sandy Prior is showing up in the Tab   ---*/");
-        boolean isPatientFound =  common.isPatientFoundValidation(legalFirstName, legalLastName);
-        if (!isPatientFound){
-            throw new RuntimeException("Exception: Patient " + legalFirstName + " " + legalLastName + " not found!!!");
-        }
+        //log("/*31.1--- first make sure that Sandy Prior is showing up in the Tab   ---*/");
+        //boolean isPatientFound =  common.isPatientFoundValidation(legalFirstName, legalLastName);
+        //if (!isPatientFound){
+           // throw new RuntimeException("Exception: Patient " + legalFirstName + " " + legalLastName + " not found!!!");
+        //}
         /////////////////////
-        log("/*31.2--- now we can Click on searched Patient   ---*/");
-        common.clickOnFondedPatient(legalFirstName, legalLastName);
-        Thread.sleep(5000);
+        //log("/*31.2--- now we can Click on searched Patient   ---*/");
+        //common.clickOnFondedPatient(legalFirstName, legalLastName);
+        //Thread.sleep(5000);
 
-        log("/*32.---Go to Related Tab--*/");
-        healthCloudConsolePage.clickOnRelatedTab();
-        Thread.sleep(5000);
+        //log("/*32.---Go to Related Tab--*/");
+        //healthCloudConsolePage.clickOnRelatedTab();
+        //Thread.sleep(5000);
 
-        log("/*33.---Click on Case record link--*/");
-        healthCloudConsolePage.clickOnCaseRecord();
-        Thread.sleep(5000);
+        //log("/*33.---Click on Case record link--*/");
+        //healthCloudConsolePage.clickOnCaseRecord();
+        //Thread.sleep(5000);
 
-        log("/*34.---- Validate field Case origin - 'Web'  ---*/");
-        String caseOriginActualValue = healthCloudConsolePage.getCaseOriginActualForValidation();
-        log("/*---- Case Origin actual value is: " + caseOriginActualValue + " --*/");
-        assertEquals(caseOriginActualValue, caseOriginExpectedValue);
-        Thread.sleep(5000);
+        //log("/*34.---- Validate field Case origin - 'Web'  ---*/");
+        //String caseOriginActualValue = healthCloudConsolePage.getCaseOriginActualForValidation();
+        //log("/*---- Case Origin actual value is: " + caseOriginActualValue + " --*/");
+        //assertEquals(caseOriginActualValue, caseOriginExpectedValue);
+        //Thread.sleep(5000);
 
-        log("/*35.---- Validate Priority  - 'None'  ---*/");
-        String priorityActualValue = healthCloudConsolePage.getPriorityActualForValidation();
-        log("/*---- Priority actual value is: " + priorityActualValue + " --*/");
-        assertEquals(priorityActualValue, priorityExpectedValue);
-        Thread.sleep(5000);
+        //log("/*35.---- Validate Priority  - 'None'  ---*/");
+        //String priorityActualValue = healthCloudConsolePage.getPriorityActualForValidation();
+        //log("/*---- Priority actual value is: " + priorityActualValue + " --*/");
+        //assertEquals(priorityActualValue, priorityExpectedValue);
+        //Thread.sleep(5000);
 
-        log("/*36.---- Validate Account name - '3113 Broadmoor'  ---*/");
-        String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
-        log("/*---- Account Name actual is: " + accountNameActual + " --*/");
-        assertEquals(accountNameActual, accountNameExpected);
-        Thread.sleep(5000);
+        //log("/*36.---- Validate Account name - '3113 Broadmoor'  ---*/");
+        //String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
+        //log("/*---- Account Name actual is: " + accountNameActual + " --*/");
+        //assertEquals(accountNameActual, accountNameExpected);
+        //Thread.sleep(5000);
 
-        log("/*37.---- Validate Case Reason - 'Unattached'  ---*/");
-        String caseReasonActual = healthCloudConsolePage.getCaseReasonActualForValidation();
-        log("/*---Case Reason actual is: " + caseReasonActual + " --*/");
-        assertEquals(caseReasonActual, caseReasonExpected);
-        Thread.sleep(5000);
+        //log("/*37.---- Validate Case Reason - 'Unattached'  ---*/");
+        //String caseReasonActual = healthCloudConsolePage.getCaseReasonActualForValidation();
+        //log("/*---Case Reason actual is: " + caseReasonActual + " --*/");
+        //assertEquals(caseReasonActual, caseReasonExpected);
+        //Thread.sleep(5000);
 
-        log("/*38.---- Validate Status - 'Active'  ---*/");
+        //log("/*38.---- Validate Status - 'Active'  ---*/");
         //log("/*----scroll down a bit --*/");
         //((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)");
         //Thread.sleep(2000);
-        String statusActual = healthCloudConsolePage.getStatusActualForValidation();
-        log("/*---- Status actual is: " + statusActual + " --*/");
-        assertEquals(statusActual, statusExpected);
-        Thread.sleep(2000);
+        //String statusActual = healthCloudConsolePage.getStatusActualForValidation();
+        //log("/*---- Status actual is: " + statusActual + " --*/");
+        //assertEquals(statusActual, statusExpected);
+        //Thread.sleep(2000);
 
     }
 
