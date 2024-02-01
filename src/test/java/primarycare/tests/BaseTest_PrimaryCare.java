@@ -32,7 +32,7 @@ public class BaseTest_PrimaryCare {
         log("Environment: "+ Utils.getTargetEnvironment());
         captureBothStreams();
         /////only for Mac
-        System.setProperty("webdriver.chrome.driver", "/primarycareauto/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         /////
         //ChromeOptions options = new ChromeOptions();
         //options.addArguments("--remote-allow-origins=*");
