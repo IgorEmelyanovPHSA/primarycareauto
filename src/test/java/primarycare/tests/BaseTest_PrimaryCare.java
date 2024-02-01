@@ -32,13 +32,13 @@ public class BaseTest_PrimaryCare {
         log("Environment: "+ Utils.getTargetEnvironment());
         captureBothStreams();
         /////only for Mac
-        //System.setProperty("webdriver.chrome.driver", "/Users/enya/immsauto/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/primarycareauto/chromedriver");
         /////
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        loginPage = new LoginPage(getDriver());
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--remote-allow-origins=*");
+        //driver = new ChromeDriver(options);
+        //driver.manage().window().maximize();
+        //loginPage = new LoginPage(getDriver());
     }
 
     /////////////////After///////////////////
