@@ -35,5 +35,5 @@ jobs:
         cache: maven
     - name: Build with Maven
       #run: mvn clean test -DsuiteFile=smokeTests_PrimaryCare_Patient_Org_QAX.xml -Denvironment=hlthbcqax_patient_org -Dtest_rail=no
-      run: mvn clean test -DsuiteFile=smokeTests_PrimaryCare_Patient_Org_QAX.xml -Denvironment=hlthbcqax_patient_org -Dtest_rail=no
+      run: mvn clean test -DsuiteFile=sanity_Primary_Care_QAX.xml -Denvironment=hlthbcqax_patient_org -Dtest_rail=no
       #mvn clean test -DsuiteFile=smokeTests_PrimaryCare_Provider_Org_QAX.xml -Denvironment=hlthbcqax_provider_org -Dtest_rail=no
