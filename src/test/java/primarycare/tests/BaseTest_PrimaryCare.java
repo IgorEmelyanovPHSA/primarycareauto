@@ -34,19 +34,19 @@ public class BaseTest_PrimaryCare {
         ///// for Mac local
         //System.setProperty("webdriver.chrome.driver", "/Users/enya/immsauto/chromedriver");
         //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--no-sandbox");
-        //options.addArguments("--disable-dev-shm-usage");
-        //options.addArguments("--headless");
+        //options.addArguments("--remote-allow-origins=*");
         //driver = new ChromeDriver(options);
+        //driver.manage().window().maximize();
+        //loginPage = new LoginPage(getDriver());
         ////
         ///// for Ubuntu GitHub Actions
         System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome/chromedriver");
-        //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        loginPage = new LoginPage(getDriver());
         ////
         ///// for Windows local and Jenkins
         //ChromeOptions options = new ChromeOptions();
