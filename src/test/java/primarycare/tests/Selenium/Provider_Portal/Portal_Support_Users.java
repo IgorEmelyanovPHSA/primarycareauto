@@ -11,6 +11,7 @@ import primarycare.tests.Utilities.TestListener;
 public class Portal_Support_Users extends BaseTest_PrimaryCare{
 
     String clinicName = "CASTLEGAR MED FAMILY CLINIC";
+    String clinicLocationStreet = "1840 8 AVE";
 
     @Test(priority = 1)
     public void Provider_Portal_Clinic_Details_Visibility_for_Staff_TIER1() throws Exception {
@@ -43,6 +44,10 @@ public class Portal_Support_Users extends BaseTest_PrimaryCare{
         log("/*5.----Click Search --*/");
         providerPortalHomePage.clickSearchForClinics();
         Thread.sleep(5000);
+
+        log("/*6.----Click on 'CASTLEGAR MED FAMILY CLINIC' in Search Result --*/");
+        providerPortalHomePage.clickOnClinicNameInSearchResultsTableRow(clinicName, clinicLocationStreet);
+        Thread.sleep(7000);
 
     }
 }
