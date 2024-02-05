@@ -70,10 +70,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
         log("/*01.---Pre-conditioning API call to remove duplicate Patient account (Sandy Prior) if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
+        //ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
 
         log("/*02.---Pre-conditioning API call to remove duplicate Family Member (Hollis Violette) account if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(familyMemberEmail, familyMemberLastName, familyMemberFirstName);
+        //ApiQueries.apiCallToRemovePatientAccount(familyMemberEmail, familyMemberLastName, familyMemberFirstName);
 
         log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
         PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();
