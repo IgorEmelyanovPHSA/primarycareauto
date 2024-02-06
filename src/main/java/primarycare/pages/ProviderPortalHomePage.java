@@ -22,6 +22,10 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement is_provider_portal_home_page_displayed_MoA;
     private By is_provider_portal_home_page_displayed_MoA_1 = By.xpath(".//span[text()='Address']");
 
+    @FindBy(xpath = ".//h1[text()='My Clinics & Panels']")
+    private WebElement is_provider_portal_home_page_displayed_TIER1;
+    private By is_provider_portal_home_page_displayed_TIER1_1 = By.xpath(".//h1[text()='My Clinics & Panels']");
+
     @FindBy(xpath = "//a[text() = 'Home']")
     private WebElement home_link;
     private By home_link_1 = By.xpath("//a[text() = 'Home']");
@@ -284,6 +288,31 @@ public class ProviderPortalHomePage extends BasePage{
     @FindBy(xpath = ".//h1[text()='Account Details']")
     private WebElement edit_clinic_page_displayed_validation;
 
+    @FindBy(xpath = ".//a[text()='Clinic & Provider Registry']")
+    private WebElement clinic_and_provider_registry_link;
+    private By clinic_and_provider_registry_link_1 = By.xpath(".//a[text()='Clinic & Provider Registry']");
+
+    @FindBy(xpath = ".//span[text()='Search all clinics in BC']")
+    private WebElement search_all_clinics_in_BC_link;
+    private By search_all_clinics_in_BC_link_1 = By.xpath(".//span[text()='Search all clinics in BC']");
+
+    @FindBy(xpath = ".//input[@placeholder='Enter Clinic Name']")
+    private WebElement clinic_name_search_box_component;
+    private By clinic_name_search_box_component_1 = By.xpath(".//input[@placeholder='Enter Clinic Name']");
+
+    @FindBy(xpath = "//button[text()='Search']")
+    private WebElement search_clinics_button;
+    private By search_clinics_button_1 = By.xpath("//button[text()='Search']");
+
+    @FindBy(xpath = ".//div[@class='slds-table_header-fixed_container slds-scrollable_x']")
+    private WebElement clinic_search_results_tab_table;
+    private By clinic_search_results_tab_table_1 = By.xpath(".//div[@class='slds-table_header-fixed_container slds-scrollable_x']");
+
+    @FindBy(xpath = "//a[contains(text(),'CASTLEGAR MED FAMILY CLINIC')]")
+    private WebElement clinic_name_in_search_results_link;
+    private By clinic_name_in_search_results_link_1 = By.xpath("//a[contains(text(),'CASTLEGAR MED FAMILY CLINIC')]");
+
+
 
     //////////////////////////////////////////////////////////////////////////////////
     Tables tables;
@@ -334,6 +363,26 @@ public class ProviderPortalHomePage extends BasePage{
         }
         return isPortalProviderHomePageDisplayed;
     }
+
+    public boolean isPortalProviderHomePageDisplayed_TIER1() throws InterruptedException {
+        boolean isPortalProviderHomePageDisplayed = false;
+        for(int i = 1; i <= 40; i++ ) {
+            if (!isDisplayed(is_provider_portal_home_page_displayed_TIER1_1)) {
+                log(i +"-try to see Provider Home Page: "  +  " Home Page not showing up yet, re-try!");
+                log( "wait for 10 sec");
+                Thread.sleep(10000);
+                log( "Refresh the browser");
+                refreshBrowser();
+                Thread.sleep(5000);
+            } else {
+                log("/*---Provider Home Page "  + "has shown up " + " --*/");
+                isPortalProviderHomePageDisplayed = true;
+                break;
+            }
+        }
+        return isPortalProviderHomePageDisplayed;
+    }
+
 
     public void clickHomeLink() throws InterruptedException {
         waitForElementToBeVisible(driver, home_link, 10);
@@ -936,5 +985,54 @@ public class ProviderPortalHomePage extends BasePage{
             log("*/--- Edit Clinic Page has shown up");
         }
     }
+
+    public void clickClinicAndProviderRegistryLink() throws InterruptedException {
+        waitForElementToBeVisible(driver, clinic_and_provider_registry_link, 10);
+        Thread.sleep(5000);
+        WebElement element = driver.findElement(clinic_and_provider_registry_link_1);
+        Thread.sleep(5000);
+        clinic_and_provider_registry_link.click();
+    }
+
+    public void clickSearchAllClinicsInBCLink() throws InterruptedException {
+        waitForElementToBeVisible(driver, search_all_clinics_in_BC_link, 10);
+        Thread.sleep(5000);
+        WebElement element = driver.findElement(search_all_clinics_in_BC_link_1);
+        Thread.sleep(5000);
+        clinic_and_provider_registry_link.click();
+    }
+
+    public void enterClinicNameInSearchBox(String clinicName) throws InterruptedException {
+        waitForElementToBeLocated(driver, clinic_name_search_box_component_1, 10);
+        Thread.sleep(1000);
+        clinic_name_search_box_component.click();
+        Thread.sleep(1000);
+        clinic_name_search_box_component.clear();
+        Thread.sleep(1000);
+        clinic_name_search_box_component.sendKeys(clinicName);
+        Thread.sleep(1000);
+    }
+
+    public void clickSearchForClinics() throws InterruptedException {
+        waitForElementToBeVisible(driver, search_clinics_button, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(search_clinics_button_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        search_clinics_button.click();
+    }
+
+    public void clickOnClinicNameInSearchResultsTableRow(String clinicName, String locationStreet) throws InterruptedException {
+        waitForElementToBeVisible(driver, clinic_search_results_tab_table, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(clinic_name_in_search_results_link_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(3000);
+        //Map<String,String> moa_practitionerFacility = ImmutableMap.of("Clinic Name", clinicName, "System Role", locationStreet);
+        //tables.clickOnPractitionerFacilityTableRowMoA(moa_practitionerFacility);
+    }
+
 
 }

@@ -71,5 +71,15 @@ public class LoginPage extends BasePage{
         return new PortalBCSCHealthConnectRegistryPage(driver);
     }
 
+    public ProviderPortalHomePage loginProviderPortalHomePageAsTier1() throws Exception {
+        driver.navigate().to(Utils.getEnvConfigProperty("url_provider_portal_direct_link"));
+        Thread.sleep(2000);
+        waitForElementToBeVisible(driver, input_username_provider_portal, 10);
+        input_username_provider_portal.sendKeys(Utils.getEnvConfigProperty("user_TIER1_Portal"));
+        input_password_provider_portal.sendKeys(Utils.getEnvConfigProperty("password_TIER1_Portal"));
+        login_button_provider_portal.click();
+        return new ProviderPortalHomePage(driver);
+    }
+
 
 }
