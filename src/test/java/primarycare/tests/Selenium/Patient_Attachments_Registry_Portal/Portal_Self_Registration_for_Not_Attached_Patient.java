@@ -25,6 +25,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String province = "BC";
     private String postalCode = "V6Y 1A3";
     private String email = "accountToDelete@phsa.ca";
+    private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
 
@@ -43,7 +44,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         //CommonMethods com = new CommonMethods(getDriver());
 
         log("/*0.---Pre-conditioning API call to remove duplicate Patient account if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
+        ApiQueries.apiCallToRemovePatientAccount(email_search_API, legalLastName, legalFirstName);
 
         log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
         PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();

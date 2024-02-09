@@ -15,7 +15,7 @@ public class API_Removing_Dups_Preconditioning_Not_Attached_Patient_SYSAdmin ext
     private String postalCode = "V6Y 1A3";
     private String personalHealthNumber = "9873010063";
     //private boolean isIndigenous = false;
-    private String email = "accountToDelete@phsa.ca";
+    private String email = "";//"accountToDelete@phsa.ca";
 
 
     @Test(priority = 1)
