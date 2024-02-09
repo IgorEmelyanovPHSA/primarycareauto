@@ -179,7 +179,7 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     @FindBy(xpath = "(.//input[@type='email'])[3]")
     private WebElement enter_family_member_email_address;
-    private By enter_family_member_email_address_1 = By.xpath("(.//input[@type='email'])[2]");
+    private By enter_family_member_email_address_1 = By.xpath("(.//input[@type='email'])[3]");
 
     @FindBy(xpath = "(.//input[@type='email'])[4]")
     private WebElement re_enter_family_member_email_address;
@@ -192,6 +192,10 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     @FindBy(xpath = "(.//input[@role='combobox'])[2]")
     private WebElement family_member_communication_preference_dropdown;
     private By family_member_communication_preference_dropdown_1 = By.xpath("(.//input[@role='combobox'])[2]");
+
+    @FindBy(xpath = "(.//span[text() = 'Email'])[2]")
+    private WebElement family_member_select_communication_preference;
+    private By family_member_select_communication_preference_1 = By.xpath("(.//span[text() = 'Email'])[2]");
 
     /*---------Constructor-------*/
     public PortalHealthConnectRegistryPage(WebDriver driver) {
@@ -486,6 +490,7 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         waitForElementToBeLocated(driver, enter_family_member_email_address_1, 10);
         enter_family_member_email_address.sendKeys(email);
     }
+
     public void re_enterFamilyMemberEmailAddress(String email) throws InterruptedException {
         waitForElementToBeLocated(driver, re_enter_family_member_email_address_1, 10);
         re_enter_family_member_email_address.sendKeys(email);
@@ -503,8 +508,8 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     public void selectFamilyMemberCommunicationPreference() throws InterruptedException {
         waitForElementToBeLocated(driver, family_member_communication_preference_dropdown_1, 10);
         family_member_communication_preference_dropdown.click();
-        waitForElementToBeVisible(driver, select_communication_preference, 10);
-        select_communication_preference.click();
+        waitForElementToBeVisible(driver, family_member_select_communication_preference, 10);
+        family_member_select_communication_preference.click();
         Thread.sleep(1000);
     }
 
