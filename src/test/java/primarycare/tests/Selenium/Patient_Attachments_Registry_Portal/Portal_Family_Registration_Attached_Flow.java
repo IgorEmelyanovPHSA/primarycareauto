@@ -229,7 +229,6 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
-
         log("/*37.1---Enter email" +email +"----*/");
         portalHealthConnectRegistryPage.enterFamilyMemberEmailAddress(email);
         //Thread.sleep(1000);
