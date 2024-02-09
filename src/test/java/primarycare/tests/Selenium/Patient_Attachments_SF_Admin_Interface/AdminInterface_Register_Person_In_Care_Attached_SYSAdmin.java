@@ -35,6 +35,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
     private String primaryContactName = "Igor PrimaryContactName";
 
     private String email = "accountToDelete@phsa.ca";
+    private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797899";
     private String currentFamilyDoctor = "Lori-Ann May Bus";
     private String cityOrTown = "Richmond";
@@ -56,7 +57,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
         log("/*0.---Pre-conditioning API call to remove duplicate Patient account if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
+        ApiQueries.apiCallToRemovePatientAccount(email_search_API, legalLastName, legalFirstName);
 
 
         log("/*1.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
