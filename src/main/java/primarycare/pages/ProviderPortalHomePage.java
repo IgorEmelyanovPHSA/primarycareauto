@@ -86,9 +86,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement add_staff_button;
     private By add_staff_button_1 = By.xpath("//button[text() = 'Add']");
 
-    @FindBy(xpath = "//button[@aria-label='System Role, --None--']")
+    @FindBy(xpath = "//button//span[text()='--None--']")
     private WebElement role_dropdown;
-    private By role_dropdown_1 = By.xpath("//button[@aria-label='System Role, --None--']");
+    private By role_dropdown_1 = By.xpath("//button//span[text()='--None--']");
 
     @FindBy(xpath = "//div/lightning-base-combobox-item//span[text()='Provider']")
     private WebElement select_provider_from_roles_options;
