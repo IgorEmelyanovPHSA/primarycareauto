@@ -255,12 +255,17 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     public void clickContinueButton() throws InterruptedException {
         waitForElementToBeVisible(driver, continue_button, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(continue_button_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(3000);
         continue_button.click();
     }
 
     public void enterStreetAddress(String streetAddress) throws InterruptedException {
         waitForElementToBeLocated(driver, street_address_1, 10);
+        Thread.sleep(1000);
         street_address.sendKeys(streetAddress);
     }
 
