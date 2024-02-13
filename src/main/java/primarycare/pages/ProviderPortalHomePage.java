@@ -87,9 +87,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement add_staff_button;
     private By add_staff_button_1 = By.xpath("//button[text() = 'Add']");
 
-    @FindBy(xpath = "//button[@aria-label='System Role, --None--']")
+    @FindBy(xpath = "//button//span[text()='--None--']")
     private WebElement role_dropdown;
-    private By role_dropdown_1 = By.xpath("//button[@aria-label='System Role, --None--']");
+    private By role_dropdown_1 = By.xpath("//button//span[text()='--None--']");
 
     @FindBy(xpath = "//div/lightning-base-combobox-item//span[text()='Provider']")
     private WebElement select_provider_from_roles_options;
@@ -115,9 +115,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement practitioner_facility_name_link;
     private By practitioner_facility_name_link_1 = By.xpath("//a[contains(text(),'Kristine Fisher')]");
 
-    @FindBy(xpath = "//div[@title='Edit']")
+    @FindBy(xpath = "//button[text()='Edit']")
     private WebElement edit_practitioner_facility_button;
-    private By edit_practitioner_facility_button_1 = By.xpath("//div[@title='Edit']");
+    private By edit_practitioner_facility_button_1 = By.xpath("//button[text()='Edit']");
 
     @FindBy(xpath = "//div[@data-target-selection-name='sfdc:RecordField.HealthcarePractitionerFacility.EffectiveFrom']//input[@class=' input']")
     private WebElement effective_from_input;
@@ -199,9 +199,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement yes_on_modal_update_panel_status_form_button;
     private By yes_on_modal_update_panel_status_form_button_1 = By.xpath("//button[@name='Yes']");
 
-    @FindBy(xpath = "//button[@aria-label='Select clinics, Select an Option']")
+    @FindBy(xpath = "//button//span[text()='Select an Option']")
     private WebElement empaneled_patient_change_clinic_options_dropdown;
-    private By empaneled_patient_change_clinic_options_dropdown_1 = By.xpath("//button[@aria-label='Select clinics, Select an Option']");
+    private By empaneled_patient_change_clinic_options_dropdown_1 = By.xpath("//button//span[text()='Select an Option']");
 
     @FindBy(xpath = "(.//div[@class='slds-form-element__control']/lightning-base-combobox//span[@title])[1]")
     private WebElement select_Capri_Center_from_options;
