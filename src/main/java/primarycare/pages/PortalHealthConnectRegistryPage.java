@@ -272,6 +272,10 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     public void clickContinueButton() throws InterruptedException {
         waitForElementToBeVisible(driver, continue_button, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(continue_button_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(3000);
         continue_button.click();
     }
