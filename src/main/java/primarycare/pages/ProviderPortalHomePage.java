@@ -293,6 +293,10 @@ public class ProviderPortalHomePage extends BasePage{
     @FindBy(xpath = ".//h1[text()='Account Details']")
     private WebElement edit_clinic_page_displayed_validation;
 
+    @FindBy(xpath = "(//button//span[text()='Save'])[1]")
+    private WebElement save_button_max_new_patients_form;
+    private By save_button_max_new_patients__form_1 = By.xpath("(//button//span[text()='Save'])[1]");
+
     @FindBy(xpath = ".//a[text()='Clinic & Provider Registry']")
     private WebElement clinic_and_provider_registry_link;
     private By clinic_and_provider_registry_link_1 = By.xpath(".//a[text()='Clinic & Provider Registry']");
@@ -1009,6 +1013,12 @@ public class ProviderPortalHomePage extends BasePage{
         } else {
             log("*/--- Edit Clinic Page has shown up");
         }
+    }
+
+    public void clickSaveMaxNewPatientsForm() throws InterruptedException {
+        waitForElementToBeVisible(driver, save_button_max_new_patients_form, 10);
+        Thread.sleep(1000);
+        save_button_max_new_patients_form.click();
     }
 
     public void clickClinicAndProviderRegistryLink() throws InterruptedException {
