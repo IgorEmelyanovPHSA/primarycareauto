@@ -128,7 +128,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*17.---Click 'Verify PHN' button--*/");
         healthCloudConsolePage.clickVerifyPHN();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
         log("/*18. Validate EMPI Verification status --*/");
         String empiStatusActual = healthCloudConsolePage.getEMPIStatusActualForValidation();
