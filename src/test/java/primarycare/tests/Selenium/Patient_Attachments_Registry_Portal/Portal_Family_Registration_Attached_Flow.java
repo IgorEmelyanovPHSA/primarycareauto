@@ -26,6 +26,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String province = "BC";
     private String postalCode = "V9Z 1P5";
     private String email = "accountToDelete@phsa.ca";
+    private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
 
@@ -42,6 +43,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberProvince = "BC";
     private String familyMembePpostalCode = "V6Y 1A3";
     private String familyMemberEmail = "accountToDelete@phsa.ca";
+    private String email_search_API_familyMemberEmail = "";//"accountToDelete@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
     private String familyMemberCommunicationPreference = "Email";
     private String caseOriginExpectedValue = "Web";
@@ -70,10 +72,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
         log("/*01.---Pre-conditioning API call to remove duplicate Patient account (Sandy Prior) if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
+        ApiQueries.apiCallToRemovePatientAccount(email_search_API, legalLastName, legalFirstName);
 
         log("/*02.---Pre-conditioning API call to remove duplicate Family Member (Hollis Violette) account if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(familyMemberEmail, familyMemberLastName, familyMemberFirstName);
+        ApiQueries.apiCallToRemovePatientAccount(email_search_API_familyMemberEmail, familyMemberLastName, familyMemberFirstName);
 
         log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
         PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();
