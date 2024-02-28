@@ -25,7 +25,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String City = "Sooke";
     private String province = "BC";
     private String postalCode = "V9Z 1P5";
-    private String email = "accountToDelete@phsa.ca";
+    private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
@@ -42,7 +42,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberCity = "Sooke";
     private String familyMemberProvince = "BC";
     private String familyMembePpostalCode = "V6Y 1A3";
-    private String familyMemberEmail = "accountToDelete@phsa.ca";
+    private String familyMemberEmail = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API_familyMemberEmail = "";//"accountToDelete@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
     private String familyMemberCommunicationPreference = "Email";
@@ -229,7 +229,23 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
-        log("/*37.---Click Continue on 'Primary Contact Information' screen--*/");
+        log("/*37.1---Enter email" +email +"----*/");
+        portalHealthConnectRegistryPage.enterFamilyMemberEmailAddress(email);
+        //Thread.sleep(1000);
+
+        log("/*37.2---Enter email" +email +"----*/");
+        portalHealthConnectRegistryPage.re_enterFamilyMemberEmailAddress(email);
+        //Thread.sleep(1000);
+
+        log("/*37.3.---Enter mobile: " + familyMemberMobilePhone +"----*/");
+        portalHealthConnectRegistryPage.enterFamilyMemberMobilePhoneNumber(familyMemberMobilePhone);
+        Thread.sleep(1000);
+
+        log("/*37.4.---Select Communication Preference - Email----*/");
+        portalHealthConnectRegistryPage.selectFamilyMemberCommunicationPreference();
+        Thread.sleep(1000);
+
+        log("/*37.5---Click Continue on 'Primary Contact Information' screen--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
