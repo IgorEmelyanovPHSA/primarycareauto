@@ -177,6 +177,26 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     private WebElement select_from_language_dropdown_list;
     private By select_from_language_dropdown_list_1 = By.xpath("//span[text() ='Portuguese']");
 
+    @FindBy(xpath = "(.//input[@type='email'])[3]")
+    private WebElement enter_family_member_email_address;
+    private By enter_family_member_email_address_1 = By.xpath("(.//input[@type='email'])[3]");
+
+    @FindBy(xpath = "(.//input[@type='email'])[4]")
+    private WebElement re_enter_family_member_email_address;
+    private By re_enter_family_member_email_address_1 = By.xpath("(.//input[@type='email'])[4]");
+
+    @FindBy(xpath = "(.//input[@type='tel'])[2]")
+    private WebElement mobile_family_member_phone;
+    private By mobile_family_member_phone_1 = By.xpath("(.//input[@type='tel'])[2]");
+
+    @FindBy(xpath = "(.//input[@role='combobox'])[2]")
+    private WebElement family_member_communication_preference_dropdown;
+    private By family_member_communication_preference_dropdown_1 = By.xpath("(.//input[@role='combobox'])[2]");
+
+    @FindBy(xpath = "(.//span[text() = 'Email'])[2]")
+    private WebElement family_member_select_communication_preference;
+    private By family_member_select_communication_preference_1 = By.xpath("(.//span[text() = 'Email'])[2]");
+
 
     /*---------Constructor-------*/
     public PortalHealthConnectRegistryPage(WebDriver driver) {
@@ -468,6 +488,33 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         //JavascriptExecutor executor = (JavascriptExecutor) driver;
         //executor.executeScript("arguments[0].click();", element);
         select_from_language_dropdown_list.click();
+        Thread.sleep(1000);
+    }
+
+    public void enterFamilyMemberEmailAddress(String email) throws InterruptedException {
+        waitForElementToBeLocated(driver, enter_family_member_email_address_1, 10);
+        enter_family_member_email_address.sendKeys(email);
+    }
+
+    public void re_enterFamilyMemberEmailAddress(String email) throws InterruptedException {
+        waitForElementToBeLocated(driver, re_enter_family_member_email_address_1, 10);
+        re_enter_family_member_email_address.sendKeys(email);
+    }
+
+    public void enterFamilyMemberMobilePhoneNumber(String mobile) throws InterruptedException {
+        waitForElementToBeLocated(driver, mobile_family_member_phone_1, 10);
+        mobile_family_member_phone.click();
+        //mobile_phone.sendKeys(mobile);
+        Actions actions = new Actions(driver);
+        actions.sendKeys(mobile).build().perform();
+        //Thread.sleep(1000);
+    }
+
+    public void selectFamilyMemberCommunicationPreference() throws InterruptedException {
+        waitForElementToBeLocated(driver, family_member_communication_preference_dropdown_1, 10);
+        family_member_communication_preference_dropdown.click();
+        waitForElementToBeVisible(driver, family_member_select_communication_preference, 10);
+        family_member_select_communication_preference.click();
         Thread.sleep(1000);
     }
 
