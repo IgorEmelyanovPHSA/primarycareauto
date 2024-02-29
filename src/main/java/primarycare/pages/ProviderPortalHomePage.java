@@ -230,9 +230,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement pencil_edit_button;
     private By pencil_edit_button_1 = By.xpath("//button[@title='Edit Manage Facility']");
 
-    @FindBy(xpath = "//input[@type='checkbox']")
+    @FindBy(xpath = "(//input[@type='checkbox'])[3]")
     private WebElement click_manage_facility_checkbox;
-    private By click_manage_facility_checkbox_1 = By.xpath("//input[@type='checkbox']");
+    private By click_manage_facility_checkbox_1 = By.xpath("(//input[@type='checkbox'])[3]");
 
     @FindBy(xpath = "//div/lightning-base-combobox-item//span[text()='Medical Office Assistant']")
     private WebElement select_MoA_from_roles_options;
