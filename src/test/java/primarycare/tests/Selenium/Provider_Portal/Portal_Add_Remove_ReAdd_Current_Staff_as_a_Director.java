@@ -166,6 +166,13 @@ public class Portal_Add_Remove_ReAdd_Current_Staff_as_a_Director extends BaseTes
         ProviderPortalHomePage providerPortalHomePage= loginPage.loginProviderPortalHomePageAsDirector();
         Thread.sleep(5000);
 
+        log("/*1.1.----Verify that Provider Portal Home page displayed --*/");
+        boolean isPortalProviderHomePageDisplayed =  providerPortalHomePage.isPortalProviderHomePageDisplayed();
+        if (!isPortalProviderHomePageDisplayed){
+            throw new RuntimeException("Exception: Portal Provider Home Page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
+
         log("/*2.----Click Home link to see all Clinic Associated Panels --*/");
         //cpMainPage.verifyIsCommunityPortalHomePageDisplayed();
         providerPortalHomePage.clickHomeLink();
