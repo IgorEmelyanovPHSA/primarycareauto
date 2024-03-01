@@ -163,9 +163,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement close_modal_form_button;
     private By close_modal_form_button_1 = By.xpath("//div[@class='slds-modal__container']//button[@title='Close']");
 
-    @FindBy(xpath = "//td[@data-col-key-value]//lightning-base-formatted-text[text()='Garth']")
+    @FindBy(xpath = "//td[@data-col-key-value]//lightning-base-formatted-text[text()='BABY GIRL']")
     private WebElement empaneled_patient_first_name_actual_field_value;
-    private By empaneled_patient_first_name_actual_field_value_1 = By.xpath("//td[@data-col-key-value]//lightning-base-formatted-text[text()='Garth']");
+    private By empaneled_patient_first_name_actual_field_value_1 = By.xpath("//td[@data-col-key-value]//lightning-base-formatted-text[text()='BABY GIRL']");
 
     @FindBy(xpath = ".//div[@class='slds-table_header-fixed_container slds-scrollable_x']")
     private WebElement empaneled_patients_current_panel_tab_table;
