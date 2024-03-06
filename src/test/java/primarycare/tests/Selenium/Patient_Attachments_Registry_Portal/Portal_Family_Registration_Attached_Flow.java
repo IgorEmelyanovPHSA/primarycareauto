@@ -25,7 +25,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String City = "Richmond";
     private String province = "BC";
     private String postalCode = "V6Y 1A3";
-    private String email = "accountToDelete@phsa.ca";
+    private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
@@ -42,7 +42,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberCity = "Richmond";
     private String familyMemberProvince = "BC";
     private String familyMembePpostalCode = "V6Y 1A3";
-    private String familyMemberEmail = "accountToDelete@phsa.ca";
+    private String familyMemberEmail = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API_familyMemberEmail = "";//"accountToDelete@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
     private String familyMemberCommunicationPreference = "Email";
@@ -230,11 +230,11 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         Thread.sleep(1000);
 
         log("/*37.1---Enter email" +email +"----*/");
-        portalHealthConnectRegistryPage.enterFamilyMemberEmailAddress(email);
+        portalHealthConnectRegistryPage.enterFamilyMemberEmailAddress(familyMemberEmail);
         //Thread.sleep(1000);
 
         log("/*37.2---Enter email" +email +"----*/");
-        portalHealthConnectRegistryPage.re_enterFamilyMemberEmailAddress(email);
+        portalHealthConnectRegistryPage.re_enterFamilyMemberEmailAddress(familyMemberEmail);
         //Thread.sleep(1000);
 
         log("/*37.3.---Enter mobile: " + familyMemberMobilePhone +"----*/");
