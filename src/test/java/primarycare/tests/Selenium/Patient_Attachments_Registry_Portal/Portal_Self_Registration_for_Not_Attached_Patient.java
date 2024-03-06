@@ -24,7 +24,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String City = "Richmond";
     private String province = "BC";
     private String postalCode = "V6Y 1A3";
-    private String email = "accountToDelete@phsa.ca";
+    private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
