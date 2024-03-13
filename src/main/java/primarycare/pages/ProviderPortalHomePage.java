@@ -247,9 +247,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement practitioner_MoA_facility_name_actual_field_value;
     private By practitioner_MoA_facility_name_actual_field_value_1 = By.xpath("//a[contains(text(),'Agnes Phillip')]");
 
-    @FindBy(xpath = "(//span[text()='Panel Sharing'])[2]")
+    @FindBy(xpath = "(//span[text()='Manage Access'])[1]")
     private WebElement panel_sharing_link;
-    private By panel_sharing_link_1 = By.xpath("(//span[text()='Panel Sharing'])[2]");
+    private By panel_sharing_link_1 = By.xpath("(//span[text()='Manage Access'])[1]");
 
     @FindBy(xpath = "//span[text()='Give Access To']")
     private WebElement give_access_to_tab;
