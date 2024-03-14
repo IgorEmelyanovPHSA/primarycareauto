@@ -247,9 +247,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement practitioner_MoA_facility_name_actual_field_value;
     private By practitioner_MoA_facility_name_actual_field_value_1 = By.xpath("//a[contains(text(),'Agnes Phillip')]");
 
-    @FindBy(xpath = "(//span[text()='Manage Access'])[1]")
+    @FindBy(xpath = "(//span[text()='Manage Access'])[2]")
     private WebElement panel_sharing_link;
-    private By panel_sharing_link_1 = By.xpath("(//span[text()='Manage Access'])[1]");
+    private By panel_sharing_link_1 = By.xpath("(//span[text()='Manage Access'])[2]");
 
     @FindBy(xpath = "//span[text()='Give Access To']")
     private WebElement give_access_to_tab;
@@ -940,7 +940,7 @@ public class ProviderPortalHomePage extends BasePage{
         log("/*----scroll down a bit --*/");
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,900)");
         Thread.sleep(2000);
-        WebElement cellPanelSharing = flexCardsRows.get(h).findElement(By.xpath(".//span[text()='Panel Sharing']"));
+        WebElement cellPanelSharing = flexCardsRows.get(h).findElement(By.xpath(".//span[text()='Manage Access']"));
         log("/*----jump to component --*/");
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", cellPanelSharing);
         Thread.sleep(2000);
