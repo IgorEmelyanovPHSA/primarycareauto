@@ -213,6 +213,16 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         healthCloudConsolePage.enterLanguage(language);
         Thread.sleep(2000);
 
+        log("/*35_1.---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
+        log("/*---chose 'Pregnancy or recent birth'----*/");
+        healthCloudConsolePage.choseHealthChangesIn3Months();
+        Thread.sleep(2000);
+
+        log("/*35_2.---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
+        log("/*---chose 'Irregular heartbeat'----*/");
+        healthCloudConsolePage.choseNewDiagnosisIn3Months();
+        Thread.sleep(2000);
+
         log("/*36.---click button 'Finish registration'----*/");
         healthCloudConsolePage.clickFinishRegistration();
         Thread.sleep(15000);

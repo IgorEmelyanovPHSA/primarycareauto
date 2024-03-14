@@ -271,6 +271,14 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement contact_name_Attached_Hollis_Violette_actual_field_value;
     private By contact_name_Attached_actual_Hollis_Violette_field_value_1 = By.xpath("(//span[text() ='Hollis Violette'])[3]");
 
+    @FindBy(xpath = ".//span[text() ='Pregnancy or recent birth']")
+    private WebElement pregnancy_or_recent_birth_radiobutton;
+    private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='Pregnancy or recent birth']");
+
+    @FindBy(xpath = ".//span[text() ='Irregular heartbeat']")
+    private WebElement irregular_heartbeat_radiobutton;
+    private By irregular_heartbeat_radiobutton_1 = By.xpath(".//span[text() ='Irregular heartbeat']");
+
 
     /*---------Constructor-------*/
     public HealthCloudConsolePage(WebDriver driver) {
@@ -830,6 +838,26 @@ public class HealthCloudConsolePage extends BasePage {
         Thread.sleep(1000);
         priority_actual_field_value.isDisplayed();
         return (status_actual_field_value.getText());
+    }
+
+    public void choseHealthChangesIn3Months() throws InterruptedException {
+        waitForElementToBeLocated(driver, pregnancy_or_recent_birth_radiobutton_1, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(pregnancy_or_recent_birth_radiobutton_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        pregnancy_or_recent_birth_radiobutton.click();
+    }
+
+    public void choseNewDiagnosisIn3Months() throws InterruptedException {
+        waitForElementToBeLocated(driver, irregular_heartbeat_radiobutton_1, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(irregular_heartbeat_radiobutton_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        irregular_heartbeat_radiobutton.click();
     }
 
 
