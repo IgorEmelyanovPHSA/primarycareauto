@@ -255,9 +255,10 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement case_comment_actual_field_value;
     private By case_comment_actual_field_value_1 = By.xpath("//span[text() ='Current Practitioner Location: Richmond']");
 
-    @FindBy(xpath = "(//span[text() ='Sandy Prior'])[2]")
+    //@FindBy(xpath = "(//span[text() ='Sandy Prior'])[2]")
+    @FindBy(xpath = "//span[text() ='Sandy Prior']")
     private WebElement caller_name_Sandy_Prior_2_actual_field_value;
-    private By caller_name_Sandy_Prior_2_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[2]");
+    private By caller_name_Sandy_Prior_2_actual_field_value_1 = By.xpath("//span[text() ='Sandy Prior']");
 
     @FindBy(xpath = ".//a[@title = 'Child']")
     private WebElement caller_related_role_Child_actual_field_value;
