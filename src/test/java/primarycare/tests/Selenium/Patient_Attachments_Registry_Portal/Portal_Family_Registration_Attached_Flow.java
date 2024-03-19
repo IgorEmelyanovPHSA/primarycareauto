@@ -173,7 +173,22 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         portalHealthConnectRegistryPage.clickNoNeedTranslatorRadiobutton();
         Thread.sleep(1000);
 
-        log("/*24.---Click Continue--*/");
+        log("/*24---Click Continue--*/");
+        portalHealthConnectRegistryPage.clickContinueButton();
+        Thread.sleep(1000);
+
+        //Health screen
+        log("/*24.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
+        log("/*---chose 'Pregnancy or recent birth'----*/");
+        portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
+        log("/*---chose 'Irregular heartbeat'----*/");
+        portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.3---Click Continue--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
@@ -282,7 +297,22 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         portalHealthConnectRegistryPage.enterLanguage(language);
         Thread.sleep(2000);
 
-        log("/46*.---Click Continue on 'Preferences' current family doctor screen--*/");
+        log("/*46---Click Continue--*/");
+        portalHealthConnectRegistryPage.clickContinueButton();
+        Thread.sleep(1000);
+
+        //Health screen
+        log("/*46.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
+        log("/*---chose 'Pregnancy or recent birth'----*/");
+        portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
+        Thread.sleep(2000);
+
+        log("/*46.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
+        log("/*---chose 'Irregular heartbeat'----*/");
+        portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
+        Thread.sleep(2000);
+
+        log("/*46.3---Click Continue--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
