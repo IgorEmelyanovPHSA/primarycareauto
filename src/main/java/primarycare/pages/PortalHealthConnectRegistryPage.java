@@ -208,6 +208,12 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     private WebElement irregular_heartbeat_radiobutton;
     private By irregular_heartbeat_radiobutton_1 = By.xpath(".//span[text() ='Irregular heartbeat']");
 
+    @FindBy(xpath = "//h1[contains(text(),'You are registering')]")
+    private WebElement click_some_where;
+    private By click_some_where_1 = By.xpath("//h1[contains(text(),'You are registering')]");
+
+
+
     /*---------Constructor-------*/
     public PortalHealthConnectRegistryPage(WebDriver driver) {
         super(driver);
@@ -319,6 +325,15 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         Thread.sleep(1000);
         street_address.sendKeys(streetAddress);
         Thread.sleep(2000);
+        street_address.click();
+        Thread.sleep(2000);
+        //just click somewhere
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(click_some_where_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        waitForElementToBeLocated(driver, click_some_where_1, 10);// just to click somewhere
+        click_some_where.click();
         waitForElementToBeLocated(driver, postal_code_1, 10);// just to click somewhere
         postal_code.click();
         Thread.sleep(2000);
