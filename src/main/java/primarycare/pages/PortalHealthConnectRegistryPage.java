@@ -204,9 +204,9 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     private WebElement pregnancy_or_recent_birth_radiobutton;
     private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='Pregnancy or recent birth']");
 
-    @FindBy(xpath = ".//span[text() ='Irregular heartbeat']")
-    private WebElement irregular_heartbeat_radiobutton;
-    private By irregular_heartbeat_radiobutton_1 = By.xpath(".//span[text() ='Irregular heartbeat']");
+    @FindBy(xpath = ".//span[text() ='Seizures or Epilepsy']")
+    private WebElement seizures_or_epilepsy_radiobutton;
+    private By seizures_or_epilepsy_radiobutton_1 = By.xpath(".//span[text() ='Seizures or Epilepsy']");
 
     @FindBy(xpath = "//h1[contains(text(),'You are registering')]")
     private WebElement click_some_where;
@@ -580,13 +580,13 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     }
 
     public void choseNewDiagnosisIn3Months() throws InterruptedException {
-        waitForElementToBeLocated(driver, irregular_heartbeat_radiobutton_1, 10);
+        waitForElementToBeLocated(driver, seizures_or_epilepsy_radiobutton_1, 10);
         Thread.sleep(1000);
         log("/*----jump to component --*/");
-        WebElement element = driver.findElement(irregular_heartbeat_radiobutton_1);
+        WebElement element = driver.findElement(seizures_or_epilepsy_radiobutton_1);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(2000);
-        irregular_heartbeat_radiobutton.click();
+        seizures_or_epilepsy_radiobutton.click();
     }
 
 
