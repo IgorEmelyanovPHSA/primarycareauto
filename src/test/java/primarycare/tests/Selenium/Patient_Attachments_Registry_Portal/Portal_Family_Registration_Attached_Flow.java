@@ -184,7 +184,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         Thread.sleep(2000);
 
         log("/*24.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
-        log("/*---chose 'Irregular heartbeat'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
         portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
         Thread.sleep(2000);
 
@@ -244,12 +244,12 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
-        log("/*37.1---Enter email" +email +"----*/");
-        portalHealthConnectRegistryPage.enterFamilyMemberEmailAddress(familyMemberEmail);
+        //log("/*37.1---Enter email" +email +"----*/");
+        //portalHealthConnectRegistryPage.enterFamilyMemberEmailAddress(familyMemberEmail);
         //Thread.sleep(1000);
 
-        log("/*37.2---Enter email" +email +"----*/");
-        portalHealthConnectRegistryPage.re_enterFamilyMemberEmailAddress(familyMemberEmail);
+        //log("/*37.2---Enter email" +email +"----*/");
+        //portalHealthConnectRegistryPage.re_enterFamilyMemberEmailAddress(familyMemberEmail);
         //Thread.sleep(1000);
 
         log("/*37.3.---Enter mobile: " + familyMemberMobilePhone +"----*/");
@@ -308,7 +308,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         Thread.sleep(2000);
 
         log("/*46.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
-        log("/*---chose 'Irregular heartbeat'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
         portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
         Thread.sleep(2000);
 

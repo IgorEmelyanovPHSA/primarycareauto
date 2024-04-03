@@ -165,7 +165,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         Thread.sleep(2000);
 
         log("/*24.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
-        log("/*---chose 'Irregular heartbeat'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
         portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
         Thread.sleep(2000);
 
