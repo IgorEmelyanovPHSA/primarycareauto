@@ -219,7 +219,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         Thread.sleep(2000);
 
         log("/*38.---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
-        log("/*---chose 'Irregular heartbeat'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
         healthCloudConsolePage.choseNewDiagnosisIn3Months();
         Thread.sleep(2000);
 
