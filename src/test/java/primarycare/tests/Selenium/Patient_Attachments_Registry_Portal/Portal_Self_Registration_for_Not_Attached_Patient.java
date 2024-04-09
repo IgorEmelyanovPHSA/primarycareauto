@@ -150,6 +150,21 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         portalHealthConnectRegistryPage.clickContinueButton();
         //Thread.sleep(1000);
 
+        //Health screen
+        log("/*24.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
+        log("/*---chose 'Pregnancy or recent birth'----*/");
+        portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
+        portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.3---Click Continue--*/");
+        portalHealthConnectRegistryPage.clickContinueButton();
+        //Thread.sleep(1000);
+
         log("/*25.---Click Submit registration --*/");
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
         Thread.sleep(15000);

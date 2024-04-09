@@ -197,6 +197,18 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     private WebElement family_member_select_communication_preference;
     private By family_member_select_communication_preference_1 = By.xpath("(.//span[text() = 'Email'])[2]");
 
+    @FindBy(xpath = ".//span[text() ='Pregnancy or recent birth']")
+    private WebElement pregnancy_or_recent_birth_radiobutton;
+    private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='Pregnancy or recent birth']");
+
+    @FindBy(xpath = ".//span[text() ='Seizures or Epilepsy']")
+    private WebElement seizures_or_epilepsy_radiobutton;
+    private By seizures_or_epilepsy_radiobutton_1 = By.xpath(".//span[text() ='Seizures or Epilepsy']");
+
+    @FindBy(xpath = "//h1[contains(text(),'You are registering')]")
+    private WebElement click_some_where;
+    private By click_some_where_1 = By.xpath("//h1[contains(text(),'You are registering')]");
+
 
     /*---------Constructor-------*/
     public PortalHealthConnectRegistryPage(WebDriver driver) {
@@ -287,6 +299,19 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         waitForElementToBeLocated(driver, street_address_1, 10);
         Thread.sleep(1000);
         street_address.sendKeys(streetAddress);
+        Thread.sleep(2000);
+        street_address.click();
+        Thread.sleep(2000);
+        //just click somewhere
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(click_some_where_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        waitForElementToBeLocated(driver, click_some_where_1, 10);// just to click somewhere
+        click_some_where.click();
+        waitForElementToBeLocated(driver, postal_code_1, 10);// just to click somewhere
+        postal_code.click();
+        Thread.sleep(2000);
     }
 
     public void enterCity(String City) throws InterruptedException {
@@ -516,6 +541,29 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         waitForElementToBeVisible(driver, family_member_select_communication_preference, 10);
         family_member_select_communication_preference.click();
         Thread.sleep(1000);
+    }
+
+    public void choseHealthChangesIn3Months() throws InterruptedException {
+        waitForElementToBeLocated(driver, pregnancy_or_recent_birth_radiobutton_1, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(pregnancy_or_recent_birth_radiobutton_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        log("/*----scroll up a bit --*/");
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)");
+        Thread.sleep(2000);
+        pregnancy_or_recent_birth_radiobutton.click();
+    }
+
+    public void choseNewDiagnosisIn3Months() throws InterruptedException {
+        waitForElementToBeLocated(driver, seizures_or_epilepsy_radiobutton_1, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(seizures_or_epilepsy_radiobutton_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        seizures_or_epilepsy_radiobutton.click();
     }
 
 }
