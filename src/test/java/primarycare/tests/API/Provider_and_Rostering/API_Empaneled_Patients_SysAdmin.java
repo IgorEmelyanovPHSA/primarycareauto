@@ -6,13 +6,13 @@ import primarycare.tests.API_BaseTest_PrimaryCare;
 
 public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
     //for Test 1.-select
-    private String empaneledPatientPHN = "9698670251"; //Prosacco Garth
+    private String empaneledPatientPHN =  "9876923304"; //'BABY GIRL' "MUNCIE" <-- 'Prosacco' "Garth"
     public String empaneledId;
 
     //for Test 3. insert
     ///REFRESH
-    public String patient__c = "001Aq00000Mn7CqIAJ";////Prosacco Garth ID - the same as Patient_ID__c in Account.
-    public String healthcare_facility_network__c = "0bYAq0000002MHjMAM";//"Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork"
+    public String patient__c = "001Aq00000OW8WDIA1";//'BABY GIRL' 'MUNCIE' <-- Prosacco Garth - the same as Patient_ID__c in Account.
+    public String healthcare_facility_network__c = "0bYAq0000003BFPMA2";//"Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork"
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
