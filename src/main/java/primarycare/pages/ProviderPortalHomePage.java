@@ -162,9 +162,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement close_modal_form_button;
     private By close_modal_form_button_1 = By.xpath("//div[@class='slds-modal__container']//button[@title='Close']");
 
-    @FindBy(xpath = "//td[@data-col-key-value]//lightning-base-formatted-text[text()='Garth']")
+    @FindBy(xpath = "//td[@data-col-key-value]//lightning-base-formatted-text[text()='BABY GIRL']")
     private WebElement empaneled_patient_first_name_actual_field_value;
-    private By empaneled_patient_first_name_actual_field_value_1 = By.xpath("//td[@data-col-key-value]//lightning-base-formatted-text[text()='Garth']");
+    private By empaneled_patient_first_name_actual_field_value_1 = By.xpath("//td[@data-col-key-value]//lightning-base-formatted-text[text()='BABY GIRL']");
 
     @FindBy(xpath = ".//div[@class='slds-table_header-fixed_container slds-scrollable_x']")
     private WebElement empaneled_patients_current_panel_tab_table;
@@ -230,9 +230,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement pencil_edit_button;
     private By pencil_edit_button_1 = By.xpath("//button[@title='Edit Manage Facility']");
 
-    @FindBy(xpath = "(//input[@type='checkbox'])[3]")
+    @FindBy(xpath = "//input[@type='checkbox']")
     private WebElement click_manage_facility_checkbox;
-    private By click_manage_facility_checkbox_1 = By.xpath("(//input[@type='checkbox'])[3]");
+    private By click_manage_facility_checkbox_1 = By.xpath("//input[@type='checkbox']");
 
     @FindBy(xpath = "//div/lightning-base-combobox-item//span[text()='Medical Office Assistant']")
     private WebElement select_MoA_from_roles_options;
@@ -246,9 +246,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement practitioner_MoA_facility_name_actual_field_value;
     private By practitioner_MoA_facility_name_actual_field_value_1 = By.xpath("//a[contains(text(),'Agnes Phillip')]");
 
-    @FindBy(xpath = "(//span[text()='Panel Sharing'])[2]")
+    @FindBy(xpath = "(//span[text()='Manage Access'])[2]")
     private WebElement panel_sharing_link;
-    private By panel_sharing_link_1 = By.xpath("(//span[text()='Panel Sharing'])[2]");
+    private By panel_sharing_link_1 = By.xpath("(//span[text()='Manage Access'])[2]");
 
     @FindBy(xpath = "//span[text()='Give Access To']")
     private WebElement give_access_to_tab;
@@ -928,7 +928,7 @@ public class ProviderPortalHomePage extends BasePage{
         log("/*----scroll down a bit --*/");
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
         Thread.sleep(2000);
-        WebElement cellPanelSharing = flexCardsRows.get(h).findElement(By.xpath(".//span[text()='Panel Sharing']"));
+        WebElement cellPanelSharing = flexCardsRows.get(h).findElement(By.xpath(".//span[text()='Manage Access']"));
         log("/*----jump to component --*/");
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", cellPanelSharing);
         Thread.sleep(2000);
