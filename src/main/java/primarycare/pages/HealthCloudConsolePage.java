@@ -271,6 +271,15 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement contact_name_Attached_Hollis_Violette_actual_field_value;
     private By contact_name_Attached_actual_Hollis_Violette_field_value_1 = By.xpath("(//span[text() ='Hollis Violette'])[3]");
 
+    @FindBy(xpath = ".//span[text() ='Pregnancy or recent birth']")
+    private WebElement pregnancy_or_recent_birth_radiobutton;
+    private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='Pregnancy or recent birth']");
+
+    @FindBy(xpath = ".//span[text() ='Seizures or Epilepsy']")
+    private WebElement seizures_or_epilepsy_radiobutton;
+    private By seizures_or_epilepsy_radiobutton_1 = By.xpath(".//span[text() ='Seizures or Epilepsy']");
+
+
 
     /*---------Constructor-------*/
     public HealthCloudConsolePage(WebDriver driver) {
@@ -837,6 +846,26 @@ public class HealthCloudConsolePage extends BasePage {
         Thread.sleep(1000);
         priority_actual_field_value.isDisplayed();
         return (status_actual_field_value.getText());
+    }
+
+    public void choseHealthChangesIn3Months() throws InterruptedException {
+        waitForElementToBeLocated(driver, pregnancy_or_recent_birth_radiobutton_1, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(pregnancy_or_recent_birth_radiobutton_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        pregnancy_or_recent_birth_radiobutton.click();
+    }
+
+    public void choseNewDiagnosisIn3Months() throws InterruptedException {
+        waitForElementToBeLocated(driver, seizures_or_epilepsy_radiobutton_1, 10);
+        Thread.sleep(1000);
+        log("/*----jump to component --*/");
+        WebElement element = driver.findElement(seizures_or_epilepsy_radiobutton_1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
+        Thread.sleep(2000);
+        seizures_or_epilepsy_radiobutton.click();
     }
 
 
