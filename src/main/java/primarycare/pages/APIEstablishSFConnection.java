@@ -11,8 +11,8 @@ public class APIEstablishSFConnection {
                 given().
                     urlEncodingEnabled(true)
                     .param("grant_type","password")
-                    .param("client_id","3MVG9696SH3dTknIGlzhu6yTksuL3MI.o0cS0AXUpAIAc99.9kn8cPaDpQhdVqQDWthNqU6ihqVch5vy3otQq")
-                    .param("client_secret","9A968C4279F36173D5021AB257E467D918D3E97B08EFB5CFB1A9154103C862B2")
+                    .param("client_id","3MVG9TZvGM_0NqB0kG8dlWT8FghKeqiaAQJXdIFBWXYGzuI5wRSXozPQS1sdny00CsMvnHUTMY6EqTK05v7ky")
+                    .param("client_secret","E7DF8A516D4EF341BA12FEEE7AD95DCCFFA28D61652523DC6CD0EB819C4FAD10")
                     .param("username","igor.emelyanov@phsa.ca.hotfixqa")
                     .param("password","Technology1990!!!!!!")
                     .header("Accept","application/json")

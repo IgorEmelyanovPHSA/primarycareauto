@@ -20,18 +20,20 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-1140 Windermere";
-    private String City = "Kootenay";
+    private String streetAddress = "15409 92 Ave";
+    private String City = "Fleetwood";
     private String province = "BC";
-    private String postalCode = "V0A 0A2";
-    private String email = "accountToDelete@phsa.ca";
+    private String postalCode = "V3R 5V9";
+    private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
+    private String email_search_API = "";//"accountToDelete@phsa.ca";
+
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
 
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";//"Medium" for UAT;
     private String statusExpected = "Active";
-    private String accountNameExpected = "1140 Windermere";
+    private String accountNameExpected = "2336 Fleetwood";
     //private String caseReasonExpected = "Unattached - Requires attachment to family doctor or nurse practitioner";
     private String caseReasonExpected = "Unattached";
 
@@ -43,7 +45,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         //CommonMethods com = new CommonMethods(getDriver());
 
         log("/*0.---Pre-conditioning API call to remove duplicate Patient account if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
+        ApiQueries.apiCallToRemovePatientAccount(email_search_API, legalLastName, legalFirstName);
 
         log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
         PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();
@@ -156,6 +158,21 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         portalHealthConnectRegistryPage.clickContinueButton();
         //Thread.sleep(1000);
 
+        //Health screen
+        log("/*24.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
+        log("/*---chose 'Pregnancy or recent birth'----*/");
+        portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
+        portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.3---Click Continue--*/");
+        portalHealthConnectRegistryPage.clickContinueButton();
+        //Thread.sleep(1000);
+
         log("/*25.---Click Submit registration --*/");
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
         Thread.sleep(15000);
@@ -229,7 +246,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*36.---- Validate Account name - '1140 Windermere'  ---*/");
+        log("/*36.---- Validate Account name - '2336 Fleetwood'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);

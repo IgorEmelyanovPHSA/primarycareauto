@@ -21,11 +21,12 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-1140 Windermere";
-    private String City = "Kootenay";
+    private String streetAddress = "15409 92 Ave";
+    private String City = "Fleetwood";
     private String province = "BC";
-    private String postalCode = "V0A 0A2";
-    private String email = "accountToDelete@phsa.ca";
+    private String postalCode = "V3R 5V9";
+    private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
+    private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
 
@@ -37,18 +38,19 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberDateOfBirth_MM = "04";//March
     private String familyMemberDateOfBirth_DD = "12";
     private String familyMemberDateOfBirth_YYYY = "1947";
-    private String familyMemberStreetAddress = "307-1140 Windermere";
-    private String familyMemberCity = "Kootenay";
+    private String familyMemberStreetAddress = "15409 92 Ave";
+    private String familyMemberCity = "Fleetwood";
     private String familyMemberProvince = "BC";
-    private String familyMembePpostalCode = "V0A 0A2";
-    private String familyMemberEmail = "accountToDelete@phsa.ca";
+    private String familyMembePpostalCode = "V3R 5V9";
+    private String familyMemberEmail = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
+    private String email_search_API_familyMemberEmail = "";//"accountToDelete@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
     private String familyMemberCommunicationPreference = "Email";
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";
     private String statusExpected = "Active";
-    private String accountNameExpected = "1140 Windermere";
-    private String primaryCareNetworkExpected = "East Kootenay";
+    private String accountNameExpected = "2336 Fleetwood";
+    private String primaryCareNetworkExpected = "Fleetwood";
     private String caseReasonExpected = "Family doctor or nurse practitioner is not accepting additional family members";
     private String caseCommentExpected = "Current Practitioner Location: Richmond";
     private String language = "Portuguese";
@@ -70,10 +72,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
         log("/*01.---Pre-conditioning API call to remove duplicate Patient account (Sandy Prior) if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
+        ApiQueries.apiCallToRemovePatientAccount(email_search_API, legalLastName, legalFirstName);
 
         log("/*02.---Pre-conditioning API call to remove duplicate Family Member (Hollis Violette) account if found--*/");
-        ApiQueries.apiCallToRemovePatientAccount(familyMemberEmail, familyMemberLastName, familyMemberFirstName);
+        ApiQueries.apiCallToRemovePatientAccount(email_search_API_familyMemberEmail, familyMemberLastName, familyMemberFirstName);
 
         log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
         PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();
@@ -121,7 +123,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
 
         log("/*12.---Click Continue--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         log("/*13.---Enter Street address: " + streetAddress +"----*/");
         portalHealthConnectRegistryPage.enterStreetAddress(streetAddress);
@@ -172,6 +174,21 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         Thread.sleep(1000);
 
         log("/*24.---Click Continue--*/");
+        portalHealthConnectRegistryPage.clickContinueButton();
+        Thread.sleep(1000);
+
+        //Health screen
+        log("/*24.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
+        log("/*---chose 'Pregnancy or recent birth'----*/");
+        portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
+        portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
+        Thread.sleep(2000);
+
+        log("/*24.3---Click Continue--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
@@ -265,6 +282,21 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         Thread.sleep(2000);
 
         log("/46*.---Click Continue on 'Preferences' current family doctor screen--*/");
+        portalHealthConnectRegistryPage.clickContinueButton();
+        Thread.sleep(1000);
+
+        //Health screen
+        log("/*46.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
+        log("/*---chose 'Pregnancy or recent birth'----*/");
+        portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
+        Thread.sleep(2000);
+
+        log("/*46.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
+        log("/*---chose 'Seizures or Epilepsy'----*/");
+        portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
+        Thread.sleep(2000);
+
+        log("/*46.3---Click Continue--*/");
         portalHealthConnectRegistryPage.clickContinueButton();
         Thread.sleep(1000);
 
@@ -366,13 +398,13 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*63.---- Validate Account name - '1140 Windermere'  ---*/");
+        log("/*63.---- Validate Account name - '2336 Fleetwood'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*64.---- Validate Primary Care Network - 'East Kootenay'  ---*/");
+        log("/*64.---- Validate Primary Care Network - 'Fleetwood'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);

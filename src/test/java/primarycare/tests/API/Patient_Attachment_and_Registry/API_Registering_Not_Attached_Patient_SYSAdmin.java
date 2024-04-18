@@ -18,8 +18,8 @@ import static primarycare.tests.BaseTest_PrimaryCare.log;
 @Listeners({TestListener.class})
 public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_PrimaryCare {
     //1.Patient Account
-    public String firstName = "Sandy3_Patient_NOT_Attached";
-    public String lastName = "Prior3";
+    public String firstName = "Sandy3_Patient_NOT_Attached_API";
+    public String lastName = "Prior3_API";
     public String recordTypeId = "0125f0000003ekBAAQ ";
     public String phn = "9873010088";
     public String gender = "Male";
@@ -27,9 +27,9 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     public String preferredCommunicationChannel = "Email";
     public String mobile = "7788793897";
     public String email = "accountToDelete@phsa.ca";
-    public String street = "307-7631 Francis Rd";
-    public String city = "Richmond";
-    public String postalcode = "V6Y1A3";
+    public String street = "15409 92 Ave";//"307-7631 Francis Rd";
+    public String city = "Fleetwood";//Richmond
+    public String postalcode = " V3R5V9";//"V6Y1A3";
     public String isActive = "true";
 
     public String accId;
@@ -40,10 +40,10 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     //3.Case
     public String caseRecordTypeId = "0125f000000qtfjAAA";
     ////REFRESH
-    public String caseAccountId = "001As00000JOZeEIAX"; //"3113 Broadmoor";
-    public String casePrimaryCareNetwork__c = "001As00000JOXyYIAX"; //"Richmond - West";
+    public String caseAccountId = "001bZ000000fPN8QAM"; //"2336 Fleetwood" <-  //"3113 Broadmoor";
+    public String casePrimaryCareNetwork__c = "001bZ000000fPPeQAM";//"Fleetwood"  <-  //"Richmond - West";
     ////REFRESH
-    public String caseReason = "Unattached - Requires attachment to family doctor or nurse practitione";
+    public String caseReason = "Unattached - Requires attachment to family doctor or nurse practitioner";
     public String caseOrigin = "Web";
     //public String caseContactName = "Sandy3_Patient_NOT_Attached";
     public String caseStatus = "Active";
