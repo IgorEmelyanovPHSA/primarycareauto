@@ -8,8 +8,8 @@ import primarycare.tests.API_BaseTest_PrimaryCare;
 public class API_Create_Practitioner_Account_NO_Associated_SysAdmin extends API_BaseTest_PrimaryCare {
     //public String lastname = "IgorAPI_Account_" + new Random().nextInt(1000);
     //public String salutation = "Ms.";
-    public String firstName = "Tanya222_Practitioner";
-    public String lastName = "Drysdale";
+    public String firstName = "Tanya222_Practitioner_API";
+    public String lastName = "Drysdale_API";
     public String birthdate = "1983-07-11";
     public String gender = "Women";
     public String email = "accountToDelete@phsa.ca";
@@ -18,8 +18,8 @@ public class API_Create_Practitioner_Account_NO_Associated_SysAdmin extends API_
     public String recordTypeId = "0125f000000qtflAAA";
     public String MSP = "54321";
     ///REFRESH
-    public String healthCloudGA__SourceSystem__c = "Health1-00DAs000002uxDx";
-    public String healthCloudGA__SourceSystem__pc = "Health1-00DAs000002uxDx";
+    public String healthCloudGA__SourceSystem__c = "Health1-00DbZ00000022lh";
+    public String healthCloudGA__SourceSystem__pc = "Health1-00DbZ00000022lh";
     ///REFRESH
 
     public String accId;

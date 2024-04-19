@@ -16,7 +16,7 @@ public class APICreateClinicAccount {
                                        String mailingCountryClinic,
                                        String mailingLocationStreetClinic,String mailingLocationCityClinic,
                                        String mailingLocationProvinceClinic,String mailingLocationPostalCodeClinic,
-                                       String mailingLocationContryClinic,String isActive_Clinic){
+                                       String mailingLocationCountryClinic,String isActive_Clinic){
         APIEstablishSFConnection sfConnection = new APIEstablishSFConnection();
         String acc_token = sfConnection.establishConnection();
         System.out.println("Connection for SF Establish with Status code 200");
@@ -38,7 +38,7 @@ public class APICreateClinicAccount {
         mapper.put("ShippingCity", mailingLocationCityClinic);
         mapper.put("ShippingState", mailingLocationProvinceClinic);
         mapper.put("ShippingPostalCode", mailingLocationPostalCodeClinic);
-        mapper.put("ShippingCountry", mailingLocationContryClinic);
+        mapper.put("ShippingCountry", mailingLocationCountryClinic);
 
         mapper.put("IsActive", isActive_Clinic);
 
