@@ -67,9 +67,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement max_new_requests_component;
     private By max_new_requests_component_1 = By.xpath("//input[@omnistudio-maskedinput_maskedinput_slds]");
 
-    @FindBy(xpath = "(//span[text()='Save'])[1]")
+    @FindBy(xpath = "(//button[text()='Save'])[1]")
     private WebElement save_button;
-    private By save_button_1 = By.xpath("(//span[text()='Save'])[1]");
+    private By save_button_1 = By.xpath("(//button[text()='Save'])[1]");
 
     @FindBy(xpath = "(//span[@class='uiOutputNumber'])[1]")
     private WebElement desired_panel_size_actual_field_value;
