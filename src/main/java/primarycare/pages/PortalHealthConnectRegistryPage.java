@@ -200,9 +200,9 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     private WebElement family_member_select_communication_preference;
     private By family_member_select_communication_preference_1 = By.xpath("(.//span[text() = 'Email'])[2]");
 
-    @FindBy(xpath = ".//span[text() ='Pregnancy or recent birth']")
+    @FindBy(xpath = ".//span[text() ='I am pregnant or have recently given birth']")
     private WebElement pregnancy_or_recent_birth_radiobutton;
-    private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='Pregnancy or recent birth']");
+    private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='I am pregnant or have recently given birth']");
 
     @FindBy(xpath = ".//span[text() ='Seizures or Epilepsy']")
     private WebElement seizures_or_epilepsy_radiobutton;
