@@ -11,8 +11,8 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
 
     //for Test 3.insert
     ///REFRESH
-    public String patient__c = "001bZ000000XQtHQAW";//'BABY GIRL' 'MUNCIE' <-- Prosacco Garth - the same as Patient_ID__c in Account.
-    public String healthcare_facility_network__c = "0bYbZ00000000RTUAY";//Lori-Ann Bus | Panel | CASTLEGAR MED FAMILY CLINIC
+    public String patient__c = "001bZ0000015QyyQAE";//'BABY GIRL' 'MUNCIE' <-- Prosacco Garth - the same as Patient_ID__c in Account.
+    public String healthcare_facility_network__c = "0bYbZ0000000Ax3UAE";//Lori-Ann Bus | Panel | CASTLEGAR MED FAMILY CLINIC
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
@@ -44,7 +44,7 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
             String apiResponse= api_delete_empaneled_patient.deleteEmpaneledPatientRecord(empaneledId);
             log("Deleted Empaneled Patient record from 'Panel_Member_c' is: " + empaneledId);
             log(apiResponse);
-            log("Status Code 204 - Empaneled Patient 'Mariano Brakus' Deleted - successfully");
+            log("Status Code 204 - Empaneled Patient 'BABY GIRL' Deleted - successfully");
         }
     }
 
