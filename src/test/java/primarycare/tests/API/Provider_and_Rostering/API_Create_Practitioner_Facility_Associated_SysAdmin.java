@@ -13,7 +13,7 @@ import static primarycare.tests.BaseTest_PrimaryCare.log;
 public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_BaseTest_PrimaryCare{
     //1.for Practitioner account
     public String firstName = "API_Practitioner_222";//Tanya
-    public String lastName = "Director";//Drysdale
+    public String lastName = "Director_API";//Drysdale
     public String birthdate = "1983-07-11";
     public String gender = "Women";
     public String email = "accountToDelete@phsa.ca";
@@ -21,8 +21,8 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
     public String isActive = "true";
     public String recordTypeId = "0125f000000qtflAAA";
     ///REFRESH
-    public String healthCloudGA__SourceSystem__c = "Health1-00DbZ0000001QID";
-    public String healthCloudGA__SourceSystem__pc = "Health1-00DbZ0000001QID";
+    public String healthCloudGA__SourceSystem__c = "Health1-00DbZ0000003Lj3";
+    public String healthCloudGA__SourceSystem__pc = "Health1-00DbZ0000003Lj3";
     ///REFRESH
 
     public String accId;
@@ -49,7 +49,7 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
 
 
     ///4.for Practitioner Facility Associated creation
-    public String practitionerFacilityName = "API_Practitioner_222 Director | API_222 CRATED CLINIC ASSOCIATED";
+    public String practitionerFacilityName = "API_Practitioner_222 Director_API | API_222 CRATED CLINIC ASSOCIATED";
     public String clinicAccountId;// = "0018N00000F9StyQAF"; //CASTLEGAR MEDICAL ASSOCIATES
     public String practitionerId; //"0038N00000D9NPoQAN";//Lori-Ann May Bus
     //public String acceptingNewPatients = "Yes";
@@ -66,7 +66,7 @@ public class API_Create_Practitioner_Facility_Associated_SysAdmin extends API_Ba
 
     //9 delete HFN
     public String healthCareFacilityNetwork_Id;
-    public String healthcareFacilityNetworkName = "API_Practitioner_222 Director | Panel | API_222 CRATED CLINIC ASSOCIATED";
+    public String healthcareFacilityNetworkName = "API_Practitioner_222 Director_API | Panel | API_222 CRATED CLINIC ASSOCIATED";
 
 
     @Test(priority = 1)
