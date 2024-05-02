@@ -214,7 +214,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         Thread.sleep(2000);
 
         log("/*37.---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
-        log("/*---chose 'Pregnancy or recent birth'----*/");
+        log("/*---chose 'I am pregnant or have recently given birth'----*/");
         healthCloudConsolePage.choseHealthChangesIn3Months();
         Thread.sleep(2000);
 

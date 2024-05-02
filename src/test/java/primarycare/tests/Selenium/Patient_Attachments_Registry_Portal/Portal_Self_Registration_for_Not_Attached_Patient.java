@@ -152,7 +152,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
 
         //Health screen
         log("/*24.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
-        log("/*---chose 'Pregnancy or recent birth'----*/");
+        log("/*---chose 'I am pregnant or have recently given birth'----*/");
         portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
         Thread.sleep(2000);
 
