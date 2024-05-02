@@ -18,14 +18,14 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
 
     //for API Insert EmpaneledPanel Member in Current Staff
     ///REFRESH
-    public String patient__c = "001Aq00000OW8WDIA1";////'BABY GIRL' "MUNCIE" <-- Prosacco "Garth"
-    public String healthcare_facility_network__c = "0bYAq0000003BFPMA2";//"Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork"
+    public String patient__c = "001bZ0000016CghQAE";////'BABY GIRL' "MUNCIE" <-- Prosacco "Garth"
+    public String healthcare_facility_network__c = "0bYbZ0000000AEFUA2";//"Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork"
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
 
     public void API_Precondition_Remove_Empaneled_Patient_Record_from_Current_Panel(){
-        log("/*0.---Pre-Condition API Remove Empaneled Patient record for 'BABY GIRL' from Current Panel not form Account --*/");
+        log("/*0.---Pre-Condition API Remove Empaneled Patient record for 'BABY GIRL' 'MUNCIE' from Current Panel not form Account --*/");
         APISelect sqlQuery = new APISelect();
         log("Select Empaneled Patient record Id from 'Panel_Member__c' Table.");
         String empaneledPatientRecordID = sqlQuery.selectEmpaneledPatientRecordIdByPHN("SELECT Id FROM Panel_Member__c WHERE Patient__r.PHN__c = '"+empaneledPatientPHN+"'", "Id");
@@ -33,7 +33,7 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
         log("Status Code 200 - Empaneled Patient record Id SELECTED request  - successfully");
 
         if(empaneledPatientRecordID==null){
-            log("Finish API Preconditioning - no Empaneled Patients records for 'BABY GIRL'. ");
+            log("Finish API Preconditioning - no Empaneled Patients records for 'BABY GIRL' 'MUNCIE'. ");
         }
         else {
             //remove Empaneled Patient from "Panel_Member_c" Table
@@ -46,7 +46,7 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
     }
 
     public void API_Precondition_Insert_Empaneled_Patient_Record_To_Current_Panel(){
-        //log("/*0.---Pre-Condition API Inserting Empaneled Patient record 'BABY GIRL' to Panel_Member__c Object for Current Panel--*/");
+        //log("/*0.---Pre-Condition API Inserting Empaneled Patient record 'BABY GIRL' 'MUNCIE' to Panel_Member__c Object for Current Panel--*/");
         APIInsert apiCreatePanelMemberRecord = new APIInsert();
         String panelMemberRecordID = apiCreatePanelMemberRecord.insertPanelMember(patient__c,
                 healthcare_facility_network__c,
@@ -60,7 +60,7 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
         TestcaseID = "252886"; //C252886
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
-        log("/*0.---Preconditioning API dups Empaneled Patient removal 'BABY GIRL' from Current Panel--*/");
+        log("/*0.---Preconditioning API dups Empaneled Patient removal 'BABY GIRL' 'MUNCIE' from Current Panel--*/");
         API_Precondition_Remove_Empaneled_Patient_Record_from_Current_Panel();
 
         log("/*1.---Login to Provider Portal Home page as an Director --*/");
