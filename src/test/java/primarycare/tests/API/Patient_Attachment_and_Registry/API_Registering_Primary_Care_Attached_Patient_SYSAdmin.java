@@ -37,9 +37,9 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     ////REFRESH
     //public String contactRecordPersonContactId = "003Aq00000BIdKkIAL";
     ////REFRESH
-    public String contactRecord_healthCloudGA__sourceSystem__c = "Health1-00DAq000004LcO9";//from Igor PrimaryContactName Account
+    public String contactRecord_healthCloudGA__sourceSystem__c = "Health1-00DbZ0000003Epd";//from Igor PrimaryContactName Account
     ////REFRESH
-    public String contactRecord_healthCloudGA__sourceSystem__pc = "Health1-00DAq000004LcO94";
+    public String contactRecord_healthCloudGA__sourceSystem__pc = "Health1-00DbZ0000003Epd";
     public String primaryContactAccountID;//id
 
     //4.select Primary Care PersonContactID from Account
@@ -50,7 +50,7 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //public String healthCloudGA__RelatedContact__c = "003Aq00000BOVabIAH"; //API_Kenton's -> PesoContactID
     //public String healthCloudGA__Contact__c = "003Aq00000BOXFpIAP"; // PesoContactID -> API_Primary3 API_CareContact3
     ////REFRESH
-    public String healthCloudGA__Role__c = "a16Aq000000Z1j3IAC"; //"Primary Contact" record role ->Contact Relation Name role from 'HealthCloudGA__ContactContactRelation__c' Object
+    public String healthCloudGA__Role__c = "a16bZ0000000Hk5QAE"; //"Primary Contact" record role ->Contact Relation Name role from 'HealthCloudGA__ContactContactRelation__c' Object
     ////REFRESH
     public String contactContactRelationId;
 
@@ -59,14 +59,14 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //6. Create Attached Case
     public String caseRecordTypeId = "0125f000000qtfjAAA";
     ////REFRESH
-    public String caseAccountId = "001Aq00000OVjirIAD"; //"4124 Sooke";
-    public String casePrimaryCareNetwork__c = "001Aq00000OVjdiIAD"; //"Western Communities";
+    public String caseAccountId = "001bZ0000015TS8QAM"; //"4124 Sooke";
+    public String casePrimaryCareNetwork__c = "001bZ0000015T5FQAU"; //"Western Communities";
     ////REFRESH
     public String caseReason = "Attached - Family doctor or nurse practitioner is not accepting additional family members";
     public String caseOrigin = "Web";
     //public String caseContactName = "Sandy3_Patient_NOT_Attached";
     ////REFRESH
-    public String practitionerAttached__c = "001Aq00000OWA4hIAH";// from "Case" Lori-Ann May Bus
+    public String practitionerAttached__c = "001bZ0000015arvQAA";// from "Case" Lori-Ann May Bus
     ////REFRESH
     public String caseStatus = "Attached";
 
@@ -75,7 +75,7 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //7. Create Case Contact Role
     public String role = "Current Practitioner";
     ////REFRESH
-    public String practitionerContactId = "003Aq00000QPoIdIAL";// from "CaseContactRole" ContactId Lori-Ann May Bus
+    public String practitionerContactId = "003bZ000000yvT8QAI";// from "CaseContactRole" ContactId Lori-Ann May Bus
     ////REFRESH
     public String caseContactRoleID;
 

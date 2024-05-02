@@ -271,9 +271,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement contact_name_Attached_Hollis_Violette_actual_field_value;
     private By contact_name_Attached_actual_Hollis_Violette_field_value_1 = By.xpath("(//span[text() ='Hollis Violette'])[3]");
 
-    @FindBy(xpath = ".//span[text() ='Pregnancy or recent birth']")
+    @FindBy(xpath = ".//span[text() ='I am pregnant or have recently given birth']")
     private WebElement pregnancy_or_recent_birth_radiobutton;
-    private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='Pregnancy or recent birth']");
+    private By pregnancy_or_recent_birth_radiobutton_1 = By.xpath(".//span[text() ='I am pregnant or have recently given birth']");
 
     @FindBy(xpath = ".//span[text() ='Seizures or Epilepsy']")
     private WebElement seizures_or_epilepsy_radiobutton;
