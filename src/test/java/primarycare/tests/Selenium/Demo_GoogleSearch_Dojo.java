@@ -21,7 +21,7 @@ public class Demo_GoogleSearch_Dojo {
         // Create a new instance of the Chrome driver
         ChromeDriver driver = new ChromeDriver(ops);
         //WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         // Navigate to Google.com
         System.out.println("/*2.---Navigate to Google.com");
