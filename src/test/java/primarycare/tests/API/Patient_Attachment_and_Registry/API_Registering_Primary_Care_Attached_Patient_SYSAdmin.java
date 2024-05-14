@@ -75,7 +75,7 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //7. Create Case Contact Role
     public String role = "Current Practitioner";
     ////REFRESH
-    public String practitionerContactId = "003Aq00000TDxRKIA1";//from "CaseContactRole" ContactId Lori-Ann May Bus
+    public String practitionerContactId = "003Aq00000T9MutIAF";//from "CaseContactRole" ContactId Lori-Ann May Bus
     ////REFRESH
     public String caseContactRoleID;
 
