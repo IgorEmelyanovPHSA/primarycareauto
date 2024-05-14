@@ -38,7 +38,7 @@ public class APICreatePrimaryContactAccount {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
+                        post("https://healthbc--previewqa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Account").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;

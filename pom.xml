@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Default suites -->
-        <!--<regressionTestsFile>${project.build.directory}/smokeTests_PrimaryCare_Patient_Org_QAX.xml</regressionTestsFile>-->
+        <!--<regressionTestsFile>${project.build.directory}/smokeTests_PrimaryCare_Patient_Org_SUMMER24.xml</regressionTestsFile>-->
         <regressionTestsFile>smokeTests_PrimaryCare_Patient_Org_QAX.xml</regressionTestsFile>
         <!-- Default suite files if not being specified from mvn command line -->
         <defaultSuiteFiles>${regressionTestsFile}</defaultSuiteFiles>

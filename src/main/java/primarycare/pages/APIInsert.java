@@ -34,7 +34,7 @@ public class APIInsert {
                         header("Content-Type", "application/json").
                         body(requester.toString()).
                         when().
-                        post("https://healthbc--hlthbcqax.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Panel_Member__c").
+                        post("https://healthbc--previewqa.sandbox.my.salesforce.com/services/data/v57.0/sobjects/Panel_Member__c").
                         then().statusCode(201).log().body().extract().path("id");
         //then().log().body();
         //return null;
