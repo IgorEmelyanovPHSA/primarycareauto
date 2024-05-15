@@ -231,9 +231,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement pencil_edit_button;
     private By pencil_edit_button_1 = By.xpath("//button[@title='Edit Manage Facility']");
 
-    @FindBy(xpath = "//input[@type='checkbox']")
+    @FindBy(xpath = "//records-record-layout-item[@field-label='Manage Facility']//input[@type='checkbox']")
     private WebElement click_manage_facility_checkbox;
-    private By click_manage_facility_checkbox_1 = By.xpath("//input[@type='checkbox']");
+    private By click_manage_facility_checkbox_1 = By.xpath("//records-record-layout-item[@field-label='Manage Facility']//input[@type='checkbox']");
 
     @FindBy(xpath = "//div/lightning-base-combobox-item//span[text()='Medical Office Assistant']")
     private WebElement select_MoA_from_roles_options;
@@ -897,6 +897,7 @@ public class ProviderPortalHomePage extends BasePage{
             log("checkbox status is - 'UnChecked'");
             log("Change status to -> Checked");
             cellDelegationCheckElement.click();
+            Thread.sleep(2000);
             click_manage_manage_my_panel_profile_checkbox.click();
             Thread.sleep(2000);
             log("/*6.----Click somewhere else --*/");

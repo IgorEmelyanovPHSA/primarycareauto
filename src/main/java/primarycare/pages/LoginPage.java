@@ -16,13 +16,13 @@ public class LoginPage extends BasePage{
     @FindBy(id = "Login")
     private WebElement login_button;
 
-    @FindBy(xpath = "//input[@name='username']")
+    @FindBy(xpath = "//input[@placeholder='Username']")
     private WebElement input_username_provider_portal;
 
-    @FindBy(xpath = "//input[@name='pw']")
+    @FindBy(xpath = "//input[@placeholder='Password']")
     private WebElement input_password_provider_portal;
 
-    @FindBy(xpath = "//input[@name = 'Login']")
+    @FindBy(xpath = "//button[@type = 'button']")
     private WebElement login_button_provider_portal;
 
 
