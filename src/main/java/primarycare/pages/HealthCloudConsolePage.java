@@ -41,13 +41,13 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement case_reason_actual_field_value;
     private By case_reason_actual_field_value_1 = By.xpath(".//flexipage-field[@data-field-id='RecordReasonField']//slot[1]//slot[1]/lightning-formatted-text");
 
-    @FindBy(xpath = "(//span[text() ='Sandy Prior'])[3]")
+    @FindBy(xpath = "//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Sandy Prior']")
     private WebElement contact_name_actual_field_value;
-    private By contact_name_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[3]");
+    private By contact_name_actual_field_value_1 = By.xpath("//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Sandy Prior']");
 
-    @FindBy(xpath = "(//span[text() ='Kenton Troup'])[3]")
+    @FindBy(xpath = "//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Kenton Troup']")
     private WebElement contact_name_Attached_actual_field_value;
-    private By contact_name_Attached_actual_field_value_1 = By.xpath("(//span[text() ='Kenton Troup'])[3]");
+    private By contact_name_Attached_actual_field_value_1 = By.xpath("//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Kenton Troup']");
 
     @FindBy(xpath = "(.//lightning-formatted-text[text() ='Less than 5 km'])")
     private WebElement distance_able_to_travel_Attached_actual_value;
@@ -267,9 +267,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement primary_contact_name_Sandy_Prior_1_actual_field_value;
     private By primary_contact_name_Sandy_Prior_1_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[1]");
 
-    @FindBy(xpath = "(//span[text() ='Hollis Violette'])[3]")
+    @FindBy(xpath = "//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Hollis Violette']")
     private WebElement contact_name_Attached_Hollis_Violette_actual_field_value;
-    private By contact_name_Attached_actual_Hollis_Violette_field_value_1 = By.xpath("(//span[text() ='Hollis Violette'])[3]");
+    private By contact_name_Attached_actual_Hollis_Violette_field_value_1 = By.xpath("//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Hollis Violette']");
 
     @FindBy(xpath = ".//span[text() ='I am pregnant or have recently given birth']")
     private WebElement pregnancy_or_recent_birth_radiobutton;
