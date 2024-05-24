@@ -21,10 +21,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-7631 Francis Rd";
-    private String City = "Richmond";
+    private String streetAddress = "11265 86 Ave";
+    private String City = "Delta";
     private String province = "BC";
-    private String postalCode = "V6Y 1A3";
+    private String postalCode = "V4C 2W8";
     private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
@@ -38,10 +38,10 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberDateOfBirth_MM = "04";//March
     private String familyMemberDateOfBirth_DD = "12";
     private String familyMemberDateOfBirth_YYYY = "1947";
-    private String familyMemberStreetAddress = "307-7631 Francis Rd";
-    private String familyMemberCity = "Richmond";
+    private String familyMemberStreetAddress = "11265 86 Ave";
+    private String familyMemberCity = "Delta";
     private String familyMemberProvince = "BC";
-    private String familyMembePpostalCode = "V6Y 1A3";
+    private String familyMembePpostalCode = "V4C 2W8";
     private String familyMemberEmail = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API_familyMemberEmail = "";//"accountToDelete@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
@@ -49,8 +49,8 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";
     private String statusExpected = "Active";
-    private String accountNameExpected = "3113 Broadmoor";
-    private String primaryCareNetworkExpected = "Richmond - East";
+    private String accountNameExpected = "2321 North Delta";
+    private String primaryCareNetworkExpected = "North Delta and West Newton";
     private String caseReasonExpected = "Family doctor or nurse practitioner is not accepting additional family members";
     private String caseCommentExpected = "Current Practitioner Location: Richmond";
     private String language = "Portuguese";
@@ -414,13 +414,13 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*63.---- Validate Account name - '3113 Broadmoor'  ---*/");
+        log("/*63.---- Validate Account name - '2321 North Delta'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*64.---- Validate Primary Care Network - 'Richmond - East'  ---*/");
+        log("/*64.---- Validate Primary Care Network - 'North Delta and West Newton'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);

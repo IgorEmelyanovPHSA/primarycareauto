@@ -20,10 +20,10 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-7631 Francis Rd";
-    private String City = "Richmond";
+    private String streetAddress = "11265 86 Ave";
+    private String City = "Delta";
     private String province = "BC";
-    private String postalCode = "V6Y 1A3";
+    private String postalCode = "V4C 2W8";
     private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
@@ -32,7 +32,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";//"Medium" for UAT;
     private String statusExpected = "Active";
-    private String accountNameExpected = "3113 Broadmoor";
+    private String accountNameExpected = "2321 North Delta";
     //private String caseReasonExpected = "Unattached - Requires attachment to family doctor or nurse practitioner";
     private String caseReasonExpected = "Unattached";
 
@@ -175,7 +175,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
 
         log("/*25.---Click Submit registration --*/");
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
-        Thread.sleep(15000);
+        Thread.sleep(20000);
 
         log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
         PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
@@ -237,7 +237,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*38.---- Validate Account name - '3113 Broadmoor'  ---*/");
+        log("/*38.---- Validate Account name - '2321 North Delta'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);

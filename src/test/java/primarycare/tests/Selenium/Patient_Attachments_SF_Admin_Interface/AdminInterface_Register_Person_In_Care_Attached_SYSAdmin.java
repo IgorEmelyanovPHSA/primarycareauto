@@ -27,10 +27,10 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
     private String empiStatusExpected = "EMPI Verified";
 
-    private String streetAddress = "309-7631 Francis Rd";
-    private String City = "Richmond";
+    private String streetAddress = "11265 86 Ave";
+    private String City = "Delta";
     private String province = "BC";
-    private String postalCode = "V6Y 1A3";
+    private String postalCode = "V4C 2W8";
 
     private String primaryContactName = "Igor PrimaryContactName";
 
@@ -44,8 +44,8 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
     private String caseOriginExpectedValue = "Phone";
     private String priorityExpectedValue = "None";//"Medium" for UAT;
     private String statusExpected = "Active";
-    private String accountNameExpected = "3113 Broadmoor";
-    private String primaryCareNetworkExpected = "Richmond - East";
+    private String accountNameExpected = "2321 North Delta";
+    private String primaryCareNetworkExpected = "North Delta and West Newton";
     private String caseReasonExpected = "Family doctor or nurse practitioner is not accepting additional family members";
     private String caseCommentExpected = "Current Practitioner Location: Richmond";
 
@@ -306,13 +306,13 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*51.---- Validate Account name - '3113 Broadmoor'  ---*/");
+        log("/*51.---- Validate Account name - '2321 North Delta'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*52.---- Validate Primary Care Network - 'Richmond - East'  ---*/");
+        log("/*52.---- Validate Primary Care Network - 'North Delta and West Newton'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);
