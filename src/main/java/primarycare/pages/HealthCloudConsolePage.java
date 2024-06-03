@@ -280,6 +280,10 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement seizures_or_epilepsy_radiobutton;
     private By seizures_or_epilepsy_radiobutton_1 = By.xpath(".//span[text() ='Seizures or Epilepsy']");
 
+    @FindBy(xpath = ".//flexipage-field[@data-field-id='RecordTranslation_Language_cField']//slot[1]//slot[1]/lightning-formatted-text[text()]")
+    private WebElement translation_language_actual_field_value;
+    private By translation_language_actual_field_value_1 = By.xpath(".//flexipage-field[@data-field-id='RecordTranslation_Language_cField']//slot[1]//slot[1]/lightning-formatted-text[text()]");
+
 
     /*---------Constructor-------*/
     public HealthCloudConsolePage(WebDriver driver) {
@@ -859,6 +863,13 @@ public class HealthCloudConsolePage extends BasePage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", element);
         Thread.sleep(2000);
         seizures_or_epilepsy_radiobutton.click();
+    }
+
+    public String getTranslationLanguageForValidation() throws InterruptedException {
+        waitForElementToBeLocated(driver, translation_language_actual_field_value_1, 10);
+        Thread.sleep(2000);
+        translation_language_actual_field_value.isDisplayed();
+        return (translation_language_actual_field_value.getText());
     }
 
 

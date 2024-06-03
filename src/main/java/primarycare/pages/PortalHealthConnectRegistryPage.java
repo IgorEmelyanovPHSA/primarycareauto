@@ -589,6 +589,29 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         seizures_or_epilepsy_radiobutton.click();
     }
 
+    public void enterTranslateLanguage(String Language) throws InterruptedException {
+        waitForElementToBeLocated(driver, language_dropdown_component_1, 10);
+        Thread.sleep(1000);
+        log("/*----scroll down a bit --*/");
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)");
+        Thread.sleep(2000);
+        language_dropdown_component.click();
+        Thread.sleep(1000);
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Language).build().perform();
+        Thread.sleep(5000);
+        //select_from_language_dropdown_list.isDisplayed();
+        By select_from_language_dropdown_list_1 = By.xpath("//span[text()='" + Language + "']");
+        isDisplayed(select_from_language_dropdown_list_1);
+        WebElement select_from_language_dropdown_list = driver.findElement(By.xpath("//span[text()='" + Language + "']"));
+        Thread.sleep(5000);
+        //JavascriptExecutor executor = (JavascriptExecutor) driver;
+        //executor.executeScript("arguments[0].click();", element);
+        //select_from_language_dropdown_list.click();
+        select_from_language_dropdown_list.click();
+        Thread.sleep(1000);
+    }
+
 
 
 }
