@@ -33,7 +33,7 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
     private String province = "BC";
     private String postalCode = "V6Y 1A3";
     private String email = "accountToDelete@phsa.ca";
-    private String email_search_API = "accountToDelete@phsa.ca";
+    private String email_search_API = "";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
 
