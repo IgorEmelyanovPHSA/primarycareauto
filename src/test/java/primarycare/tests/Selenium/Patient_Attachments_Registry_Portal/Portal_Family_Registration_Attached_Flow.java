@@ -25,8 +25,8 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String City = "Richmond";
     private String province = "BC";
     private String postalCode = "V6Y 1A3";
-    private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
-    private String email_search_API = "";//"accountToDelete@phsa.ca";
+    private String email = "accountToDelete@phsa.ca";//"igor.emelyanov@phsa.ca";
+    private String email_search_API = "accountToDelete@phsa.ca";//"igor.emelyanov@phsa.ca";
     private String mobilePhone = "7788797898";
     private String communicationPreference = "Email";
 
@@ -42,8 +42,8 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
     private String familyMemberCity = "Richmond";
     private String familyMemberProvince = "BC";
     private String familyMembePpostalCode = "V6Y 1A3";
-    private String familyMemberEmail = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
-    private String email_search_API_familyMemberEmail = "";//"accountToDelete@phsa.ca";
+    private String familyMemberEmail = "accountToDelete@phsa.ca";//"igor.emelyanov@phsa.ca";
+    private String email_search_API_familyMemberEmail = "accountToDelete@phsa.ca";//"igor.emelyanov@phsa.ca";
     private String familyMemberMobilePhone = "7788797898";
     private String familyMemberCommunicationPreference = "Email";
     private String caseOriginExpectedValue = "Web";
