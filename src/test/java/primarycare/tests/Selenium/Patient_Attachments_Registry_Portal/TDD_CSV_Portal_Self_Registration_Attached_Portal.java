@@ -67,7 +67,11 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
 
         for (int i = 0; i < languagesListTotal.size(); i++) {
             totalCountArray += 1;
-            log("Language will be selected in Translation Language Drop Down testCase = " + languagesListTotal.get(i));
+            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            log("TRANSLATION LANGUAGE will be selected in Portal Drop Down = " + languagesListTotal.get(i));
+            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
             try {
                 Can_Do_Self_Registration_Attached_in_Portal(languagesListTotal.get(i));
                 countPass += 1;
@@ -273,7 +277,11 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
         healthCloudConsolePage.clickOnCaseRecord();
         Thread.sleep(5000);
 
-        log("/*38.---- Validate Language - 'Portuguese'  ---*/");
+        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+        log("/*38.---- Validate Language -   ---*/" + translationLanguageExpected);
+        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
         String translationLanguageActual = healthCloudConsolePage.getTranslationLanguageForValidation();
         log("/*---- Translation Language actual is: " + translationLanguageActual + " --*/");
         assertEquals(translationLanguageActual, translationLanguageExpected);
