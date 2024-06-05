@@ -40,8 +40,8 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     //3.Case
     public String caseRecordTypeId = "0125f000000qtfjAAA";
     ////REFRESH
-    public String caseAccountId = "001bZ000000fPN8QAM"; //"2336 Fleetwood" <-  //"3113 Broadmoor";
-    public String casePrimaryCareNetwork__c = "001bZ000000fPPeQAM";//"Fleetwood"  <-  //"Richmond - West";
+    public String caseAccountId = "001G100000Gjax2IAB"; //"2336 Fleetwood" <-  //"3113 Broadmoor";
+    public String casePrimaryCareNetwork__c = "001G100000GjazYIAR";//"Fleetwood"  <-  //"Richmond - West";
     ////REFRESH
     public String caseReason = "Unattached - Requires attachment to family doctor or nurse practitioner";
     public String caseOrigin = "Web";
