@@ -59,7 +59,7 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
             languagesListTotal.add(name);
         }
 
-        log("Total number of Languages to be processed in languageListTotal: " + languagesListTotal.size());
+        log("Total number of Languages to be processed in languageListTotal  = " + languagesListTotal.size());
 
         int countFailed = 0;
         int countPass = 0;
@@ -67,11 +67,11 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
 
         for (int i = 0; i < languagesListTotal.size(); i++) {
             totalCountArray += 1;
-            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
-            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
-            log("TRANSLATION LANGUAGE will be selected in Portal Drop Down = " + languagesListTotal.get(i));
-            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
-            log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+            log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            log("+++++++TRANSLATION LANGUAGE will be selected in Portal Drop Down +++++++ " + languagesListTotal.get(i) + " +++++");
+            log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             try {
                 Can_Do_Self_Registration_Attached_in_Portal(languagesListTotal.get(i));
                 countPass += 1;
@@ -201,7 +201,11 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
         portalHealthConnectRegistryPage.clickYesNeedTranslatorRadiobutton();
         Thread.sleep(1000);
 
-        log("/*23_1---select language 'What language?' dropdown" + translationLanguageExpected +"----*/");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        log("/*23_1---select language 'What language?' dropdown  ++++++  " + translationLanguageExpected +" ++++++*/");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         portalHealthConnectRegistryPage.enterTranslateLanguage(translationLanguageExpected);
         Thread.sleep(2000);
 
@@ -277,11 +281,11 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
         healthCloudConsolePage.clickOnCaseRecord();
         Thread.sleep(5000);
 
-        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
-        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
-        log("/*38.---- Validate Language -   ---*/" + translationLanguageExpected);
-        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
-        log("/////////////////////////////////////////////////////////////////////////////////////////////////");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        log("/*38.---- Validate Language - expected Language is +++++++  " + translationLanguageExpected +"  ++++++*/");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         String translationLanguageActual = healthCloudConsolePage.getTranslationLanguageForValidation();
         log("/*---- Translation Language actual is: " + translationLanguageActual + " --*/");
         assertEquals(translationLanguageActual, translationLanguageExpected);
