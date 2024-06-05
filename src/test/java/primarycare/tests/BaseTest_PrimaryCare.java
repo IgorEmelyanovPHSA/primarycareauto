@@ -51,6 +51,7 @@ public class BaseTest_PrimaryCare {
         ////
         ///// for Windows local and Jenkins
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
