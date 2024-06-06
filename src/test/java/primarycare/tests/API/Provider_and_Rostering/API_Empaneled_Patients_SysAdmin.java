@@ -11,8 +11,8 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
 
     //for Test 3.insert
     ///REFRESH
-    public String patient__c = "001bZ000000fQPqQAM";//'BABY GIRL' 'MUNCIE' ID <--Mariano Brakus ID - the same as Patient_ID__c in Account.
-    public String healthcare_facility_network__c = "0bYbZ00000002oZUAQ";//Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" - the same as Id from "HealthcareFacilityNetwork"
+    public String patient__c = "001G100000GjcWQIAZ";//'BABY GIRL' 'MUNCIE' ID <--Mariano Brakus ID - the same as Patient_ID__c in Account.
+    public String healthcare_facility_network__c = "0bYG1000000006pMAA";//Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" - the same as Id from "HealthcareFacilityNetwork"
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
@@ -23,7 +23,7 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
         APISelect sqlQuery = new APISelect();
         log("Select Empaneled Patient record Id from 'Panel_Member__c' Table.");
         String empaneledPatientRecordID = sqlQuery.selectEmpaneledPatientRecordIdByPHN("SELECT Id FROM Panel_Member__c WHERE Patient__r.PHN__c = '"+empaneledPatientPHN+"'", "Id");
-        log("Selected Empaneled Patient 'Mariano Brakus' record Id from 'Panel_Member__c' is: " +empaneledPatientRecordID);
+        log("Selected Empaneled Patient  'BABY GIRL' 'MUNCIE' record Id from 'Panel_Member__c' is: " +empaneledPatientRecordID);
         log("Status Code 200 - Empaneled Patient record Id SELECTED request  - successfully");
         empaneledId = empaneledPatientRecordID;
     }
@@ -32,11 +32,11 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
     public void API_Can_Remove_Empaneled_Patient_Record_in_Salesforce_Status_Code_204_as_SysAdmin(){
         TestcaseID = "275927"; //C275927
         if(empaneledId==null){
-            log("No Empaneled Patients records for 'Mariano Brakus'.");
+            log("No Empaneled Patients records for  'BABY GIRL' 'MUNCIE'.");
             log("Nothings to delete - do nothing.");
         }
         else {
-            log("Empaneled Patients records for 'Mariano Brakus' has founded.");
+            log("Empaneled Patients records for  'BABY GIRL' 'MUNCIE' has founded.");
             log("lets Delete it");
             //remove Empaneled Patient from "Panel_Member_c" Table
             APIDelete api_delete_empaneled_patient = new APIDelete();
@@ -44,7 +44,7 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
             String apiResponse= api_delete_empaneled_patient.deleteEmpaneledPatientRecord(empaneledId);
             log("Deleted Empaneled Patient record from 'Panel_Member_c' is: " + empaneledId);
             log(apiResponse);
-            log("Status Code 204 - Empaneled Patient 'Mariano Brakus' Deleted - successfully");
+            log("Status Code 204 - Empaneled Patient  'BABY GIRL' 'MUNCIE' Deleted - successfully");
         }
     }
 
@@ -56,7 +56,7 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
                 healthcare_facility_network__c,
                 panel__c, roster__c);
         log("Created Panel Member's record id is: " +panelMemberRecordID);
-        log("Status Code 201 - Empaneled record 'Mariano Brakus' created success");
+        log("Status Code 201 - Empaneled record  'BABY GIRL' 'MUNCIE' created success");
     }
 
 }
