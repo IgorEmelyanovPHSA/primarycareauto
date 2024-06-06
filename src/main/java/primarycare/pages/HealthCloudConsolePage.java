@@ -41,9 +41,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement case_reason_actual_field_value;
     private By case_reason_actual_field_value_1 = By.xpath(".//flexipage-field[@data-field-id='RecordReasonField']//slot[1]//slot[1]/lightning-formatted-text");
 
-    @FindBy(xpath = "(//span[text() ='Sandy Prior'])[3]")
+    @FindBy(xpath = "//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Sandy Prior']")
     private WebElement contact_name_actual_field_value;
-    private By contact_name_actual_field_value_1 = By.xpath("(//span[text() ='Sandy Prior'])[3]");
+    private By contact_name_actual_field_value_1 = By.xpath("//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Sandy Prior']");
 
     @FindBy(xpath = "//flexipage-field[@data-field-id='RecordContactIdField']//span[text()='Kenton Troup']")
     private WebElement contact_name_Attached_actual_field_value;
