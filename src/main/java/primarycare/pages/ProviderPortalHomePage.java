@@ -930,7 +930,7 @@ public class ProviderPortalHomePage extends BasePage{
         for (int i = 0; i < numberOfRows; i++) {
             String flexCardRowText = flexCardsRows.get(i).getText();
             //log("get Text: " +'\n' + flexCardRowText);
-            if (flexCardRowText.contains("CASTLEGAR MED FAMILY CLINIC"))
+            if (flexCardRowText.contains("NORTH SHORE PRIMARY CARE MED HOME"))
             {
                 log("Related Flex Card has founded: " + '\n' + flexCardRowText);
                 h = i;
