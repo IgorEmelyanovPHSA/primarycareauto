@@ -27,10 +27,10 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
     private String empiStatusExpected = "EMPI Verified";
 
-    private String streetAddress = "11265 86 Ave";
-    private String City = "Delta";
+    private String streetAddress = "15409 92 Ave";//"11265 86 Ave";
+    private String City = "Fleetwood";//"Delta";
     private String province = "BC";
-    private String postalCode = "V4C 2W8";
+    private String postalCode = "V3R 5V9";//"V4C 2W8";
 
     private String primaryContactName = "Igor PrimaryContactName";
 
@@ -44,8 +44,8 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
     private String caseOriginExpectedValue = "Phone";
     private String priorityExpectedValue = "None";//"Medium" for UAT;
     private String statusExpected = "Active";
-    private String accountNameExpected = "2321 North Delta";
-    private String primaryCareNetworkExpected = "North Delta and West Newton";
+    private String accountNameExpected = "2336 Fleetwood";//"2321 North Delta";
+    private String primaryCareNetworkExpected = "Fleetwood";//"North Delta and West Newton";
     private String caseReasonExpected = "Family doctor or nurse practitioner is not accepting additional family members";
     private String caseCommentExpected = "Current Practitioner Location: Richmond";
 

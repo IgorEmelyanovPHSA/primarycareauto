@@ -20,10 +20,10 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String dateOfBirth_MM = "03";//March
     private String dateOfBirth_DD = "01";
     private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "11265 86 Ave";
-    private String City = "Delta";
+    private String streetAddress = "15409 92 Ave";//"11265 86 Ave";
+    private String City = "Fleetwood";//""Delta";
     private String province = "BC";
-    private String postalCode = "V4C 2W8";
+    private String postalCode = "V3R 5V9";
     private String email = "igor.emelyanov@phsa.ca";//"accountToDelete@phsa.ca";
     private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797898";
@@ -32,7 +32,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
     private String caseOriginExpectedValue = "Web";
     private String priorityExpectedValue = "None";//"Medium" for UAT;
     private String statusExpected = "Active";
-    private String accountNameExpected = "2321 North Delta";
+    private String accountNameExpected = "2336 Fleetwood";//"2321 North Delta";
     //private String caseReasonExpected = "Unattached - Requires attachment to family doctor or nurse practitioner";
     private String caseReasonExpected = "Unattached";
 
