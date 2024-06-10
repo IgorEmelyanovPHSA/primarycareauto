@@ -50,7 +50,7 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //public String healthCloudGA__RelatedContact__c = "003Aq00000BOVabIAH"; //API_Kenton's -> PesoContactID
     //public String healthCloudGA__Contact__c = "003Aq00000BOXFpIAP"; // PesoContactID -> API_Primary3 API_CareContact3
     ////REFRESH
-    public String healthCloudGA__Role__c = "a16As000000SFPBIA4"; //"Primary Contact" record role ->Contact Relation Name role from 'HealthCloudGA__ContactContactRelation__c' Object
+    public String healthCloudGA__Role__c = "a16As000000YvCDIA0"; //"Primary Contact" record role ->Contact Relation Name role from 'HealthCloudGA__ContactContactRelation__c' Object
     ////REFRESH
     public String contactContactRelationId;
 
@@ -59,14 +59,14 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //6. Create Attached Case
     public String caseRecordTypeId = "0125f000000qtfjAAA";
     ////REFRESH
-    public String caseAccountId = "001As00000ObeICIAZ"; //"3113 Broadmoor";
-    public String casePrimaryCareNetwork__c = "001As00000ObeG8IAJ"; //"Richmond - East";
+    public String caseAccountId = "001As00000PiwFWIAZ"; //"3113 Broadmoor";
+    public String casePrimaryCareNetwork__c = "001As00000PiwDSIAZ"; //"Richmond - East";
     ////REFRESH
     public String caseReason = "Attached - Family doctor or nurse practitioner is not accepting additional family members";
     public String caseOrigin = "Web";
     //public String caseContactName = "Sandy3_Patient_NOT_Attached";
     ////REFRESH
-    public String practitionerAttached__c = "001As00000ObgIqIAJ";//from "Case" Lori-Ann May Bus
+    public String practitionerAttached__c = "001As00000Piyn8IAB";//from "Case" Lori-Ann May Bus
     public String caseStatus = "Attached";
     ////REFRESH
 
@@ -75,7 +75,7 @@ public class API_Registering_Primary_Care_Attached_Patient_SYSAdmin extends API_
     //7. Create Case Contact Role
     public String role = "Current Practitioner";
     ////REFRESH
-    public String practitionerContactId = "003As00000KeE2aIAF";//from "CaseContactRole" ContactId Lori-Ann May Bus
+    public String practitionerContactId = "003As00000LoijZIAR";//from "CaseContactRole" ContactId Lori-Ann May Bus
     ////REFRESH
     public String caseContactRoleID;
 

@@ -34,7 +34,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
     private String primaryContactName = "Igor PrimaryContactName";
 
-    private String email = "accountToDelete@phsa.c";//"igor.emelyanov@phsa.ca";
+    private String email = "accountToDelete@phsa.ca";//"igor.emelyanov@phsa.ca";
     private String email_search_API = "";//"accountToDelete@phsa.ca";
     private String mobilePhone = "7788797899";
     private String currentFamilyDoctor = "Lori-Ann May Bus";
