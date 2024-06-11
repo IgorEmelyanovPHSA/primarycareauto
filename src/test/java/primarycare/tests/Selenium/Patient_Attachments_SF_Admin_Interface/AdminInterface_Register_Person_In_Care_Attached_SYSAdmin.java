@@ -306,13 +306,13 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*51.---- Validate Account name - '2321 North Delta'  ---*/");
+        log("/*51.---- Validate Account name - '2336 Fleetwood'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*52.---- Validate Primary Care Network - 'North Delta and West Newton'  ---*/");
+        log("/*52.---- Validate Primary Care Network - 'Fleetwood'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);

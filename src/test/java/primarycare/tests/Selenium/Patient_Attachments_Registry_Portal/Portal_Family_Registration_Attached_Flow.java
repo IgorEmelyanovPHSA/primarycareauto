@@ -414,13 +414,13 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         assertEquals(priorityActualValue, priorityExpectedValue);
         Thread.sleep(5000);
 
-        log("/*63.---- Validate Account name - '2321 North Delta'  ---*/");
+        log("/*63.---- Validate Account name - '2336 Fleetwood'  ---*/");
         String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
         log("/*---- Account Name actual is: " + accountNameActual + " --*/");
         assertEquals(accountNameActual, accountNameExpected);
         Thread.sleep(5000);
 
-        log("/*64.---- Validate Primary Care Network - 'North Delta and West Newton'  ---*/");
+        log("/*64.---- Validate Primary Care Network - 'Fleetwood'  ---*/");
         String primaryCareNetworkActual = healthCloudConsolePage.getPrimaryCareNetworkActualForValidation();
         log("/*----Primary Care Network actual is: " + primaryCareNetworkActual + " --*/");
         assertEquals(primaryCareNetworkActual, primaryCareNetworkExpected);

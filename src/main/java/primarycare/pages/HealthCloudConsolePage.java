@@ -53,9 +53,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement distance_able_to_travel_Attached_actual_value;
     private By distance_able_to_travel_Attached_actual_value_1 = By.xpath("(.//lightning-formatted-text[text() ='Less than 5 km'])");
 
-    @FindBy(xpath = "//slot[text() ='North Delta and West Newton']")
+    @FindBy(xpath = "//slot[text() ='Fleetwood']")
     private WebElement primary_care_network_actual_field_value;
-    private By primary_care_network_actual_field_value_1 = By.xpath("//slot[text() ='North Delta and West Newton']");
+    private By primary_care_network_actual_field_value_1 = By.xpath("//slot[text() ='Fleetwood']");
 
     @FindBy(xpath = "//span[text() ='A person in my care']")
     private WebElement person_in_my_care_radiobutton;
