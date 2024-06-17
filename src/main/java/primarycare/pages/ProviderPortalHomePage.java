@@ -199,9 +199,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement yes_on_modal_update_panel_status_form_button;
     private By yes_on_modal_update_panel_status_form_button_1 = By.xpath("//button[@name='Yes']");
 
-    @FindBy(xpath = "//button[@aria-label='Select clinics - Current Selection: Select an Option']")
+    @FindBy(xpath = "//button//span[text()='Select an Option']")
     private WebElement empaneled_patient_change_clinic_options_dropdown;
-    private By empaneled_patient_change_clinic_options_dropdown_1 = By.xpath("//button[@aria-label='Select clinics - Current Selection: Select an Option']");
+    private By empaneled_patient_change_clinic_options_dropdown_1 = By.xpath("//button//span[text()='Select an Option']");
 
     @FindBy(xpath = "(.//div[@class='slds-form-element__control']/lightning-base-combobox//span[@title])[1]")
     private WebElement select_Capri_Center_from_options;
