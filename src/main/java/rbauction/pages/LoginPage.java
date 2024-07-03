@@ -33,9 +33,9 @@ public class LoginPage extends BasePage{
 
 
     /*-------------Methods--------------*/
-    public PortalHealthConnectRegistryPage openPortalHealthConnectRegistryPage() throws Exception {
+    public RBAuctionPage openRBAuctionPage() throws Exception {
         driver.navigate().to(Utils.getEnvConfigProperty("url_direct_link"));
-        return new PortalHealthConnectRegistryPage(driver);
+        return new RBAuctionPage(driver);
     }
 
     public ProviderPortalHomePage loginProviderPortalHomePageAsDirector() throws Exception {

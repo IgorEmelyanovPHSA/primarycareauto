@@ -7,33 +7,13 @@ import rbauction.pages.Utils;
 import rbauction.tests.BaseTest_RBAuction;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import rbauction.pages.PortalHealthConnectRegistryPage;
+import rbauction.pages.RBAuctionPage;
 
 import static org.testng.Assert.assertEquals;
 
 @Listeners({TestListener.class})
 public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuction {
-    private String legalFirstName = "Sandy";
-    private String legalLastName = "Prior";
-    private String personalHealthNumber = "9873010063";
-    private String dateOfBirth_MM = "03";//March
-    private String dateOfBirth_DD = "01";
-    private String dateOfBirth_YYYY = "1975";
-    private String streetAddress = "307-7631 Francis Rd";
-    private String City = "Richmond";
-    private String province = "BC";
-    private String postalCode = "V6Y 1A3";
-    private String email = "accountToDelete@phsa.ca";//"igor.emelyanov@phsa.ca";
-    private String email_search_API = "";//"igor.emelyanov@phsa.ca";
-    private String mobilePhone = "7788797898";
-    private String communicationPreference = "Email";
-
-    private String caseOriginExpectedValue = "Web";
-    private String priorityExpectedValue = "None";//"Medium" for UAT;
-    private String statusExpected = "Active";
-    private String accountNameExpected = "3113 Broadmoor";
-    //private String caseReasonExpected = "Unattached - Requires attachment to family doctor or nurse practitioner";
-    private String caseReasonExpected = "Unattached";
+    //private String legalFirstName = "Sandy";
 
     @Test(priority = 1)
     public void Can_Do_Search_For_My_F150_Platinum_in_RBAuction_website () throws Exception {
@@ -42,220 +22,28 @@ public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuc
 
         //CommonMethods com = new CommonMethods(getDriver());
 
-        log("/*0.---Pre-conditioning API call to remove duplicate Patient account if found--*/");
+        log("/*0.---Pre-conditioning API call to remove duplicate  account if found--*/");
         //ApiQueries.apiCallToRemovePatientAccount(email_search_API, legalLastName, legalFirstName);
 
-        log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
-        PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();
+        log("/*1.---Open the Title main page)--*/");
+        RBAuctionPage portalRBAuctionPage= loginPage.openRBAuctionPage();
         Thread.sleep(5000);
 
-        //log("/*2.---- Validate that the Register to get doctor page has displayed --*/");
+        //log("/*2.---- Validate that the Title page has displayed --*/");
         //PortalHealthConnectRegistryPage.validateRegisterToGetDoctorPageDisplayed();
         //Thread.sleep(1000);
 
         log("/*2.----Verify that the RBAuction page has displayed --*/");
-        boolean isPortalRegisterToGetDoctorPageDisplayed =  PortalHealthConnectRegistryPage.isRegisterToGetDoctorPageDisplayed();
-        if (!isPortalRegisterToGetDoctorPageDisplayed){
-            throw new RuntimeException("Exception: the Portal Register 'to get doctor' page "  + "has not shown up!!!");
-        }
-        Thread.sleep(2000);
-
-        log("/*3.---Click Next button--*/");
-        portalHealthConnectRegistryPage.clickNextButton();
-        //Thread.sleep(1000);
-
-        log("/*4.--- Validate that the Who is Registering page has displayed --*/");
-        PortalHealthConnectRegistryPage.validateWhoIsRegisteringPageDisplayed();
-        //Thread.sleep(1000);
-
-        log("/*5.---Click Register my household button--*/");
-        portalHealthConnectRegistryPage.clickRegisterMyHouseholdButton();
-        Thread.sleep(20000);
-
-        log("/*6.---Enter First Name " +legalFirstName +"--*/");
-        portalHealthConnectRegistryPage.enterFirstName(legalFirstName);
-        //Thread.sleep(1000);
-
-
-        log("/*7.---Enter Last Name " +legalLastName +"--*/");
-        portalHealthConnectRegistryPage.enterLastName(legalLastName);
-        //Thread.sleep(1000);
-
-        log("/*8.---Enter PHN " +personalHealthNumber +"--*/");
-        portalHealthConnectRegistryPage.enterPHN(personalHealthNumber);
-        //Thread.sleep(1000);
-
-        log("/*9.---Enter Date of Birth - Month" +dateOfBirth_MM +"--*/");
-        portalHealthConnectRegistryPage.enterMonth(dateOfBirth_MM);
-        //Thread.sleep(1000);
-
-        log("/*10.---Enter Date of Birth - Day" +dateOfBirth_DD +"--*/");
-        portalHealthConnectRegistryPage.enterDay(dateOfBirth_DD);
-        //Thread.sleep(1000);
-
-        log("/*11.---Enter Date of Birth - Year" +dateOfBirth_YYYY +"--*/");
-        portalHealthConnectRegistryPage.enterYear(dateOfBirth_YYYY);
-        Thread.sleep(3000);
-
-        log("/*12.---Click Continue--*/");
-        portalHealthConnectRegistryPage.clickContinueButton();
-        Thread.sleep(5000);
-
-        log("/*13.---Enter Street address " +streetAddress +"----*/");
-        portalHealthConnectRegistryPage.enterStreetAddress(streetAddress);
-        Thread.sleep(5000);
-
-        log("/*14.---Enter City " +City +"----*/");
-        portalHealthConnectRegistryPage.enterCity(City);
-       // Thread.sleep(1000);
-
-        log("/*14_1.---Select Province option from dropdown" +province +"----*/");
-        portalHealthConnectRegistryPage.enterProvince(province);
-        //Thread.sleep(1000);
-
-        log("/*15.---Enter Postal Code" +postalCode +"----*/");
-        portalHealthConnectRegistryPage.enterPostalCode(postalCode);
-        //Thread.sleep(1000);
-
-        log("/*16.---Click Continue--*/");
-        portalHealthConnectRegistryPage.clickContinueButton();
-        //Thread.sleep(1000);
-
-        //log("/*17.---Select Sex female----*/");
-        //portalHealthConnectRegistryPage.selectSex();
-        //Thread.sleep(1000);
-
-        log("/*17.---Enter email" +email +"----*/");
-        portalHealthConnectRegistryPage.enterEmailAddress(email);
-        //Thread.sleep(1000);
-
-        log("/*18.---Enter email" +email +"----*/");
-        portalHealthConnectRegistryPage.re_enterEmailAddress(email);
-        //Thread.sleep(1000);
-
-        log("/*19.---Enter mobile" +mobilePhone +"----*/");
-        portalHealthConnectRegistryPage.enterMobilePhoneNumber(mobilePhone);
-        //Thread.sleep(1000);
-
-        log("/*20.---Select Communication Preference - Email----*/");
-        portalHealthConnectRegistryPage.selectCommunicationPreference();
-        //Thread.sleep(1000);
-
-        log("/*21.---Click Continue--*/");
-        portalHealthConnectRegistryPage.clickContinueButton();
-        //Thread.sleep(1000);
-
-        log("/*22.---Click 'No' currently having family doctor--*/");
-        portalHealthConnectRegistryPage.clickNoFamilyDoctorRadiobutton();
-        //Thread.sleep(1000);
-
-        log("/*23.---Click 'No' need a translator--*/");
-        portalHealthConnectRegistryPage.clickNoNeedTranslatorRadiobutton();
-        //Thread.sleep(1000);
-
-        log("/*24.---Click Continue--*/");
-        portalHealthConnectRegistryPage.clickContinueButton();
-        //Thread.sleep(1000);
-
-        //Health screen
-        log("/*24.1---chose radiobutton 'Have you experienced any of the following new changes in your health in the last 3 months?'----*/");
-        log("/*---chose 'I am pregnant or have recently given birth'----*/");
-        portalHealthConnectRegistryPage.choseHealthChangesIn3Months();
-        Thread.sleep(2000);
-
-        log("/*24.2---chose radiobutton 'Have you had a new diagnosis of any of the following in the last 3 months?'----*/");
-        log("/*---chose 'Seizures or Epilepsy'----*/");
-        portalHealthConnectRegistryPage.choseNewDiagnosisIn3Months();
-        Thread.sleep(2000);
-
-        log("/*24.3---Click Continue--*/");
-        portalHealthConnectRegistryPage.clickContinueButton();
-        //Thread.sleep(1000);
-
-        log("/*25.---Click Submit registration --*/");
-        portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
-        Thread.sleep(15000);
-
-        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
-        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
-        Thread.sleep(5000);
-
-        log("/*27.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
-        HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
-        Thread.sleep(15000);// wait for sf loading
-
-        log("/*28.----Validate if Health Cloud Console Page displayed --*/");
-        CommonMethods common = new CommonMethods(getDriver());
-        common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
-        Thread.sleep(5000);
-
-        log("/*29.----Close All previously opened Tab's --*/");
-        common.closeAllHealthCloudConsoleTabs();
-        Thread.sleep(2000);
-
-        log("/*30.----Select Home from Navigation Menu Dropdown --*/");
-        common.selectHomeFromNavigationMenuDropdown();
-        Thread.sleep(2000);
-
-        log("/*31.---Search for Patient by PHN " + legalFirstName + " "+ legalLastName +"--*/");
-        common.globalSearch(personalHealthNumber);
-        Thread.sleep(2000);
-
-        //common.SearchForCitizenAlternativeWay();
-        //common.SearchForCitizen();
-
-        log("/*32.---Click on founded Patient--*/");
-        ///////////////////
-        log("/*33.1--- first make sure that Sandy Prior is showing up in the Tab   ---*/");
-        boolean isPatientFound =  common.isPatientFoundValidation(legalFirstName, legalLastName);
-        if (!isPatientFound){
-            throw new RuntimeException("Exception: Patient " + legalFirstName + " " + legalLastName + " not found!!!");
-        }
-        /////////////////////
-        log("/*33.2--- now we can Click on searched Patient   ---*/");
-        common.clickOnFondedPatient(legalFirstName, legalLastName);
-        Thread.sleep(5000);
-
-        log("/*34.---Go to Related Tab--*/");
-        healthCloudConsolePage.clickOnRelatedTab();
-        Thread.sleep(5000);
-
-        log("/*35.---Click on Case record link--*/");
-        healthCloudConsolePage.clickOnCaseRecord();
-        Thread.sleep(5000);
-
-        log("/*36.---- Validate field Case origin - 'Web'  ---*/");
-        String caseOriginActualValue = healthCloudConsolePage.getCaseOriginActualForValidation();
-        log("/*---- Case Origin actual value is: " + caseOriginActualValue + " --*/");
-        assertEquals(caseOriginActualValue, caseOriginExpectedValue);
-        Thread.sleep(5000);
-
-        log("/*37.---- Validate Priority  - 'None'  ---*/");
-        String priorityActualValue = healthCloudConsolePage.getPriorityActualForValidation();
-        log("/*---- Priority actual value is: " + priorityActualValue + " --*/");
-        assertEquals(priorityActualValue, priorityExpectedValue);
-        Thread.sleep(5000);
-
-        log("/*38.---- Validate Account name - '3113 Broadmoor'  ---*/");
-        String accountNameActual = healthCloudConsolePage.getAccountNameActualForValidation();
-        log("/*---- Account Name actual is: " + accountNameActual + " --*/");
-        assertEquals(accountNameActual, accountNameExpected);
-        Thread.sleep(5000);
-
-        log("/*49.---- Validate Case Reason - 'Unattached'  ---*/");
-        String caseReasonActual = healthCloudConsolePage.getCaseReasonActualForValidation();
-        log("/*---Case Reason actual is: " + caseReasonActual + " --*/");
-        assertEquals(caseReasonActual, caseReasonExpected);
-        Thread.sleep(5000);
-
-        log("/*40.---- Validate Status - 'Active'  ---*/");
-        //log("/*----scroll down a bit --*/");
-        //((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)");
+       // boolean isPortalRegisterToGetDoctorPageDisplayed =  PortalHealthConnectRegistryPage.isRegisterToGetDoctorPageDisplayed();
+        //if (!isPortalRegisterToGetDoctorPageDisplayed){
+            //throw new RuntimeException("Exception: the Portal Register 'to get doctor' page "  + "has not shown up!!!");
+        //}
         //Thread.sleep(2000);
-        String statusActual = healthCloudConsolePage.getStatusActualForValidation();
-        log("/*---- Status actual is: " + statusActual + " --*/");
-        assertEquals(statusActual, statusExpected);
-        Thread.sleep(2000);
+
+        //log("/*3.---Click Next button--*/");
+        //portalHealthConnectRegistryPage.clickNextButton();
+        //Thread.sleep(1000);
+
 
     }
 

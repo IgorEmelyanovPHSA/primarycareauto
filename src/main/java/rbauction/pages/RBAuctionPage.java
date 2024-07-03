@@ -4,7 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public class PortalHealthConnectRegistryPage extends BasePage{
+public class RBAuctionPage extends BasePage{
 
     /*---------Properties-------*/
     @FindBy(xpath = "//div/h1[text()='Register to get a family doctor or nurse practitioner']")
@@ -215,7 +215,7 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
 
     /*---------Constructor-------*/
-    public PortalHealthConnectRegistryPage(WebDriver driver) {
+    public RBAuctionPage(WebDriver driver) {
         super(driver);
     }
 

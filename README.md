@@ -1,6 +1,12 @@
 # rbauction_qa
 RBAUCTION QA Automation
 
+see only on SELENIUM test there for now
+got to: 
+rbauction -> tests -> Selenium ->RBAuction_Website_search ->
+RBAuction_Title_Page_Navigate_Search_Results
+
+
 Automation framework installation steps:
 Download latest 8th version of JDK (E.g. Java SE 8u341):
 C:\WINDOWS\system32>java -version
