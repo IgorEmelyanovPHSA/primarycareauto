@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.phsa</groupId>
-    <artifactId>smoke-primarycareauto</artifactId>
+    <artifactId>smoke-rbauctionauto</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -12,8 +12,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Default suites -->
-        <!--<regressionTestsFile>${project.build.directory}/smokeTests_PrimaryCare_Patient_Org_QAX.xml</regressionTestsFile>-->
-        <regressionTestsFile>smokeTests_PrimaryCare_Patient_Org_QAX.xml</regressionTestsFile>
+        <!--<regressionTestsFile>${project.build.directory}/smokeTests_RBAuction_QAX.xml</regressionTestsFile>-->
+        <regressionTestsFile>smokeTests_RBAuction_QAX.xml</regressionTestsFile>
         <!-- Default suite files if not being specified from mvn command line -->
         <defaultSuiteFiles>${regressionTestsFile}</defaultSuiteFiles>
         <suiteFile>${defaultSuiteFiles}</suiteFile>

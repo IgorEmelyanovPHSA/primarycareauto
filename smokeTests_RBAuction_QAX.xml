@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation run">
+    <test name="Smoke">
+        <classes>
+            <class name="rbauction.tests.API.API_Establish_RBAuction_Connection_SysAdmin"/>
+            <class name="rbauction.tests.Selenium.RBAuction_Website_search.RBAuction_Title_Page_Navigate_Search_Results"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

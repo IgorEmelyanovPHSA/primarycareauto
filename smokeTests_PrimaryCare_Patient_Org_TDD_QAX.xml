@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Automation run">
-    <test name="Smoke">
-        <classes>
-            <class name="primarycare.tests.Selenium.Patient_Attachments_Registry_Portal.TDD_CSV_Portal_Self_Registration_Attached_Portal"/>
-        </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->

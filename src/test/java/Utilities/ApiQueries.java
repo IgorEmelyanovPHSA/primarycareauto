@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
-import primarycare.pages.Utils;
+import rbauction.pages.Utils;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -24,7 +24,7 @@ import org.json.JSONTokener;
 import org.json.JSONException;
 
 
-import static primarycare.tests.BaseTest_PrimaryCare.log;
+import static rbauction.tests.BaseTest_RBAuction.log;
 
 public class ApiQueries {
 

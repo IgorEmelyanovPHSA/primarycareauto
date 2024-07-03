@@ -1,6 +1,5 @@
-package Utilities;
+package rbauction.tests.Utilities;
 
-import rbauction.tests.BaseTest_RBAuction;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -8,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
+import rbauction.tests.BaseTest_RBAuction;
 
 import java.io.ByteArrayOutputStream;
 
@@ -20,7 +19,7 @@ public class TestListener extends BaseTest_RBAuction implements ITestListener {
 
     @Attachment(value = "Screenshot of {1}", type = "image/png")
     public byte[] saveScreenshotPNG (WebDriver dr, String testCaseName){
-            return ((TakesScreenshot)dr).getScreenshotAs(OutputType.BYTES);
+        return ((TakesScreenshot)dr).getScreenshotAs(OutputType.BYTES);
     }
 
     @Attachment(value = "Log of {1}", type = "text/plain")
@@ -66,4 +65,5 @@ public class TestListener extends BaseTest_RBAuction implements ITestListener {
     public void onFinish(ITestContext var1){
         // TODO Auto-generated method stub
     }
+
 }
