@@ -7,10 +7,24 @@ import org.openqa.selenium.support.FindBy;
 public class RBAuctionPage extends BasePage{
 
     /*---------Properties-------*/
-    @FindBy(xpath = "//div/h1[text()='Register to get a family doctor or nurse practitioner']")
-    private static WebElement register_to_get_doctor_page_validation;
-    @FindBy(xpath = "//div/h1[text()='Register to get a family doctor or nurse practitioner']")
-    private static By is_register_to_get_doctor_page_displayed_1 = By.xpath("//div/h1[text()='Register to get a family doctor or nurse practitioner']");
+
+    private static By is_rb_auction_page_displayed_1 = By.xpath("//button[text() ='Trucks & Trailers']");
+
+    @FindBy(xpath = ".//input[@placeholder='Search over 79,000 items']")
+    private WebElement searchAssistant;
+
+    @FindBy(xpath = ".//input[@id='manufactureYearRange_min']")
+    private WebElement year_range_min;
+    private By year_range_min_1 = By.xpath(".//input[@id='manufactureYearRange_min']");
+
+    @FindBy(xpath = ".//input[@id='manufactureYearRange_max']")
+    private WebElement year_range_max;
+    private By year_range_max_1 = By.xpath(".//input[@id='manufactureYearRange_max']");
+
+
+
+
+
 
 
     @FindBy(xpath = ".//span[text() = 'Next']")
@@ -212,6 +226,10 @@ public class RBAuctionPage extends BasePage{
     private WebElement click_some_where;
     private By click_some_where_1 = By.xpath("//h1[contains(text(),'You are registering')]");
 
+    @FindBy(xpath = ".//div[@class='MuiStack-root muiltr-1wcq1x5']/h2")
+    private WebElement search_text_results;
+    private By search_text_results_1 = By.xpath(".//div[@class='MuiStack-root muiltr-1wcq1x5']/h2");
+
 
 
     /*---------Constructor-------*/
@@ -222,39 +240,88 @@ public class RBAuctionPage extends BasePage{
 
 
     /*-------------Methods--------------*/
-    public static boolean validateRegisterToGetDoctorPageDisplayed() throws InterruptedException {
-        try {
-            waitForElementToBeVisible(driver, register_to_get_doctor_page_validation, 10);
-            log("/*---Home Register to get a doctor/nurse page - shown up");
-        } catch (Exception e) {
-            log("/*---Home Register to get a doctor/nurse page has NOT show up");
-            throw e;
-        }
-        return false;
-    }
-
-    public static boolean isRegisterToGetDoctorPageDisplayed() throws InterruptedException {
-        boolean PortalRegisterToGetDoctorPageDisplayed = false;
-        for(int i = 1; i <= 40; i++ ) {
-            if (!isDisplayed(is_register_to_get_doctor_page_displayed_1)) {
-                log(i +"-try to see The Register 'to get doctors' Page: "  +  " the page is not showing up yet, re-try!");
+    public static boolean isRBAuctionPageDisplayed() throws InterruptedException {
+        boolean RBAuctionPageDisplayed = false;
+        for(int i = 1; i <= 3; i++ ) {
+            if (!isDisplayed(is_rb_auction_page_displayed_1)) {
+                log(i +"-try to see The RBAuction Page: "  +  " the page is not showing up yet, re-try!");
                 log( "wait for 10 sec");
                 Thread.sleep(10000);
                 log( "Refresh the browser");
                 refreshBrowser();
                 Thread.sleep(5000);
             } else {
-                log("/*---The Register 'to get doctors' Page "  + "has shown up " + " --*/");
-                PortalRegisterToGetDoctorPageDisplayed = true;
+                log("/*---The RBAuction Page "  + "has shown up " + " --*/");
+                RBAuctionPageDisplayed = true;
                 break;
             }
         }
-        return PortalRegisterToGetDoctorPageDisplayed;
+        return RBAuctionPageDisplayed;
     }
 
     public static void refreshBrowser() throws InterruptedException {
         driver.navigate().refresh();
     }
+
+
+    public void globalSearch(String textToSearch) throws InterruptedException {
+        waitForElementToBeVisible(driver, searchAssistant, 10);
+        searchAssistant.click();
+        searchAssistant.clear();
+        searchAssistant.sendKeys(textToSearch);
+        searchAssistant.sendKeys(Keys.RETURN);
+    }
+
+
+    public String getSearchTextResults() throws InterruptedException {
+        waitForElementToBeLocated(driver, search_text_results_1, 10);
+        //Thread.sleep(2000);
+        search_text_results.isDisplayed();
+        return (search_text_results.getText());
+    }
+
+    public void applyTheYearFilter(String yearFrom, String currentYear) throws InterruptedException {
+        //Year from
+        waitForElementToBeVisible(driver, year_range_min, 10);
+        Thread.sleep(1000);
+        //log("/*----scroll down a bit --*/");
+        //((JavascriptExecutor) driver).executeScript("window.scrollBy(0,900)");
+        //Thread.sleep(2000);
+        log("/*----jump to component --*/");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", year_range_min);
+        Thread.sleep(1000);
+        year_range_min.click();
+        //year_range_min.clear(); //does not work
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value = '';", year_range_min);
+        Thread.sleep(1000);
+        year_range_min.sendKeys(yearFrom);
+        //year_range_min.sendKeys(Keys.RETURN);
+
+        //To the Current Year
+        log("/*----jump to component --*/");
+        //((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView()", year_range_max);
+        Thread.sleep(1000);
+        year_range_max.click();
+        //year_range_min.clear(); //does not work
+        JavascriptExecutor js2 = (JavascriptExecutor) driver;
+        js2.executeScript("arguments[0].value = '';", year_range_max);
+        Thread.sleep(1000);
+        year_range_max.sendKeys(currentYear);
+        year_range_max.sendKeys(Keys.RETURN);
+        Thread.sleep(1000);
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public void clickNextButton() throws InterruptedException {
         waitForElementToBeVisible(driver, next_button, 10);
@@ -611,6 +678,7 @@ public class RBAuctionPage extends BasePage{
         select_from_language_dropdown_list.click();
         Thread.sleep(1000);
     }
+
 
 
 

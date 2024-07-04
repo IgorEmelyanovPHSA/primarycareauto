@@ -1,5 +1,6 @@
 package rbauction.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +38,8 @@ public class LoginPage extends BasePage{
         driver.navigate().to(Utils.getEnvConfigProperty("url_direct_link"));
         return new RBAuctionPage(driver);
     }
+
+
 
     public ProviderPortalHomePage loginProviderPortalHomePageAsDirector() throws Exception {
         driver.navigate().to(Utils.getEnvConfigProperty("url_direct_link"));
