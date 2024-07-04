@@ -24,10 +24,9 @@ public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuc
     private String yearFrom = "2010";
     private Integer totalResults1;
     private Integer totalResults2;
-    private Boolean assert1;
 
     @Test(priority = 1)
-    public void Can_Do_Search_For_My_F150_Platinum_in_RBAuction_website () throws Exception {
+    public void Can_Do_Search_For_My_F150_in_RBAuction_website () throws Exception {
         //TestcaseID = "251780"; //C251780
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
