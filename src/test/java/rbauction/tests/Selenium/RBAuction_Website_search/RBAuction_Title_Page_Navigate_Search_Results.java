@@ -1,5 +1,6 @@
 package rbauction.tests.Selenium.RBAuction_Website_search;
 
+import org.testng.Assert;
 import rbauction.pages.CommonMethods;
 import rbauction.pages.HealthCloudConsolePage;
 import rbauction.tests.Utilities.TestListener;
@@ -14,12 +15,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 @Listeners({TestListener.class})
 public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuction {
     private String makes = "Ford";
     private String model = "F-150";
     private String yearFrom = "2010";
+    private Integer totalResults1;
+    private Integer totalResults2;
+    private Boolean assert1;
 
     @Test(priority = 1)
     public void Can_Do_Search_For_My_F150_Platinum_in_RBAuction_website () throws Exception {
@@ -50,17 +55,14 @@ public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuc
 
         // Define the regular expression to match the total results
         String regex = "of (\\d+) results";
-
         // Compile the regular expression
         Pattern pattern = Pattern.compile(regex);
-
         // Match the regular expression against the text
         Matcher matcher = pattern.matcher(searchTextResults);
-
         // Extract the total results
         if (matcher.find()) {
             String totalResultsString = matcher.group(1);
-            int totalResults1 = Integer.parseInt(totalResultsString);
+            totalResults1 = Integer.parseInt(totalResultsString);
             log("Total Results: " + totalResults1);
         } else {
             log("No match found");
@@ -75,8 +77,33 @@ public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuc
 
         portalRBAuctionPage.applyTheYearFilter(yearFrom, currentYear );
 
+        log("/*6.----Get the SECOND filtered by Years search total results --*/");
+        String searchTextResults2 = portalRBAuctionPage.getSearchTextResults();
+        log("/*---- Search Text Results is: " + searchTextResults2 + " --*/");
+        // Define the regular expression to match the total results
+        String regex2 = "of (\\d+) results";
+        // Compile the regular expression
+        Pattern pattern2 = Pattern.compile(regex2);
+        // Match the regular expression against the text
+        Matcher matcher2 = pattern2.matcher(searchTextResults2);
+        // Extract the total results
+        if (matcher2.find()) {
+            String totalResultsString2 = matcher2.group(1);
+            totalResults2 = Integer.parseInt(totalResultsString2);
+            log("Total Results by Years Filtering: " + totalResults2);
+        } else {
+            log("No match found");
+        }
 
 
+        log("/*7.----•Verification that the number of results returned is different  --*/");
+        //assertTrue( totalResults1 > totalResults2, "totalResults1 should be greater than totalResults2");
+        if (totalResults1 > totalResults2) {
+            log("/---Verification Results:totalResults1 greater than totalResults2  --*/");
+        }
+        else {
+            log("/---Verification failed: totalResults1 should be greater than totalResults2 but it's not  --*/");
+        }
     }
 
 
