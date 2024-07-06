@@ -10,7 +10,8 @@ public class RBAuctionPage extends BasePage{
 
     private static By is_rb_auction_page_displayed_1 = By.xpath("//button[text() ='Trucks & Trailers']");
 
-    @FindBy(xpath = ".//div[@data-testid='search input']/input")
+    //@FindBy(xpath = ".//div[@data-testid='search input']/input")
+    @FindBy(css = "div[data-testid='search input'] > input")
     private WebElement searchAssistant;
 
     @FindBy(xpath = ".//input[@id='manufactureYearRange_min']")
