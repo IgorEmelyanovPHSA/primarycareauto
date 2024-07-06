@@ -1,5 +1,7 @@
 # rbauction_qa
-RBAUCTION QA Automation
+RITCHIE BROS' AUCTION QA Automation Framework
+
+![RBAuction_Jenkins](https://github.com/IgorEmelyanovPHSA/primarycareauto/assets/102995800/c1ebbfaa-1738-486d-bc26-58eac42f19be)
 
 see only on SELENIUM test there for now
 got to: 
