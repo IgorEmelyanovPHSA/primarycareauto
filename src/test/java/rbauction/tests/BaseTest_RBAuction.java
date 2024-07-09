@@ -50,15 +50,17 @@ public class BaseTest_RBAuction {
         ///// for Windows local and Jenkins
         ChromeOptions options = new ChromeOptions();
         //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
-        //options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         loginPage = new LoginPage(getDriver());
     }
 
     /////////////////After///////////////////
+
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result){
+        /*
         try {
             if(Utils.shoudIUpdateTestRail()){
                 if (result.getStatus() == ITestResult.SUCCESS) {
@@ -72,6 +74,7 @@ public class BaseTest_RBAuction {
         } catch (Exception e) {
             log("Test Rail was not updated: "+e);
         }
+        */
         driver.manage().deleteAllCookies();
         driver.quit();
     }
