@@ -48,10 +48,11 @@ public class BaseTest_RBAuction {
         //loginPage = new LoginPage(getDriver());
         ////
         ///// for Windows local and Jenkins
-        ChromeOptions options = new ChromeOptions();
+        //ChromeOptions options = new ChromeOptions();
         //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
-        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(options);
+        //options.addArguments("--remote-allow-origins=*");
+        //driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         loginPage = new LoginPage(getDriver());
     }
