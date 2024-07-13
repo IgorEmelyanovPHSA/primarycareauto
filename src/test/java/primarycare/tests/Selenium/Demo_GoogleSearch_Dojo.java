@@ -21,7 +21,7 @@ public class Demo_GoogleSearch_Dojo {
         ops.addArguments("--headless"); // Run in headless mode if you're running on a CI server
         ops.addArguments("--disable-gpu");
         //ops.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
-        //ops.addArguments("--remote-allow-origins=*");
+        ops.addArguments("--remote-allow-origins=*");
 
         // Create a new instance of the Chrome driver
         ChromeDriver driver = new ChromeDriver(ops);
