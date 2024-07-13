@@ -18,7 +18,7 @@ public class Demo_GoogleSearch_Dojo {
         System.out.println("/*1.---Let's try to run in Windows Chrome");
         System.setProperty("webdriver.chrome.driver", "/Users/igor.emelyanov/.jenkins/workspace/smoke_PrimaryCare_Patient_QAX/chromedriver.exe");
         ChromeOptions ops = new ChromeOptions();
-        ops.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
+        //ops.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         ops.addArguments("--remote-allow-origins=*");
 
         // Create a new instance of the Chrome driver

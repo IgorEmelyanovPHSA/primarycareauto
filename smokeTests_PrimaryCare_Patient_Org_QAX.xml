@@ -3,7 +3,14 @@
 <suite name="Automation run">
     <test name="Smoke">
         <classes>
-            <class name = "primarycare.tests.Selenium.Demo_GoogleSearch_Dojo"/>
+            <class name="primarycare.tests.API.Patient_Attachment_and_Registry.API_Removing_Dups_Preconditioning_Not_Attached_Patient_SYSAdmin"/>
+            <class name="primarycare.tests.API.Patient_Attachment_and_Registry.API_Establish_Salesforce_Connection_SysAdmin"/>
+            <class name="primarycare.tests.API.Patient_Attachment_and_Registry.API_Create_Patient_Account_SysAdmin"/>
+            <class name="primarycare.tests.API.Patient_Attachment_and_Registry.API_Registering_Not_Attached_Patient_SYSAdmin"/>
+            <class name="primarycare.tests.API.Patient_Attachment_and_Registry.API_Registering_Primary_Care_Attached_Patient_SYSAdmin"/>
+            <class name="primarycare.tests.Selenium.Patient_Attachments_Registry_Portal.Portal_Self_Registration_for_Not_Attached_Patient"/>
+            <class name="primarycare.tests.Selenium.Patient_Attachments_SF_Admin_Interface.AdminInterface_Register_Person_In_Care_Attached_SYSAdmin"/>
+            <class name="primarycare.tests.Selenium.Patient_Attachments_Registry_Portal.Portal_Family_Registration_Attached_Flow"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
