@@ -51,9 +51,9 @@ public class BaseTest_PrimaryCare {
         ////
         ///// for Windows local and Jenkins
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         options.addArguments("--headless"); // Run in headless mode if you're running on a CI server
         options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
