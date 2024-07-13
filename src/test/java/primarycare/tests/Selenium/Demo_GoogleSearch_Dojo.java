@@ -5,11 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 import primarycare.pages.LoginPage;
 
 public class Demo_GoogleSearch_Dojo {
-
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    //public static void main(String[] args) throws InterruptedException
+    public void Can_Search_In_Google () throws Exception{
         // Set the system property for the Chrome driver
 
         //for Windows
