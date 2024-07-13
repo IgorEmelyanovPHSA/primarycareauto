@@ -11,6 +11,7 @@
             <class name="primarycare.tests.Selenium.Patient_Attachments_Registry_Portal.Portal_Self_Registration_for_Not_Attached_Patient"/>
             <class name="primarycare.tests.Selenium.Patient_Attachments_SF_Admin_Interface.AdminInterface_Register_Person_In_Care_Attached_SYSAdmin"/>
             <class name="primarycare.tests.Selenium.Patient_Attachments_Registry_Portal.Portal_Family_Registration_Attached_Flow"/>
+            <class name = "primarycare.tests.Selenium.Demo_GoogleSearch_Dojo"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

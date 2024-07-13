@@ -14,7 +14,7 @@ public class Demo_GoogleSearch_Dojo {
 
         //for Windows
         System.out.println("/*1.---Let's try to run in Windows Chrome");
-        System.setProperty("webdriver.chrome.driver", "/primarycareauto/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/igor.emelyanov/Downloads/primarycareauto/chromedriver.exe");
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--remote-allow-origins=*");
 
