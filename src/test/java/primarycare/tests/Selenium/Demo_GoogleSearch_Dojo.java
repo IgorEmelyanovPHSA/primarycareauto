@@ -5,17 +5,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 import primarycare.pages.LoginPage;
 
 public class Demo_GoogleSearch_Dojo {
-
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    //public static void main(String[] args) throws InterruptedException
+    public void Can_Search_In_Google () throws Exception{
         // Set the system property for the Chrome driver
 
         //for Windows
         System.out.println("/*1.---Let's try to run in Windows Chrome");
-        System.setProperty("webdriver.chrome.driver", "/primarycareauto/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/igor.emelyanov/.jenkins/workspace/smoke_PrimaryCare_Patient_QAX/chromedriver.exe");
         ChromeOptions ops = new ChromeOptions();
+        //ops.addArguments("--headless"); // Run in headless mode if you're running on a CI server
+        //ops.addArguments("--disable-gpu");
+        //ops.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         ops.addArguments("--remote-allow-origins=*");
 
         // Create a new instance of the Chrome driver
