@@ -42,9 +42,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement current_staff_link;
     private By current_staff_link_1 = By.xpath("(//span[text()='Current Staff'])[1]");
 
-    @FindBy(xpath = "(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[1]")
+    @FindBy(xpath = "(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[3]")
     private WebElement facility_link;
-    private By facility_link_1 = By.xpath("(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[1]");
+    private By facility_link_1 = By.xpath("(//span[text()='CASTLEGAR MED FAMILY CLINIC'])[3]");
 
     @FindBy(xpath = "//span[text()='Edit']")
     private WebElement edit_button;
