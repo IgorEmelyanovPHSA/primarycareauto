@@ -32,7 +32,7 @@ public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuc
 
         //CommonMethods common = new CommonMethods(getDriver());
 
-        log("/*0.---Pre-conditioning API call to remove duplicate  if found--*/");
+        //log("/*0.---Pre-conditioning API call to remove duplicate  if found--*/");
         //ApiQueries.apiCallToRemovePatientAccount(email_search_API, makes, model);
 
         log("/*1.---Open the Title main page)--*/");
@@ -106,11 +106,10 @@ public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuc
     }
 
 
-
     //@Test(priority = 2)
-    public void Post_conditions_step_Remove_Dups_Patient_account() throws Exception {
+    //public void Post_conditions_step_Remove_Dups_Patient_account() throws Exception {
         //TestcaseID = "251774"; //C251774
         //log("/---API call to remove duplicate Patient's account if found--*/");
         //ApiQueries.apiCallToRemovePatientAccount(email, legalLastName, legalFirstName);
-    }
+    //}
 }
