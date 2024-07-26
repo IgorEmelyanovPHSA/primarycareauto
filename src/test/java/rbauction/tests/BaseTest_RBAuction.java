@@ -51,17 +51,24 @@ public class BaseTest_RBAuction {
         ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless");
         options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
+        log("DEBUG: SetUp after --disable-gpu");
         options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
+        log("DEBUG: SetUp after --no-sandbox");
         options.addArguments("--remote-allow-origins=*");
+        log("DEBUG: SetUp after remote-allow-origins");
         driver = new ChromeDriver(options);
+        log("DEBUG: SetUp after new Chrome (Options)");
         driver.manage().window().maximize();
+        log("DEBUG: SetUp after maximize ");
         loginPage = new LoginPage(getDriver());
+        log("DEBUG: SetUp after LoginPage(getDriver)");
     }
 
     /////////////////After///////////////////
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult result){
+        log("DEBUG: tearDown very beginning");
         try {
             if(Utils.shoudIUpdateTestRail()){
                 if (result.getStatus() == ITestResult.SUCCESS) {
@@ -75,8 +82,11 @@ public class BaseTest_RBAuction {
         } catch (Exception e) {
             log("Test Rail was not updated: "+e);
         }
+        log("DEBUG: tearDown before deleteCookies");
         driver.manage().deleteAllCookies();
+        log("DEBUG: tearDown before driver.quit");
         driver.quit();
+        log("DEBUG: tearDown after driver.quit");
     }
 
     public WebDriver getDriver() {
