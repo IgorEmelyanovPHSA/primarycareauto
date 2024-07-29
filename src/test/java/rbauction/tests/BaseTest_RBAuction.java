@@ -49,14 +49,14 @@ public class BaseTest_RBAuction {
         ////
         ///// for Windows local and Jenkins
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        log("DEBUG: SetUp after --headless");
-        //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
-        //log("DEBUG: SetUp after --disable-gpu");
-        //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
-        //log("DEBUG: SetUp after --no-sandbox");
-        //options.addArguments("--remote-allow-origins=*");
-        //log("DEBUG: SetUp after remote-allow-origins");
+        //options.addArguments("--headless");
+        //log("DEBUG: SetUp after --headless");
+        options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
+        log("DEBUG: SetUp after --disable-gpu");
+        options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
+        log("DEBUG: SetUp after --no-sandbox");
+        options.addArguments("--remote-allow-origins=*");
+        log("DEBUG: SetUp after remote-allow-origins");
         driver = new ChromeDriver(options);
         log("DEBUG: SetUp after new Chrome (Options)");
         driver.manage().window().maximize();
