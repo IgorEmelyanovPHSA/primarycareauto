@@ -26,7 +26,9 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
     private String practitionerGrantedByRole = "Director";
 
     /////////prep for Test3 - Accept New Patients and Max New Request
-    //private int desiredPanelSize = ((1 + new Random().nextInt(2)) * 10000) + new Random().nextInt(10000);
+    //private String desiredPanelSize = "999";
+    private int desiredPanelSize = ((1 + new Random().nextInt(2)) * 1000) + new Random().nextInt(1000);
+    private int monthlyCapacityRate = ((1 + new Random().nextInt(2)) * 1000) + new Random().nextInt(1000);
     private String isAcceptingNewPatients = "Yes";
     int maxNew = new Random().nextInt(1000) + 1000;
     String maxNewRequests = String.format("%04d", maxNew);
@@ -186,13 +188,21 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare
         providerPortalHomePage.clickEdit();
         Thread.sleep(1000);
 
-        log("/*6.----Select Accepting new Patients: " + isAcceptingNewPatients + "--*/");
-        providerPortalHomePage.selectAcceptingNewPatientsOption(isAcceptingNewPatients);
+        log("/*5.----Enter random Monthly Capacity Rate: " + monthlyCapacityRate + "--*/");
+        providerPortalHomePage.enterMonthlyCapacityRate(monthlyCapacityRate);
         Thread.sleep(1000);
 
-        log("/*7.----Enter random Max New Requests: " + maxNewRequests + "--*/");
-        providerPortalHomePage.enterMaxNewRequests(maxNewRequests);
+        log("/*6.----Enter random Desired Panel Size: " + desiredPanelSize + "--*/");
+        providerPortalHomePage.enterDesiredPanelSize(desiredPanelSize);
         Thread.sleep(1000);
+
+        //log("/*6.----Select Accepting new Patients: " + isAcceptingNewPatients + "--*/");
+        //providerPortalHomePage.selectAcceptingNewPatientsOption(isAcceptingNewPatients);
+        //Thread.sleep(1000);
+
+        //log("/*7.----Enter random Max New Requests: " + maxNewRequests + "--*/");
+        //providerPortalHomePage.enterMaxNewRequests(maxNewRequests);
+        //Thread.sleep(1000);
 
         log("/*8.----Click Save --*/");
         providerPortalHomePage.clickSaveMaxNewPatientsForm();
