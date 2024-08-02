@@ -30,8 +30,8 @@ public class APICreatePractitionerAccount {
         mapper.put("PersonEmail", email);
         mapper.put("IsActive", isActive);
         mapper.put("EMPI_Verified__pc", "Verified");
-        mapper.put("HealthCloudGA__SourceSystem__c", "healthCloudGA__SourceSystem__c");
-        mapper.put("HealthCloudGA__SourceSystem__pc", "healthCloudGA__SourceSystem__pc");
+        mapper.put("HealthCloudGA__SourceSystem__c", healthCloudGA__SourceSystem__c);
+        mapper.put("HealthCloudGA__SourceSystem__pc", healthCloudGA__SourceSystem__pc);
         mapper.put("MSP_Number__pc", MSP);
 
 
