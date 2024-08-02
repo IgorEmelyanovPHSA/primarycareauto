@@ -82,8 +82,12 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
         //providerPortalHomePage.enterMaxNewRequests(maxNewRequests);
         //Thread.sleep(1000);
 
-        log("/*8.----Click Save --*/");
+        log("/*8.----Click 'Save' button --*/");
         providerPortalHomePage.clickSaveMaxNewPatientsForm();
+        Thread.sleep(5000);
+
+        log("/*9.----Click 'Save&Close' button --*/");
+        providerPortalHomePage.clickSaveAndCloseMaxNewPatientsForm();
         Thread.sleep(5000);
 
 //        log("/*9.---- Validate Desired Panel Size  ---*/");

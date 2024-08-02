@@ -50,9 +50,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement edit_button;
     private By edit_button_1 = By.xpath("//span[text()='Edit']");
 
-    @FindBy(xpath = "//omnistudio-omniscript-number[@data-omni-key='DesiredPanelSize']//input")
+    @FindBy(xpath = "//omnistudio-omniscript-number[@data-omni-key='DesiredPanelSize1']//input")
     private WebElement desired_panel_size_component;
-    private By desired_panel_size_component_1 = By.xpath("//omnistudio-omniscript-number[@data-omni-key='DesiredPanelSize']//input");
+    private By desired_panel_size_component_1 = By.xpath("//omnistudio-omniscript-number[@data-omni-key='DesiredPanelSize1']//input");
 
     @FindBy(xpath = "//input[@class='slds-input slds-listbox__option-text_entity']")
     private WebElement accepting_new_patient_dropdown;
@@ -321,10 +321,13 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement clinic_name_in_search_results_link;
     private By clinic_name_in_search_results_link_1 = By.xpath("//a[contains(text(),'CASTLEGAR MED FAMILY CLINIC')]");
 
-    @FindBy(xpath = "//omnistudio-omniscript-number[@data-omni-key='MonthlyCapacityRate']//input")
+    @FindBy(xpath = "//omnistudio-omniscript-number[@data-omni-key='MonthlyCapacityRate1']//input")
     private WebElement monthly_capacity_rate_component;
-    private By monthly_capacity_rate_component_1 = By.xpath("//omnistudio-omniscript-number[@data-omni-key='MonthlyCapacityRate']//input");
+    private By monthly_capacity_rate_component_1 = By.xpath("//omnistudio-omniscript-number[@data-omni-key='MonthlyCapacityRate1']//input");
 
+    @FindBy(xpath = "(//button//span[text()='Save & Close'])[1]")
+    private WebElement save_and_close_button_max_new_patients_form;
+    private By save_and_close_button_max_new_patients_form_1 = By.xpath("(//button//span[text()='Save & Close'])[1]");
 
     //////////////////////////////////////////////////////////////////////////////////
     Tables tables;
@@ -1085,6 +1088,12 @@ public class ProviderPortalHomePage extends BasePage{
         String size = Integer.toString(monthlyCapacityRate);
         monthly_capacity_rate_component.sendKeys(size);
         Thread.sleep(1000);
+    }
+
+    public void clickSaveAndCloseMaxNewPatientsForm() throws InterruptedException {
+        waitForElementToBeVisible(driver, save_and_close_button_max_new_patients_form, 10);
+        Thread.sleep(1000);
+        save_and_close_button_max_new_patients_form.click();
     }
 
 }
