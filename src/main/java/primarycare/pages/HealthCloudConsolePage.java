@@ -57,9 +57,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement primary_care_network_actual_field_value;
     private By primary_care_network_actual_field_value_1 = By.xpath("//slot[text() ='Richmond - East']");
 
-    @FindBy(xpath = "//span[text() ='A person in my care']")
+    @FindBy(xpath = "(//span[@class='slds-radio_faux'])[2]")
     private WebElement person_in_my_care_radiobutton;
-    private By person_in_my_care_radiobutton_1 = By.xpath("//span[text() ='A person in my care']");
+    private By person_in_my_care_radiobutton_1 = By.xpath("(//span[@class='slds-radio_faux'])[2]");
 
     @FindBy(xpath = "(//span[text()='Continue'])[1]")
     private WebElement continue_button;
