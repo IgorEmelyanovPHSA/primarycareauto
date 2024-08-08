@@ -329,9 +329,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement save_and_close_button_max_new_patients_form;
     private By save_and_close_button_max_new_patients_form_1 = By.xpath("(//button//span[text()='Save & Close'])[1]");
 
-    @FindBy(xpath = "//div[@class='slds-col--padded contentRegion comm-layout-column']//omnistudio-flex-card-state//omnistudio-output-field[@data-style-id='state0element0block_element0block_element0block_element0block_element1_child']//span")
+    @FindBy(xpath = "//div[@class='slds-col--padded contentRegion comm-layout-column']//omnistudio-flex-card-state//omnistudio-output-field[@data-style-id='state0element0block_element0block_element0block_element1block_element1_child']//span")
     private WebElement monthly_capacity_rate_actual_field_value;
-    private By monthly_capacity_rate_actual_field_value_1 = By.xpath("//div[@class='slds-col--padded contentRegion comm-layout-column']//omnistudio-flex-card-state//omnistudio-output-field[@data-style-id='state0element0block_element0block_element0block_element0block_element1_child']//span");
+    private By monthly_capacity_rate_actual_field_value_1 = By.xpath("//div[@class='slds-col--padded contentRegion comm-layout-column']//omnistudio-flex-card-state//omnistudio-output-field[@data-style-id='state0element0block_element0block_element0block_element1block_element1_child']//span");
 
     //////////////////////////////////////////////////////////////////////////////////
     Tables tables;
