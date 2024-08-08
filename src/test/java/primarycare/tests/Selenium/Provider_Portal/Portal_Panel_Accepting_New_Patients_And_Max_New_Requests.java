@@ -99,9 +99,9 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
 
         log("/*11.---- Validate Monthly Capacity Rate  ---*/");
         String maxMonthlyCapacityRateExpected = monthlyCapacityRate;
-        //String monthlyCapacityRateActual = providerPortalHomePage.getMonthlyCapacityRateForValidation();
-        //log("/*---Monthly Capacity Rate actual is: " + monthlyCapacityRateActual + " --*/");
-        //assertEquals(monthlyCapacityRateActual, maxMonthlyCapacityRateExpected);
+        String monthlyCapacityRateActual = providerPortalHomePage.getMonthlyCapacityRateForValidation();
+        log("/*---Monthly Capacity Rate actual is: " + monthlyCapacityRateActual + " --*/");
+        assertEquals(monthlyCapacityRateActual, maxMonthlyCapacityRateExpected);
         Thread.sleep(2000);
 
         log("/*12.---- Validate Desired Panel Size  ---*/");
