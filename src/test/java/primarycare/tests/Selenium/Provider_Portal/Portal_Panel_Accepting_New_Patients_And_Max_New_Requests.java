@@ -93,9 +93,9 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
         providerPortalHomePage.clickSaveAndCloseMaxNewPatientsForm();
         Thread.sleep(5000);
 
-        log("/*10.----Click 'Details' Tab --*/");
-        providerPortalHomePage.clickDetailsTab();
-        Thread.sleep(5000);
+        //log("/*10.----Click 'Details' Tab --*/");
+        //providerPortalHomePage.clickDetailsTab();
+        //Thread.sleep(5000);
 
         log("/*11.---- Validate Monthly Capacity Rate  ---*/");
         String maxMonthlyCapacityRateExpected = monthlyCapacityRate;
@@ -106,9 +106,9 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
 
         log("/*12.---- Validate Desired Panel Size  ---*/");
         String desiredPanelSizeExpected = desiredPanelSize;
-        //String desiredPanelSizeActual = providerPortalHomePage.getActualDesiredPanelSizeForValidation();
-        //log("/*---Desired Panel Size actual is: " + desiredPanelSizeExpected + " --*/");
-        //assertEquals(desiredPanelSizeActual, desiredPanelSizeExpected);
+        String desiredPanelSizeActual = providerPortalHomePage.getActualDesiredPanelSizeForValidation();
+        log("/*---Desired Panel Size actual is: " + desiredPanelSizeExpected + " --*/");
+        assertEquals(desiredPanelSizeActual, desiredPanelSizeExpected);
         Thread.sleep(2000);
 
         //log("/*10.---- Validate isAccepting new Patients  ---*/");
