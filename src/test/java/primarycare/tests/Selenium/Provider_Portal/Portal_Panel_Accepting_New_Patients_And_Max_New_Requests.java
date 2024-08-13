@@ -22,12 +22,16 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
 
     //private String clinic_Name_2 = "NORTH SHORE PRIMARY CARE MED HOME CLINIC11111";
 
-    //private String desiredPanelSize = "77777";
-    private int desiredPanelSize = ((1 + new Random().nextInt(2)) * 10000) + new Random().nextInt(10000);
+    //private String desiredPanelSize = "999";
+    private int desiredSize = ((1 + new Random().nextInt(2)) * 1000) + new Random().nextInt(1000);
+    private int monthlyCapacity = ((1 + new Random().nextInt(2)) * 1000) + new Random().nextInt(1000);
     private String isAcceptingNewPatients = "Yes";
     //private String maxNewRequests = "88888";
     int maxNew = new Random().nextInt(1000) + 1000;
     String maxNewRequests = String.format("%04d", maxNew);
+    //int monthlyCapacity = new Random().nextInt(1000) + 1000;
+    String monthlyCapacityRate = String.format("%04d", monthlyCapacity);
+    String desiredPanelSize = String.format("%04d", desiredSize);
 
 
     @Test(priority = 1)
@@ -39,7 +43,14 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
 
         log("/*1.---Login to Provider Portal Home page as an Director --*/");
         ProviderPortalHomePage providerPortalHomePage= loginPage.loginProviderPortalHomePageAsDirector();
-        Thread.sleep(10000);
+        Thread.sleep(5000);
+
+        log("/*1.1.----Verify that Provider Portal Home page displayed --*/");
+        boolean isPortalProviderHomePageDisplayed =  providerPortalHomePage.isPortalProviderHomePageDisplayed();
+        if (!isPortalProviderHomePageDisplayed){
+            throw new RuntimeException("Exception: Portal Provider Home Page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         log("/*2.----Click Home link to see all Clinic Associated Panels --*/");
         //cpMainPage.verifyIsCommunityPortalHomePageDisplayed();
@@ -50,7 +61,7 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
         //providerPortalHomePage.clickView();
         //Thread.sleep(1000);
 
-        log("/*3.----Click 'Panel Registry' link --*/");
+        log("/*3.----Click 'My Panel' link --*/");
         providerPortalHomePage.clickRostering();
         Thread.sleep(5000);
 
@@ -58,44 +69,63 @@ public class Portal_Panel_Accepting_New_Patients_And_Max_New_Requests extends Ba
         providerPortalHomePage.clickEdit();
         Thread.sleep(1000);
 
-        //log("/*5.----Enter random Desired Panel Size: " + desiredPanelSize + "--*/");
-        //providerPortalHomePage.enterDesiredPanelSize(desiredPanelSize);
+        log("/*5.----Enter random Monthly Capacity Rate: " + monthlyCapacity + "--*/");
+        providerPortalHomePage.enterMonthlyCapacityRate(monthlyCapacity);
+        Thread.sleep(1000);
+
+        log("/*6.----Enter random Desired Panel Size: " + desiredSize + "--*/");
+        providerPortalHomePage.enterDesiredPanelSize(desiredSize);
+        Thread.sleep(1000);
+
+        //log("/*6.----Select Accepting new Patients: " + isAcceptingNewPatients + "--*/");
+        //providerPortalHomePage.selectAcceptingNewPatientsOption(isAcceptingNewPatients);
         //Thread.sleep(1000);
 
-        log("/*6.----Select Accepting new Patients: " + isAcceptingNewPatients + "--*/");
-        providerPortalHomePage.selectAcceptingNewPatientsOption(isAcceptingNewPatients);
-        Thread.sleep(1000);
-
-        log("/*7.----Enter random Max New Requests: " + maxNewRequests + "--*/");
-        providerPortalHomePage.enterMaxNewRequests(maxNewRequests);
-        Thread.sleep(1000);
+        //log("/*7.----Enter random Max New Requests: " + maxNewRequests + "--*/");
+        //providerPortalHomePage.enterMaxNewRequests(maxNewRequests);
+        //Thread.sleep(1000);
 
         log("/*8.----Click Save --*/");
         providerPortalHomePage.clickSaveMaxNewPatientsForm();
         Thread.sleep(1000);
 
-//        log("/*9.---- Validate Desired Panel Size  ---*/");
-//        String desiredPanelSizeExpected = new DecimalFormat("##,###").format(desiredPanelSize);
-//        String desiredPanelSizeActual = providerPortalHomePage.getActualDesiredPanelSizeForValidation();
-//        log("/*---Desired Panel Size actual is: " + desiredPanelSizeActual + " --*/");
-//        assertEquals(desiredPanelSizeActual, desiredPanelSizeExpected);
-//        Thread.sleep(2000);
+        log("/*9.----Click 'Save&Close' button --*/");
+        providerPortalHomePage.clickSaveAndCloseMaxNewPatientsForm();
+        Thread.sleep(5000);
 
-        log("/*10.---- Validate isAccepting new Patients  ---*/");
-        String acceptingNewPatientsActual = providerPortalHomePage.getActualIsAcceptingNewPatientsForValidation();
-        log("/*---Accepting new Patients actual is: " + acceptingNewPatientsActual + " --*/");
-        assertEquals(acceptingNewPatientsActual, isAcceptingNewPatients);
+        //log("/*10.----Click 'Details' Tab --*/");
+        //providerPortalHomePage.clickDetailsTab();
+        //Thread.sleep(5000);
+
+        log("/*11.---- Validate Monthly Capacity Rate  ---*/");
+        String maxMonthlyCapacityRateExpected = monthlyCapacityRate;
+        String monthlyCapacityRateActual = providerPortalHomePage.getMonthlyCapacityRateForValidation();
+        log("/*---Monthly Capacity Rate actual is: " + monthlyCapacityRateActual + " --*/");
+        assertEquals(monthlyCapacityRateActual, maxMonthlyCapacityRateExpected);
         Thread.sleep(2000);
 
-        log("/*11.---- Validate Max New Requests  ---*/");
-        //double maxNewRequests_To_Double = Double.parseDouble(maxNewRequests);
-        //DecimalFormat formatter = new DecimalFormat("##,###");
-        //String maxNewRequestsExpected = formatter.format(maxNewRequests_To_Double);
-        String maxNewRequestsExpected = maxNewRequests;
-        String maxNewRequestsActual = providerPortalHomePage.getActualMaxNewRequestsForValidation();
-        log("/*---Max New Requests actual is: " + maxNewRequestsActual + " --*/");
-        assertEquals(maxNewRequestsActual, maxNewRequestsExpected);
+        log("/*12.---- Validate Desired Panel Size  ---*/");
+        String desiredPanelSizeExpected = desiredPanelSize;
+        String desiredPanelSizeActual = providerPortalHomePage.getActualDesiredPanelSizeForValidation();
+        log("/*---Desired Panel Size actual is: " + desiredPanelSizeExpected + " --*/");
+        assertEquals(desiredPanelSizeActual, desiredPanelSizeExpected);
         Thread.sleep(2000);
+
+        //log("/*10.---- Validate isAccepting new Patients  ---*/");
+        //String acceptingNewPatientsActual = providerPortalHomePage.getActualIsAcceptingNewPatientsForValidation();
+        //log("/*---Accepting new Patients actual is: " + acceptingNewPatientsActual + " --*/");
+        //assertEquals(acceptingNewPatientsActual, isAcceptingNewPatients);
+        //Thread.sleep(2000);
+
+        //log("/*11.---- Validate Max New Requests  ---*/");
+        /////double maxNewRequests_To_Double = Double.parseDouble(maxNewRequests);
+        /////DecimalFormat formatter = new DecimalFormat("##,###");
+        /////String maxNewRequestsExpected = formatter.format(maxNewRequests_To_Double);
+        //String maxNewRequestsExpected = maxNewRequests;
+        //String maxNewRequestsActual = providerPortalHomePage.getActualMaxNewRequestsForValidation();
+        //log("/*---Max New Requests actual is: " + maxNewRequestsActual + " --*/");
+        //assertEquals(maxNewRequestsActual, maxNewRequestsExpected);
+        //Thread.sleep(2000);
 
     }
 

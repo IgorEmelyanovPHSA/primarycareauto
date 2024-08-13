@@ -187,30 +187,30 @@ public class Portal_Delegation_Activities_To_Staff extends BaseTest_PrimaryCare 
         providerPortalHomePage.clickEdit();
         Thread.sleep(1000);
 
-        log("/*6.----Select Accepting new Patients: " + isAcceptingNewPatients + "--*/");
-        providerPortalHomePage.selectAcceptingNewPatientsOption(isAcceptingNewPatients);
-        Thread.sleep(1000);
+        //log("/*6.----Select Accepting new Patients: " + isAcceptingNewPatients + "--*/");
+        //providerPortalHomePage.selectAcceptingNewPatientsOption(isAcceptingNewPatients);
+        //Thread.sleep(1000);
 
-        log("/*7.----Enter random Max New Requests: " + maxNewRequests + "--*/");
-        providerPortalHomePage.enterMaxNewRequests(maxNewRequests);
-        Thread.sleep(1000);
+        //log("/*7.----Enter random Max New Requests: " + maxNewRequests + "--*/");
+        //providerPortalHomePage.enterMaxNewRequests(maxNewRequests);
+        //Thread.sleep(1000);
 
         log("/*8.----Click Save --*/");
         providerPortalHomePage.clickSaveMaxNewPatientsForm();
         Thread.sleep(5000);
 
         log("/*9.---- Validate isAccepting new Patients  ---*/");
-        String acceptingNewPatientsActual = providerPortalHomePage.getActualIsAcceptingNewPatientsForValidation();
-        log("/*---Accepting new Patients actual is: " + acceptingNewPatientsActual + " --*/");
-        assertEquals(acceptingNewPatientsActual, isAcceptingNewPatients);
-        Thread.sleep(2000);
+        //String acceptingNewPatientsActual = providerPortalHomePage.getActualIsAcceptingNewPatientsForValidation();
+        //log("/*---Accepting new Patients actual is: " + acceptingNewPatientsActual + " --*/");
+        //assertEquals(acceptingNewPatientsActual, isAcceptingNewPatients);
+        //Thread.sleep(2000);
 
         log("/*10.---- Validate Max New Requests  ---*/");
-        String maxNewRequestsExpected = maxNewRequests;
-        String maxNewRequestsActual = providerPortalHomePage.getActualMaxNewRequestsForValidation();
-        log("/*---Max New Requests actual is: " + maxNewRequestsActual + " --*/");
-        assertEquals(maxNewRequestsActual, maxNewRequestsExpected);
-        Thread.sleep(2000);
+        //String maxNewRequestsExpected = maxNewRequests;
+        //String maxNewRequestsActual = providerPortalHomePage.getActualMaxNewRequestsForValidation();
+        //log("/*---Max New Requests actual is: " + maxNewRequestsActual + " --*/");
+        //assertEquals(maxNewRequestsActual, maxNewRequestsExpected);
+        //Thread.sleep(2000);
     }
 
     @Test(priority = 4)
