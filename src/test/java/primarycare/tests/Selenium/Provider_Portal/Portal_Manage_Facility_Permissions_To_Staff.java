@@ -211,7 +211,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
         log("Target Environment: "+ Utils.getTargetEnvironment());
 
         log("/*0.---Preconditioning API dups removal from Current Staff for Practitioner Facility 'someone else but not  Agnes Phillip :) | CASTLEGAR MED FAMILY CLINIC'--*/");
-        //API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin();
+        API_Precondition_Delete_Practitioner_Facility_and_Network_in_Salesforce_as_SysAdmin();
 
         //log("/*1.---Login to Provider Portal Home page as an Director --*/");
         //ProviderPortalHomePage providerPortalHomePage= loginPage.loginProviderPortalHomePageAsDirector();
