@@ -55,6 +55,10 @@ public class BaseTest_RBAuction {
         //log("DEBUG: SetUp after --disable-gpu");
         //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         //log("DEBUG: SetUp after --no-sandbox");
+
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-web-security");
+
         options.addArguments("--remote-allow-origins=*");
         log("DEBUG: SetUp after remote-allow-origins");
         driver = new ChromeDriver(options);
