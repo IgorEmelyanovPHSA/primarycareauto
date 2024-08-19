@@ -48,7 +48,7 @@ public class BaseTest_RBAuction {
         //loginPage = new LoginPage(getDriver());
         ////
         ///// for Windows local and Jenkins
-        ChromeOptions options = new ChromeOptions();
+        //ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless");
         //log("DEBUG: SetUp after --headless");
         //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
@@ -62,6 +62,8 @@ public class BaseTest_RBAuction {
         //options.addArguments("--remote-allow-origins=*");
         //log("DEBUG: SetUp after remote-allow-origins");
         //driver = new ChromeDriver(options);
+
+        System.setProperty("webdriver.chrome.driver","/Users/igor.emelyanov/.jenkins/workspace/demo_test_rbauction_qa/chromedriver.exe");
         driver = new ChromeDriver();
         log("DEBUG: SetUp after new Chrome (Options)");
         driver.manage().window().maximize();
