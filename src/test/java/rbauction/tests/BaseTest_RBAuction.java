@@ -56,12 +56,13 @@ public class BaseTest_RBAuction {
         //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         //log("DEBUG: SetUp after --no-sandbox");
 
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-web-security");
+        //options.addArguments("--disable-extensions");
+        //options.addArguments("--disable-web-security");
 
-        options.addArguments("--remote-allow-origins=*");
-        log("DEBUG: SetUp after remote-allow-origins");
-        driver = new ChromeDriver(options);
+        //options.addArguments("--remote-allow-origins=*");
+        //log("DEBUG: SetUp after remote-allow-origins");
+        //driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
         log("DEBUG: SetUp after new Chrome (Options)");
         driver.manage().window().maximize();
         log("DEBUG: SetUp after maximize ");
