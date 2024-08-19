@@ -63,7 +63,7 @@ public class BaseTest_RBAuction {
         //log("DEBUG: SetUp after remote-allow-origins");
         //driver = new ChromeDriver(options);
 
-        System.setProperty("webdriver.chrome.driver","/Users/igor.emelyanov/.jenkins/workspace/demo_test_rbauction_qa/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","/Users/igor.emelyanov/Downloads/primarycareauto/chromedriver.exe");
         driver = new ChromeDriver();
         log("DEBUG: SetUp after new Chrome (Options)");
         driver.manage().window().maximize();
