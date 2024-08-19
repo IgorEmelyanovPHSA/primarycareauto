@@ -63,8 +63,13 @@ public class BaseTest_RBAuction {
         //log("DEBUG: SetUp after remote-allow-origins");
         //driver = new ChromeDriver(options);
 
-        System.setProperty("webdriver.chrome.driver","/Users/igor.emelyanov/Downloads/primarycareauto/chromedriver.exe");
-        driver = new ChromeDriver();
+        try {
+            System.setProperty("webdriver.chrome.driver", "/Users/igor.emelyanov/Downloads/primarycareauto/chromedriver.exe");
+            driver = new ChromeDriver();
+        } catch (Exception e){
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initializate FUCKING Webdriver", e);
+        }
         log("DEBUG: SetUp after new Chrome (Options)");
         driver.manage().window().maximize();
         log("DEBUG: SetUp after maximize ");
