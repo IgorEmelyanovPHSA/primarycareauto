@@ -49,32 +49,36 @@ public class BaseTest_RBAuction {
         ////
         ///// for Windows local and Jenkins
         //ChromeOptions options = new ChromeOptions();
+        //log("DEBUG: SetUp  --headless");
         //options.addArguments("--headless");
-        //log("DEBUG: SetUp after --headless");
+        //log("DEBUG: SetUp  --disable-gpu");
         //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
-        //log("DEBUG: SetUp after --disable-gpu");
+        //log("DEBUG: SetUp before --no-sandbox");
         //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
-        //log("DEBUG: SetUp after --no-sandbox");
+
 
         //options.addArguments("--disable-extensions");
         //options.addArguments("--disable-web-security");
 
+        //log("DEBUG: SetUp remote-allow-origins");
         //options.addArguments("--remote-allow-origins=*");
-        //log("DEBUG: SetUp after remote-allow-origins");
+
+        //log("DEBUG: SetUp new Chrome (Options)");
         //driver = new ChromeDriver(options);
 
         try {
+            log("DEBUG: SetUp 'System.setProperty'");
             System.setProperty("webdriver.chrome.driver", "/Users/igor.emelyanov/Downloads/primarycareauto/chromedriver.exe");
+            log("DEBUG: SetUp 'new ChromeDriver()'");
             driver = new ChromeDriver();
         } catch (Exception e){
             e.printStackTrace();
-            throw new RuntimeException("Failed to initializate FUCKING Webdriver", e);
+            throw new RuntimeException("Failed to initialize FUCKING Webdriver", e);
         }
-        log("DEBUG: SetUp after new Chrome (Options)");
+        log("DEBUG: SetUp maximize ");
         driver.manage().window().maximize();
-        log("DEBUG: SetUp after maximize ");
+        log("DEBUG: SetUp LoginPage(getDriver)");
         loginPage = new LoginPage(getDriver());
-        log("DEBUG: SetUp after LoginPage(getDriver)");
     }
 
     /////////////////After///////////////////
@@ -95,11 +99,11 @@ public class BaseTest_RBAuction {
         } catch (Exception e) {
             log("Test Rail was not updated: "+e);
         }
-        log("DEBUG: tearDown before deleteCookies");
+        log("DEBUG: tearDown deleteCookies");
         driver.manage().deleteAllCookies();
-        log("DEBUG: tearDown before driver.quit");
+        log("DEBUG: tearDown driver.quit - start");
         driver.quit();
-        log("DEBUG: tearDown after driver.quit");
+        log("DEBUG: tearDown  driver.quit -successful");
     }
 
     public WebDriver getDriver() {
