@@ -69,6 +69,7 @@ public class BaseTest_RBAuction {
 
         //log("DEBUG: SetUp 'incognito mod'");
         options.addArguments("--incognito");
+        options.addArguments("--headless");
 
         try {
             log("DEBUG: SetUp 'System.setProperty'");
