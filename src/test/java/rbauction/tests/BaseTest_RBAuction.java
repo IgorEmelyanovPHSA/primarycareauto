@@ -49,7 +49,7 @@ public class BaseTest_RBAuction {
         //loginPage = new LoginPage(getDriver());
         ////
         ///// for Windows local and Jenkins
-        ChromeOptions options = new ChromeOptions();
+        //ChromeOptions options = new ChromeOptions();
         //log("DEBUG: SetUp  --headless");
         //options.addArguments("--headless");
         //log("DEBUG: SetUp  --disable-gpu");
@@ -68,17 +68,15 @@ public class BaseTest_RBAuction {
         //driver = new ChromeDriver(options);
 
         //log("DEBUG: SetUp 'incognito mod'");
-        options.addArguments("--incognito");
-        options.addArguments("--headless");
+        //options.addArguments("--incognito");
 
         try {
             log("DEBUG: SetUp 'System.setProperty'");
-            System.setProperty("webdriver.chrome.driver", "/Users/igor.emelyanov/Downloads/primarycareauto/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:/agent/chromedriver.exe");
             log("DEBUG: SetUp 'new ChromeDriver()'");
-            driver = new ChromeDriver(options);
+            driver = new ChromeDriver();
             log("DEBUG: SetUp 'implicitlyWait'");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
         } catch (Exception e){
             e.printStackTrace();
             throw new RuntimeException("Failed to initialize FUCKING Webdriver", e);
