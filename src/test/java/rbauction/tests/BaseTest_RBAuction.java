@@ -72,7 +72,7 @@ public class BaseTest_RBAuction {
 
         try {
             log("DEBUG: SetUp 'System.setProperty'");
-            System.setProperty("webdriver.chrome.driver", "C:/agent/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:/agent/chromedriver777777.exe");
             log("DEBUG: SetUp 'new ChromeDriver()'");
             driver = new ChromeDriver();
             log("DEBUG: SetUp 'implicitlyWait'");
