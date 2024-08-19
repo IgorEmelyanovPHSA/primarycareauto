@@ -66,7 +66,8 @@ public class BaseTest_RBAuction {
 
         //log("DEBUG: SetUp new Chrome (Options)");
         //driver = new ChromeDriver(options);
-        // Enable Incognito mode
+
+        //log("DEBUG: SetUp 'incognito mod'");
         options.addArguments("--incognito");
 
         try {
