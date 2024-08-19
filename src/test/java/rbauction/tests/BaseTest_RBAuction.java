@@ -99,12 +99,17 @@ public class BaseTest_RBAuction {
         } catch (Exception e) {
             log("Test Rail was not updated: "+e);
         }
+
+        log("DEBUG: check driver is not null");
         if (driver!=null) {
             log("DEBUG: tearDown deleteCookies");
             driver.manage().deleteAllCookies();
             log("DEBUG: tearDown driver.quit - start");
             driver.quit();
             log("DEBUG: tearDown  driver.quit -successful");
+        }
+        else {
+            log("DEBUG: driver is null - do not need to quit or clean Cookies");
         }
     }
 
