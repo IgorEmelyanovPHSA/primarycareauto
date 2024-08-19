@@ -16,6 +16,7 @@ import java.io.PrintStream;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest_RBAuction {
     public final static SimpleDateFormat LOG_TIMESTAMP_FORMAT = new SimpleDateFormat("HH:mm:ss.SSS");
@@ -48,7 +49,7 @@ public class BaseTest_RBAuction {
         //loginPage = new LoginPage(getDriver());
         ////
         ///// for Windows local and Jenkins
-        //ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         //log("DEBUG: SetUp  --headless");
         //options.addArguments("--headless");
         //log("DEBUG: SetUp  --disable-gpu");
@@ -65,12 +66,17 @@ public class BaseTest_RBAuction {
 
         //log("DEBUG: SetUp new Chrome (Options)");
         //driver = new ChromeDriver(options);
+        // Enable Incognito mode
+        options.addArguments("--incognito");
 
         try {
             log("DEBUG: SetUp 'System.setProperty'");
             System.setProperty("webdriver.chrome.driver", "/Users/igor.emelyanov/Downloads/primarycareauto/chromedriver.exe");
             log("DEBUG: SetUp 'new ChromeDriver()'");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
+            log("DEBUG: SetUp 'implicitlyWait'");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         } catch (Exception e){
             e.printStackTrace();
             throw new RuntimeException("Failed to initialize FUCKING Webdriver", e);
@@ -100,7 +106,7 @@ public class BaseTest_RBAuction {
             log("Test Rail was not updated: "+e);
         }
 
-        log("DEBUG: check driver is not null");
+        log("DEBUG: check the Driver if it's null or not");
         if (driver!=null) {
             log("DEBUG: tearDown deleteCookies");
             driver.manage().deleteAllCookies();
@@ -109,7 +115,7 @@ public class BaseTest_RBAuction {
             log("DEBUG: tearDown  driver.quit -successful");
         }
         else {
-            log("DEBUG: driver is null - do not need to quit or clean Cookies");
+            log("DEBUG: The Driver is null - do not need to quit or clean Cookies");
         }
     }
 
