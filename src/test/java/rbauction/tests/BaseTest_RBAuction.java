@@ -55,7 +55,7 @@ public class BaseTest_RBAuction {
         //options.addArguments("--headless");
         //log("DEBUG: SetUp  --disable-gpu");
         //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
-        log("DEBUG: SetUp before --no-sandbox");
+        log("DEBUG: SetUp --no-sandbox");
         options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
 
 
