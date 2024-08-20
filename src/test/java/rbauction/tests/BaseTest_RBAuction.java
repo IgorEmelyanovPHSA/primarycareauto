@@ -78,10 +78,10 @@ public class BaseTest_RBAuction {
             e.printStackTrace();
             throw new RuntimeException("Failed to initialize FUCKING Webdriver", e);
         }
-        //log("DEBUG: SetUp maximize ");
-        //driver.manage().window().maximize();
-        log("DEBUG: SetUp  --window-size=1920x1080");
-        options.addArguments("--window-size=1920x1080");
+        log("DEBUG: SetUp maximize ");
+        driver.manage().window().maximize();
+        //log("DEBUG: SetUp  --window-size=1920x1080");
+        //options.addArguments("--window-size=1920x1080");
         log("DEBUG: SetUp LoginPage(getDriver)");
         loginPage = new LoginPage(getDriver());
     }
