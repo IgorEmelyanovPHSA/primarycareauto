@@ -55,12 +55,12 @@ public class BaseTest_RBAuction {
         //options.addArguments("--headless");
         //log("DEBUG: SetUp  --disable-gpu");
         //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
-        log("DEBUG: SetUp --no-sandbox");
-        options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
+        //log("DEBUG: SetUp --no-sandbox");
+        //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         //options.addArguments("--disable-extensions");
         //options.addArguments("--disable-web-security");
-        //log("DEBUG: SetUp remote-allow-origins");
-        //options.addArguments("--remote-allow-origins=*");
+        log("DEBUG: SetUp remote-allow-origins");
+        options.addArguments("--remote-allow-origins=*");
         //log("DEBUG: SetUp 'incognito mod'");
         //options.addArguments("--incognito");
         try {
