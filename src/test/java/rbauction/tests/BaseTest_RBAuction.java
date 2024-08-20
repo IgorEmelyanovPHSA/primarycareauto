@@ -16,6 +16,7 @@ import java.io.PrintStream;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest_RBAuction {
@@ -49,13 +50,13 @@ public class BaseTest_RBAuction {
         //loginPage = new LoginPage(getDriver());
         ////
         ///// for Windows local and Jenkins
-        //ChromeOptions options = new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         //log("DEBUG: SetUp  --headless");
         //options.addArguments("--headless");
         //log("DEBUG: SetUp  --disable-gpu");
         //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
-        //log("DEBUG: SetUp before --no-sandbox");
-        //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
+        log("DEBUG: SetUp before --no-sandbox");
+        options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
 
 
         //options.addArguments("--disable-extensions");
@@ -72,11 +73,11 @@ public class BaseTest_RBAuction {
 
         try {
             log("DEBUG: SetUp 'System.setProperty'");
-            System.setProperty("webdriver.chrome.driver", "C:/agent/chromedriver777777.exe");
+            System.setProperty("webdriver.chrome.driver", "C:/agent/chromedriver.exe");
             log("DEBUG: SetUp 'new ChromeDriver()'");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
             log("DEBUG: SetUp 'implicitlyWait'");
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         } catch (Exception e){
             e.printStackTrace();
             throw new RuntimeException("Failed to initialize FUCKING Webdriver", e);
