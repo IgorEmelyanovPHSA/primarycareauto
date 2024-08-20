@@ -53,16 +53,22 @@ public class BaseTest_RBAuction {
         ChromeOptions options = new ChromeOptions();
         //log("DEBUG: SetUp  --headless");
         //options.addArguments("--headless");
-        //log("DEBUG: SetUp  --disable-gpu");
-        //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
+        log("DEBUG: SetUp  --disable-gpu");
+        options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
         //log("DEBUG: SetUp --no-sandbox");
         //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
-        //options.addArguments("--disable-extensions");
-        //options.addArguments("--disable-web-security");
+        log("DEBUG: SetUp --disable-extensions");
+        options.addArguments("--disable-extensions");
+        log("DEBUG: SetUp --disable-web-security");
+        options.addArguments("--disable-web-security");
+        log("DEBUG: SetUp  --disable-dev-shm-usage");
+        options.addArguments("--disable-dev-shm-usage");
+        log("DEBUG: SetUp  --window-size=1920x1080");
+        options.addArguments("--window-size=1920x1080");
         log("DEBUG: SetUp remote-allow-origins");
         options.addArguments("--remote-allow-origins=*");
-        //log("DEBUG: SetUp 'incognito mod'");
-        //options.addArguments("--incognito");
+        log("DEBUG: SetUp --incognito mod");
+        options.addArguments("--incognito");
         try {
             //log("DEBUG: SetUp 'System.setProperty'");
             //System.setProperty("webdriver.chrome.driver", "C:/agent/chromedriver.exe");
