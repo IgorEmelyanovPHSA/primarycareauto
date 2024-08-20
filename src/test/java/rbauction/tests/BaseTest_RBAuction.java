@@ -52,11 +52,11 @@ public class BaseTest_RBAuction {
         ///// for Windows local and Jenkins
         ChromeOptions options = new ChromeOptions();
         //log("DEBUG: SetUp  --headless");
-        //options.addArguments("--headless");
+        //options.addArguments("--headless"); //does not work
         log("DEBUG: SetUp  --disable-gpu");
         options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
-        //log("DEBUG: SetUp --no-sandbox");
-        //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
+        log("DEBUG: SetUp --no-sandbox"); //github.com/SeleniumHQ/selenium/issues/13872
+        options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
         log("DEBUG: SetUp --disable-extensions");
         options.addArguments("--disable-extensions");
         log("DEBUG: SetUp --disable-web-security");
