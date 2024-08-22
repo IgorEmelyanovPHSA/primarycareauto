@@ -52,13 +52,13 @@ public class BaseTest_PrimaryCare {
         ///// for Windows local and Jenkins
         ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless");
-        options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
-        options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-web-security");
-        options.addArguments("--disable-dev-shm-usage");
+        //options.addArguments("--disable-gpu");//disable the use of GPU hardware acceleration
+        //options.addArguments("--no-sandbox"); //this flag killing 100% CPU//https://github.com/SeleniumHQ/selenium/issues/13872
+        //options.addArguments("--disable-extensions");
+        //options.addArguments("--disable-web-security");
+        //options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--incognito");
+        //options.addArguments("--incognito");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         loginPage = new LoginPage(getDriver());
