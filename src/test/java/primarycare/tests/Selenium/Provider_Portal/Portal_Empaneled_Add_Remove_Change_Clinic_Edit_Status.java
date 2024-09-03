@@ -18,8 +18,8 @@ public class Portal_Empaneled_Add_Remove_Change_Clinic_Edit_Status extends BaseT
 
     //for API Insert EmpaneledPanel Member in Current Staff
     ///REFRESH
-    public String patient__c = "0bYAs00000065Q3MAI";////'BABY GIRL' "MUNCIE" <-- Prosacco "Garth"
-    public String healthcare_facility_network__c = "0bYAs00000065Q3MAI";//"Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork"
+    public String patient__c = "001As00000S9pOlIAJ";////'BABY GIRL' "MUNCIE" <-- Prosacco "Garth"
+    public String healthcare_facility_network__c = "0bYAs00000065QNMAY";//"Karen Beegan | Panel | NORTH SHORE PRIMARY CARE MED HOME" from "HealthcareFacilityNetwork"
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
