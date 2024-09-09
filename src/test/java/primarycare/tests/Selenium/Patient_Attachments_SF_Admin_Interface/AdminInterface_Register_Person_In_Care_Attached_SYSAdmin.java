@@ -258,7 +258,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         /////////////////////
         log("/*42.2--- now we can Click on searched Patient   ---*/");
         common.clickOnFondedKentonPatient(legalFirstName, legalLastName);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
         log("/*43.---Go to Patient Account Related Tab--*/");
         healthCloudConsolePage.clickOnRelatedTab();
