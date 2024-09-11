@@ -20,7 +20,7 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     //1.Patient Account
     public String firstName = "Sandy3_Patient_NOT_Attached_API";
     public String lastName = "Prior3_API";
-    public String recordTypeId = "0125f0000003ekBAAQ ";
+    public String recordTypeId = "0125f0000003ekBAAQ";
     public String phn = "9873010063";
     public String gender = "Male";
     public String birthdate = "1959-12-05";
@@ -38,10 +38,10 @@ public class API_Registering_Not_Attached_Patient_SYSAdmin extends API_BaseTest_
     public String personContactId;
 
     //3.Case
-    public String caseRecordTypeId = "0125f000000qtfjAAA";
+    public String caseRecordTypeId = "0125f000000qtfjAAA"; //RecordTypeId from Case
     ////REFRESH
-    public String caseAccountId = "001Aq00000QZVbEIAX"; //"3113 Broadmoor";
-    public String casePrimaryCareNetwork__c = "001Aq00000QZVZAIA5"; //"Richmond - East";
+    public String caseAccountId = "001bZ000003m241QAA"; //"2336 Fleetwood"  //"3113 Broadmoor";
+    public String casePrimaryCareNetwork__c = "001bZ000003m26XQAQ"; //"Fleetwood"  //"Richmond - East";
     ////REFRESH
     public String caseReason = "Unattached - Requires attachment to family doctor or nurse practitioner";
     public String caseOrigin = "Web";
