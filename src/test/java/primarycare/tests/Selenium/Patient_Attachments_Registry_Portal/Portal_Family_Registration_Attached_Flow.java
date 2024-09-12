@@ -366,7 +366,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         /////////////////////
         log("/*54.2--- now we can Click on searched Patient   ---*/");
         common.clickOnFondedHollisVioletteFamilyMember(familyMemberFirstName, familyMemberLastName);
-        Thread.sleep(5000);
+        Thread.sleep(7000);
 
         log("/*55.---Go to Patient Account Related Tab--*/");
         healthCloudConsolePage.clickOnRelatedTab();

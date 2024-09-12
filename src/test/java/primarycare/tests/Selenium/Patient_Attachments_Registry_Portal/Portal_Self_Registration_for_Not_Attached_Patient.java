@@ -215,7 +215,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         /////////////////////
         log("/*33.2--- now we can Click on searched Patient   ---*/");
         common.clickOnFondedPatient(legalFirstName, legalLastName);
-        Thread.sleep(5000);
+        Thread.sleep(7000);
 
         log("/*34.---Go to Related Tab--*/");
         healthCloudConsolePage.clickOnRelatedTab();
