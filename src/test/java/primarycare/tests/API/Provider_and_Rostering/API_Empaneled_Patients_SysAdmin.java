@@ -11,8 +11,8 @@ public class API_Empaneled_Patients_SysAdmin extends API_BaseTest_PrimaryCare{
 
     //for Test 3.insert
     ///REFRESH
-    public String patient__c = "001As00000SEwAiIAL";//'BABY GIRL' 'MUNCIE' <-- Prosacco Garth - the same as Patient_ID__c in Account.
-    public String healthcare_facility_network__c = "0bYAs00000068MJMAY";//Lori-Ann Bus | Panel | CASTLEGAR MED FAMILY CLINIC
+    public String patient__c = "001As00000TBUesIAH";//'BABY GIRL' 'MUNCIE' <-- Prosacco Garth - the same as Patient_ID__c in Account.
+    public String healthcare_facility_network__c = "0bYAs0000007G9jMAE";//Lori-Ann Bus | Panel | CASTLEGAR MED FAMILY CLINIC
     ///REFRESH
     public String panel__c = "Active";
     public String roster__c = "Pending";
