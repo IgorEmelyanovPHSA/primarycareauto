@@ -28,7 +28,7 @@ public abstract class BasePage<T>  {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    protected WebElement find(By locator) {
+    protected static WebElement find(By locator) {
         return driver.findElement(locator);
     }
 
@@ -41,7 +41,7 @@ public abstract class BasePage<T>  {
         find(locator).click();
     }
 
-    protected Boolean isDisplayed(By locator) {
+    protected static Boolean isDisplayed(By locator) {
         try {
             return find(locator).isDisplayed();
         } catch (NoSuchElementException exc) {
@@ -56,7 +56,7 @@ public abstract class BasePage<T>  {
         }
     }
 
-    public Boolean isDisplayed(WebElement element) {
+    public static Boolean isDisplayed(WebElement element) {
         try {
             return element.isDisplayed();
         } catch (NoSuchElementException exc) {
