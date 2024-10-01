@@ -9,6 +9,9 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     /*---------Properties-------*/
     @FindBy(xpath = "//div/h1[text()='Register to get a family doctor or nurse practitioner']")
     private static WebElement register_to_get_doctor_page_validation;
+    @FindBy(xpath = "//div/h1[text()='Register to get a family doctor or nurse practitioner']")
+    private static By is_register_to_get_doctor_page_displayed_1 = By.xpath("//div/h1[text()='Register to get a family doctor or nurse practitioner']");
+
 
     @FindBy(xpath = ".//span[text() = 'Next']")
     private WebElement next_button;
@@ -112,6 +115,9 @@ public class PortalHealthConnectRegistryPage extends BasePage{
 
     @FindBy(xpath = "//h1[text()='Successfully registered!']") //Registration successful!
     private static WebElement registration_successful_page_validation;
+    @FindBy(xpath = "//h1[text()='Successfully registered!']")
+    private static By is_registration_successful_page_displayed_1 = By.xpath("//h1[text()='Successfully registered!'");
+
 
     @FindBy(xpath = ".//span[text()='Add a family member']")
     private WebElement add_family_member_button;
@@ -227,6 +233,29 @@ public class PortalHealthConnectRegistryPage extends BasePage{
             throw e;
         }
         return false;
+    }
+
+    public static boolean isRegisterToGetDoctorPageDisplayed() throws InterruptedException {
+        boolean PortalRegisterToGetDoctorPageDisplayed = false;
+        for(int i = 1; i <= 40; i++ ) {
+            if (!isDisplayed(is_register_to_get_doctor_page_displayed_1)) {
+                log(i +"-try to see The Register 'to get doctors' Page: "  +  " the page is not showing up yet, re-try!");
+                log( "wait for 10 sec");
+                Thread.sleep(10000);
+                log( "Refresh the browser");
+                refreshBrowser();
+                Thread.sleep(5000);
+            } else {
+                log("/*---The Register 'to get doctors' Page "  + "has shown up " + " --*/");
+                PortalRegisterToGetDoctorPageDisplayed = true;
+                break;
+            }
+        }
+        return PortalRegisterToGetDoctorPageDisplayed;
+    }
+
+    public static void refreshBrowser() throws InterruptedException {
+        driver.navigate().refresh();
     }
 
     public void clickNextButton() throws InterruptedException {
@@ -397,15 +426,34 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         submit_registration_button.click();
     }
 
-    public static boolean validateRegisterSuccessfulPageDisplayed() throws InterruptedException {
-        try {
-            waitForElementToBeVisible(driver, registration_successful_page_validation, 10);
-            System.out.println("/*---Registration successful page - shown up");
-        } catch (NoSuchElementException e) {
-            System.out.println("/*---Registration successful page page has NOT show up");
-            throw e;
+//    public static boolean validateRegisterSuccessfulPageDisplayed() throws InterruptedException {
+//        try {
+//            waitForElementToBeVisible(driver, registration_successful_page_validation, 10);
+//            System.out.println("/*---Registration successful page - shown up");
+//        } catch (NoSuchElementException e) {
+//            System.out.println("/*---Registration successful page page has NOT show up");
+//            throw e;
+//        }
+//        return false;
+//    }
+
+    public static boolean isRegisterSuccessfulPageDisplayed() throws InterruptedException {
+        boolean RegisterSuccessfulPageDisplayed = false;
+        for(int i = 1; i <= 40; i++ ) {
+            if (!isDisplayed(registration_successful_page_validation)) {
+                log(i +"-try to see The 'Successfully registered!' Page: "  +  " the page is not showing up yet, re-try!");
+                log( "wait for 10 sec");
+                Thread.sleep(10000);
+                log( "Refresh the browser");
+                refreshBrowser();
+                Thread.sleep(5000);
+            } else {
+                log("/*---The 'Successfully registered!' Page "  + "has shown up " + " --*/");
+                RegisterSuccessfulPageDisplayed = true;
+                break;
+            }
         }
-        return false;
+        return RegisterSuccessfulPageDisplayed;
     }
 
     public void clickAddFamilyMemberButton() throws InterruptedException {
