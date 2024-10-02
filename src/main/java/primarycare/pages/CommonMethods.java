@@ -6,9 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class CommonMethods extends BasePage {
     /*---------Properties-------*/
-    private By appsLauncher = By.xpath("//div[@class='slds-icon-waffle']");
+    private static By appsLauncher = By.xpath("//div[@class='slds-icon-waffle']");
     private By healthCloudConsoleTitle = By.xpath(".//span[@title='Health Cloud Console']");
     private By appsHealthCloudConsole = By.xpath("//p[text()='Health Cloud Console']");
+
+//    @FindBy(xpath = "//div[@class= 'slds-icon-waffle']")
+//    private WebElement is_waffle_icon_displayed;
+//    private static By is_waffle_icon_displayed_1 = By.xpath("//div[@class= 'slds-icon-waffle']");
 
     @FindBy(xpath = "//button[@title = 'Show Navigation Menu']")
     private WebElement navigator_menu_dropdown;
@@ -92,24 +96,25 @@ public class CommonMethods extends BasePage {
         //Thread.sleep(2000);
     }
 
-//    public static boolean isHealthCloudConsolePageDisplayed() throws InterruptedException {
-//        boolean HealthCloudConsolePageDisplayed = false;
-//        for(int i = 1; i <= 40; i++ ) {
-//            if (!isDisplayed(is_register_to_get_doctor_page_displayed_1)) {
-//                log(i +"-try to see The Register 'to get doctors' Page: "  +  " the page is not showing up yet, re-try!");
-//                log( "wait for 10 sec");
-//                Thread.sleep(10000);
-//                log( "Refresh the browser");
-//                refreshBrowser();
-//                Thread.sleep(5000);
-//            } else {
-//                log("/*---The Register 'to get doctors' Page "  + "has shown up " + " --*/");
-//                HealthCloudConsolePageDisplayed = true;
-//                break;
-//            }
-//        }
-//        return HealthCloudConsolePageDisplayed;
-//    }
+    public static boolean isWaffleIconDisplayed() throws InterruptedException {
+        boolean WaffleIconDisplayed = false;
+        for(int i = 1; i <= 40; i++ ) {
+            if (!isDisplayed(appsLauncher)) {
+                log(i +"-try to see the 'Waffle Icon' SF Title Page: "  +  " the 'Waffle Icon' is not showing up yet, re-try!");
+                log( "wait for 10 sec");
+                Thread.sleep(10000);
+                log( "Refresh the browser");
+                refreshBrowser();
+                Thread.sleep(5000);
+            } else {
+                log("/*---The 'Waffle Icon' SF Title Page Page "  + "has shown up " + " --*/");
+                WaffleIconDisplayed = true;
+                Thread.sleep(5000);
+                break;
+            }
+        }
+        return WaffleIconDisplayed;
+    }
 
     public void closeAllHealthCloudConsoleTabs() throws InterruptedException {
         do {
@@ -240,6 +245,7 @@ public class CommonMethods extends BasePage {
             } else {
                 log("/*---Patient --> " + legalFirstName + " " + legalLastName + " present on the page--*/");
                 isPatientFound = true;
+                Thread.sleep(5000);
                 break;
             }
         }

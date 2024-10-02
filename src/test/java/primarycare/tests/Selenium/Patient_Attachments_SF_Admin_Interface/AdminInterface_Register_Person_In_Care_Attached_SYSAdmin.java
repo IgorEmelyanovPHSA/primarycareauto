@@ -63,18 +63,18 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*1.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
         HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
-        Thread.sleep(15000);// wait for sf loading
+        Thread.sleep(5000);// wait for sf loading
 
-//        log("/*2.----Verify that the 'Health Cloud Console Page' has displayed --*/");
-//        CommonMethods common = new CommonMethods(getDriver());
-//        boolean isHealthCloudConsolePageDisplayed =  common.isHealthCloudCjonsolePageDisplayed();
-//        if (!isHealthCloudConsolePageDisplayed){
-//            throw new RuntimeException("Exception: the Portal Register 'to get doctor' page "  + "has not shown up!!!");
-//        }
-//        Thread.sleep(2000);
-
-        log("/*2.----Validate if Health Cloud Console Page displayed --*/");
+        log("/*2.----Verify that the 'Waffle Icon' SF component has displayed --*/");
         CommonMethods common = new CommonMethods(getDriver());
+        boolean isWaffleIconDisplayed =  common.isWaffleIconDisplayed();
+        if (!isWaffleIconDisplayed){
+           throw new RuntimeException("Exception: the Waffle Icon SF title page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
+
+        log("/*2.1.----Validate if Health Cloud Console Page displayed --*/");
+        //CommonMethods common = new CommonMethods(getDriver());
         common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
         Thread.sleep(5000);
 
