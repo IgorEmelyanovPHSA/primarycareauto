@@ -2,6 +2,7 @@ package primarycare.tests.Selenium.Patient_Attachments_SF_Admin_Interface;
 
 import primarycare.pages.CommonMethods;
 import primarycare.pages.HealthCloudConsolePage;
+import primarycare.pages.PortalHealthConnectRegistryPage;
 import primarycare.tests.Utilities.TestListener;
 import primarycare.pages.Utils;
 import org.testng.annotations.Listeners;
@@ -64,6 +65,13 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
         Thread.sleep(15000);// wait for sf loading
 
+//        log("/*2.----Verify that the 'Health Cloud Console Page' has displayed --*/");
+//        CommonMethods common = new CommonMethods(getDriver());
+//        boolean isHealthCloudConsolePageDisplayed =  common.isHealthCloudCjonsolePageDisplayed();
+//        if (!isHealthCloudConsolePageDisplayed){
+//            throw new RuntimeException("Exception: the Portal Register 'to get doctor' page "  + "has not shown up!!!");
+//        }
+//        Thread.sleep(2000);
 
         log("/*2.----Validate if Health Cloud Console Page displayed --*/");
         CommonMethods common = new CommonMethods(getDriver());

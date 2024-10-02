@@ -79,11 +79,18 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
 
         log("/*1.---Open Patient Registry Portal (Health Connect Registry site)--*/");
         PortalHealthConnectRegistryPage portalHealthConnectRegistryPage= loginPage.openPortalHealthConnectRegistryPage();
-        Thread.sleep(15000);
+        Thread.sleep(5000);
 
-        log("/*2.---- Validate that the Register to get doctor page has displayed --*/");
-        PortalHealthConnectRegistryPage.validateRegisterToGetDoctorPageDisplayed();
-        Thread.sleep(1000);
+//        log("/*2.---- Validate that the Register to get doctor page has displayed --*/");
+//        PortalHealthConnectRegistryPage.validateRegisterToGetDoctorPageDisplayed();
+//        Thread.sleep(1000);
+
+        log("/*2.----Verify that the Register to get doctor page has displayed --*/");
+        boolean isPortalRegisterToGetDoctorPageDisplayed =  PortalHealthConnectRegistryPage.isRegisterToGetDoctorPageDisplayed();
+        if (!isPortalRegisterToGetDoctorPageDisplayed){
+            throw new RuntimeException("Exception: the Portal Register 'to get doctor' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         log("/*3.---Click Next button--*/");
         portalHealthConnectRegistryPage.clickNextButton();
@@ -194,11 +201,18 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
 
         log("/*25.---Click Submit registration --*/");
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
-        Thread.sleep(15000);
-
-        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
-        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
         Thread.sleep(5000);
+
+//        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
+//        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
+//        Thread.sleep(5000);
+
+        log("/*26.----Verify that the 'Successfully registered!' page has displayed --*/");
+        boolean isPortalRegisterSuccessfulPageDisplayed =  PortalHealthConnectRegistryPage.isRegisterSuccessfulPageDisplayed();
+        if (!isPortalRegisterSuccessfulPageDisplayed){
+            throw new RuntimeException("Exception: the Portal 'Successfully registered!' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         log("/////////////////////////////////////////////////////////");
         log("The Actual Family Registration Attached for Hollis Violette.");
@@ -320,9 +334,16 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
         Thread.sleep(15000);
 
-        log("/*48.--- Validate is Family Member 'Successfully registered!' page displayed? --*/");
-        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
-        Thread.sleep(5000);
+//        log("/*48.--- Validate is Family Member 'Successfully registered!' page displayed? --*/");
+//        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
+//        Thread.sleep(5000);
+
+        log("/*48.----Verify that the 'Successfully registered!' page has displayed --*/");
+        boolean isPortalRegisterSuccessfulPageDisplayed_familymember =  PortalHealthConnectRegistryPage.isRegisterSuccessfulPageDisplayed();
+        if (!isPortalRegisterSuccessfulPageDisplayed_familymember){
+            throw new RuntimeException("Exception: the Portal 'Successfully registered!' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         log("/////////////////////////////////////////////////////////");
         log("Go to SF to find and Validate the Family Member - Hollis Violette.");

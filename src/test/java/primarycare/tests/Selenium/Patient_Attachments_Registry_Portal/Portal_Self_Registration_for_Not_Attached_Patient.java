@@ -177,9 +177,16 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
         Thread.sleep(20000);
 
-        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
-        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
-        Thread.sleep(5000);
+//        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
+//        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
+//        Thread.sleep(5000);
+
+        log("/*26.----Verify that the 'Successfully registered!' page has displayed --*/");
+        boolean isPortalRegisterSuccessfulPageDisplayed =  PortalHealthConnectRegistryPage.isRegisterSuccessfulPageDisplayed();
+        if (!isPortalRegisterSuccessfulPageDisplayed){
+            throw new RuntimeException("Exception: the Portal 'Successfully registered!' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         log("/*27.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
         HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
