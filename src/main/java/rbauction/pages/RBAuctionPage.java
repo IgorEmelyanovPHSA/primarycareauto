@@ -22,10 +22,9 @@ public class RBAuctionPage extends BasePage{
     private WebElement year_range_max;
     private By year_range_max_1 = By.xpath(".//input[@id='manufactureYearRange_max']");
 
-
-
-
-
+    @FindBy(xpath = "//div[@id = 'manufactureYearRange-header']")
+    private WebElement click_filtering_by_year_dropdown_component;
+    private By click_filtering_by_year_dropdown_component_1 = By.xpath("//div[@id = 'manufactureYearRange-header']");
 
 
     @FindBy(xpath = ".//span[text() = 'Next']")
@@ -310,6 +309,13 @@ public class RBAuctionPage extends BasePage{
         Thread.sleep(1000);
         year_range_max.sendKeys(currentYear);
         year_range_max.sendKeys(Keys.RETURN);
+        Thread.sleep(1000);
+    }
+
+    public void clickYearFilter() throws InterruptedException {
+        waitForElementToBeVisible(driver, click_filtering_by_year_dropdown_component, 10);
+        Thread.sleep(1000);
+        click_filtering_by_year_dropdown_component.click();
         Thread.sleep(1000);
     }
 

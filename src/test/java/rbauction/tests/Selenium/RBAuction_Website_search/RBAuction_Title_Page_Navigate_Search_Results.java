@@ -67,7 +67,10 @@ public class RBAuction_Title_Page_Navigate_Search_Results extends BaseTest_RBAuc
             log("No match found");
         }
 
-        log("/*5.----Apply the 'Year' filter form 2010 to the CURRENT --*/");
+        log("/*5.----Click on Filtering DropDown by 'Year' --*/");
+        portalRBAuctionPage.clickYearFilter();
+
+        log("/*5.1.----Apply the 'Year' filter form 2010 to the CURRENT --*/");
         // Get the current year using LocalDate
         int currentYearInt = LocalDate.now().getYear();
         // Convert the current year to String
