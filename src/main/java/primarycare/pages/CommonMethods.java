@@ -187,6 +187,7 @@ public class CommonMethods extends BasePage {
             } else {
                 log("/*---Patient --> " + legalFirstName + " " + legalLastName + " present on the page--*/");
                 isPatientFound = true;
+                Thread.sleep(5000);
                 break;
             }
         }
