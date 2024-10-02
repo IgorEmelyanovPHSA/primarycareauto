@@ -232,9 +232,16 @@ public class TDD_CSV_Portal_Self_Registration_Attached_Portal extends BaseTest_P
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
         Thread.sleep(15000);
 
-        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
-        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
-        Thread.sleep(5000);
+//        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
+//        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
+//        Thread.sleep(5000);
+
+        log("/*26.----Verify that the 'Successfully registered!' page has displayed --*/");
+        boolean isPortalRegisterSuccessfulPageDisplayed =  PortalHealthConnectRegistryPage.isRegisterSuccessfulPageDisplayed();
+        if (!isPortalRegisterSuccessfulPageDisplayed){
+            throw new RuntimeException("Exception: the Portal 'Successfully registered!' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         log("/////////////////////////////////////////////////////////");
         log("TDD _csv Go to SF to find and Validate the Family Member - Sandy Prior.");

@@ -92,6 +92,25 @@ public class CommonMethods extends BasePage {
         //Thread.sleep(2000);
     }
 
+//    public static boolean isHealthCloudConsolePageDisplayed() throws InterruptedException {
+//        boolean HealthCloudConsolePageDisplayed = false;
+//        for(int i = 1; i <= 40; i++ ) {
+//            if (!isDisplayed(is_register_to_get_doctor_page_displayed_1)) {
+//                log(i +"-try to see The Register 'to get doctors' Page: "  +  " the page is not showing up yet, re-try!");
+//                log( "wait for 10 sec");
+//                Thread.sleep(10000);
+//                log( "Refresh the browser");
+//                refreshBrowser();
+//                Thread.sleep(5000);
+//            } else {
+//                log("/*---The Register 'to get doctors' Page "  + "has shown up " + " --*/");
+//                HealthCloudConsolePageDisplayed = true;
+//                break;
+//            }
+//        }
+//        return HealthCloudConsolePageDisplayed;
+//    }
+
     public void closeAllHealthCloudConsoleTabs() throws InterruptedException {
         do {
             try {
@@ -198,7 +217,7 @@ public class CommonMethods extends BasePage {
         patient_Kenton_founded.click();
     }
 
-    public void refreshBrowser() throws InterruptedException {
+    public static void refreshBrowser() throws InterruptedException {
         driver.navigate().refresh();
     }
 
