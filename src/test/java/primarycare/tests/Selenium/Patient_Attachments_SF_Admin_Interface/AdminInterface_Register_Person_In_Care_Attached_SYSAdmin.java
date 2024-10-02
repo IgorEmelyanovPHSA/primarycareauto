@@ -246,7 +246,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*41.---Search for Patient by PHN " + legalFirstName + " "+ legalLastName +"--*/");
         common.globalSearch(personalHealthNumber);
-        Thread.sleep(5000);
+        Thread.sleep(7000);
 
         log("/*42.---Click on founded Patient--*/");
         ///////////////////
