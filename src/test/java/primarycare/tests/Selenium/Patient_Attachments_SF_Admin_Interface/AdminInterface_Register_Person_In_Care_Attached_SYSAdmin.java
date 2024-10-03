@@ -62,11 +62,18 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*1.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
         HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
-        Thread.sleep(15000);// wait for sf loading
+        Thread.sleep(5000);// wait for sf loading
 
-
-        log("/*2.----Validate if Health Cloud Console Page displayed --*/");
+        log("/*2.----Verify that the 'Waffle Icon' SF component has displayed --*/");
         CommonMethods common = new CommonMethods(getDriver());
+        boolean isWaffleIconDisplayed =  common.isWaffleIconDisplayed();
+        if (!isWaffleIconDisplayed){
+            throw new RuntimeException("Exception: the Waffle Icon SF title page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
+
+        log("/*2.1----Validate if Health Cloud Console Page displayed --*/");
+        //CommonMethods common = new CommonMethods(getDriver());
         common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
         Thread.sleep(5000);
 
@@ -225,11 +232,18 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*39.---click button 'Finish registration'----*/");
         healthCloudConsolePage.clickFinishRegistration();
-        Thread.sleep(15000);
-
-        log("/*40.--- Validate is 'Successfully registered!' page displayed? --*/");
-        healthCloudConsolePage.validateSuccessfullyRegisteredPageDisplayed();
         Thread.sleep(5000);
+
+        //log("/*40.--- Validate is 'Successfully registered!' page displayed? --*/");
+        //healthCloudConsolePage.validateSuccessfullyRegisteredPageDisplayed();
+        //Thread.sleep(5000);
+
+        log("/*40.----Verify that the 'Successfully registered!' page has displayed --*/");
+        boolean isHealthCloudConsoleRegisterSuccessfulPageDisplayed =  healthCloudConsolePage.isRegisterSuccessfulPageDisplayed();
+        if (!isHealthCloudConsoleRegisterSuccessfulPageDisplayed){
+            throw new RuntimeException("Exception: the Portal 'Successfully registered!' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         //log("/* ----Wait for 40 sec before Searching Kenton --*/");
         //Thread.sleep(480000); //8 min
@@ -246,7 +260,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*41.---Search for Patient by PHN " + legalFirstName + " "+ legalLastName +"--*/");
         common.globalSearch(personalHealthNumber);
-        Thread.sleep(5000);
+        Thread.sleep(7000);
 
         log("/*42.---Click on founded Patient--*/");
         ///////////////////
@@ -257,6 +271,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         }
         /////////////////////
         log("/*42.2--- now we can Click on searched Patient   ---*/");
+        Thread.sleep(5000);
         common.clickOnFondedKentonPatient(legalFirstName, legalLastName);
         Thread.sleep(7000);
 

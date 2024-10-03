@@ -240,9 +240,9 @@ public class PortalHealthConnectRegistryPage extends BasePage{
                 log(i +"-try to see The Register 'to get doctors' Page: "  +  " the page is not showing up yet, re-try!");
                 log( "wait for 10 sec");
                 Thread.sleep(10000);
-                log( "Refresh the browser");
-                refreshBrowser();
-                Thread.sleep(5000);
+                //log( "Refresh the browser");
+                //refreshBrowser();
+                //Thread.sleep(5000);
             } else {
                 log("/*---The Register 'to get doctors' Page "  + "has shown up " + " --*/");
                 PortalRegisterToGetDoctorPageDisplayed = true;
@@ -420,15 +420,34 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         submit_registration_button.click();
     }
 
-    public static boolean validateRegisterSuccessfulPageDisplayed() throws InterruptedException {
-        try {
-            waitForElementToBeVisible(driver, registration_successful_page_validation, 10);
-            System.out.println("/*---Successfully registered! page - shown up");
-        } catch (NoSuchElementException e) {
-            System.out.println("/*---Successfully registered! page page has NOT show up");
-            throw e;
+//    public static boolean validateRegisterSuccessfulPageDisplayed() throws InterruptedException {
+//        try {
+//            waitForElementToBeVisible(driver, registration_successful_page_validation, 10);
+//            System.out.println("/*---Successfully registered! page - shown up");
+//        } catch (NoSuchElementException e) {
+//            System.out.println("/*---Successfully registered! page page has NOT show up");
+//            throw e;
+//        }
+//        return false;
+//    }
+
+    public static boolean isRegisterSuccessfulPageDisplayed() throws InterruptedException {
+        boolean RegisterSuccessfulPageDisplayed = false;
+        for(int i = 1; i <= 40; i++ ) {
+            if (!isDisplayed(registration_successful_page_validation)) {
+                log(i +"-try to see The 'Successfully registered!' Page: "  +  " the page is not showing up yet, re-try!");
+                log( "wait for 10 sec");
+                Thread.sleep(10000);
+                //log( "Refresh the browser");
+                //refreshBrowser();
+                //Thread.sleep(5000);
+            } else {
+                log("/*---The 'Successfully registered!' Page "  + "has shown up " + " --*/");
+                RegisterSuccessfulPageDisplayed = true;
+                break;
+            }
         }
-        return false;
+        return RegisterSuccessfulPageDisplayed;
     }
 
     public void clickAddFamilyMemberButton() throws InterruptedException {

@@ -56,7 +56,7 @@ public abstract class BasePage<T>  {
         }
     }
 
-    public Boolean isDisplayed(WebElement element) {
+    public static Boolean isDisplayed(WebElement element) {
         try {
             return element.isDisplayed();
         } catch (NoSuchElementException exc) {

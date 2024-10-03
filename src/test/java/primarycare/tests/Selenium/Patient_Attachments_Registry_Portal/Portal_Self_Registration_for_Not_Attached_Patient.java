@@ -175,18 +175,33 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
 
         log("/*25.---Click Submit registration --*/");
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
-        Thread.sleep(20000);
-
-        log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
-        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
         Thread.sleep(5000);
+
+        //log("/*26.--- Validate is 'Successfully registered!' page displayed? --*/");
+        //PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
+        //Thread.sleep(5000);
+
+        log("/*26.----Verify that the 'Successfully registered!' page has displayed --*/");
+        boolean isPortalRegisterSuccessfulPageDisplayed =  PortalHealthConnectRegistryPage.isRegisterSuccessfulPageDisplayed();
+        if (!isPortalRegisterSuccessfulPageDisplayed){
+            throw new RuntimeException("Exception: the Portal 'Successfully registered!' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
 
         log("/*27.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
         HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
-        Thread.sleep(15000);// wait for sf loading
+        Thread.sleep(5000);// wait for sf loading
 
-        log("/*28.----Validate if Health Cloud Console Page displayed --*/");
+        log("/*28.----Verify that the 'Waffle Icon' SF component has displayed --*/");
         CommonMethods common = new CommonMethods(getDriver());
+        boolean isWaffleIconDisplayed =  common.isWaffleIconDisplayed();
+        if (!isWaffleIconDisplayed){
+            throw new RuntimeException("Exception: the Waffle Icon SF title page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
+
+        log("/*28.1----Validate if Health Cloud Console Page displayed --*/");
+        //CommonMethods common = new CommonMethods(getDriver());
         common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
         Thread.sleep(5000);
 
@@ -214,6 +229,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         }
         /////////////////////
         log("/*33.2--- now we can Click on searched Patient   ---*/");
+        Thread.sleep(5000);
         common.clickOnFondedPatient(legalFirstName, legalLastName);
         Thread.sleep(7000);
 
