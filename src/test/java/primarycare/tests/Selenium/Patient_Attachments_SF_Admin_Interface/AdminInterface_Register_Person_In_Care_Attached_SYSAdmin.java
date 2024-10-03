@@ -233,11 +233,20 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*39.---click button 'Finish registration'----*/");
         healthCloudConsolePage.clickFinishRegistration();
-        Thread.sleep(15000);
-
-        log("/*40.--- Validate is 'Successfully registered!' page displayed? --*/");
-        healthCloudConsolePage.validateSuccessfullyRegisteredPageDisplayed();
         Thread.sleep(5000);
+
+        //log("/*40.--- Validate is 'Successfully registered!' page displayed? --*/");
+        //healthCloudConsolePage.validateSuccessfullyRegisteredPageDisplayed();
+        //Thread.sleep(5000);
+
+        log("/*40.----Verify that the 'Successfully registered!' page has displayed --*/");
+        boolean isHealthCloudConsoleRegisterSuccessfulPageDisplayed =  healthCloudConsolePage.isRegisterSuccessfulPageDisplayed();
+        if (!isHealthCloudConsoleRegisterSuccessfulPageDisplayed){
+            throw new RuntimeException("Exception: the Portal 'Successfully registered!' page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
+
+
 
         //log("/* ----Wait for 40 sec before Searching Kenton --*/");
         //Thread.sleep(480000); //8 min

@@ -332,7 +332,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
 
         log("/*47.---Click Family Member Submit registration --*/");
         portalHealthConnectRegistryPage.clickSubmitRegistrationButton();
-        Thread.sleep(15000);
+        Thread.sleep(5000);
 
 //        log("/*48.--- Validate is Family Member 'Successfully registered!' page displayed? --*/");
 //        PortalHealthConnectRegistryPage.validateRegisterSuccessfulPageDisplayed();
@@ -351,10 +351,18 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
 
         log("/*49.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
         HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
-        Thread.sleep(15000);// wait for sf loading
+        Thread.sleep(5000);// wait for sf loading
 
-        log("/*50.----Validate if Health Cloud Console Page displayed --*/");
+        log("/*50----Verify that the 'Waffle Icon' SF component has displayed --*/");
         CommonMethods common = new CommonMethods(getDriver());
+        boolean isWaffleIconDisplayed =  common.isWaffleIconDisplayed();
+        if (!isWaffleIconDisplayed){
+            throw new RuntimeException("Exception: the Waffle Icon SF title page "  + "has not shown up!!!");
+        }
+        Thread.sleep(2000);
+
+        log("/*50.1----Validate if Health Cloud Console Page displayed --*/");
+        //CommonMethods common = new CommonMethods(getDriver());
         common.goToHealthCloudConsolePageIfNeededAndConfirmPageIsDisplayed();
         Thread.sleep(5000);
 
