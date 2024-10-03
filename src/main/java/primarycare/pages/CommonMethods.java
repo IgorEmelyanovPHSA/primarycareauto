@@ -107,7 +107,7 @@ public class CommonMethods extends BasePage {
                 //refreshBrowser();
                 //Thread.sleep(5000);
             } else {
-                log("/*---The 'Waffle Icon' SF Title Page Page "  + "has shown up " + " --*/");
+                log("/*---The 'Waffle Icon' SF Title Page "  + "has shown up " + " --*/");
                 WaffleIconDisplayed = true;
                 Thread.sleep(5000);
                 break;
