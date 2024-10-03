@@ -274,6 +274,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
         }
         /////////////////////
         log("/*42.2--- now we can Click on searched Patient   ---*/");
+        Thread.sleep(5000);
         common.clickOnFondedKentonPatient(legalFirstName, legalLastName);
         Thread.sleep(5000);
 
