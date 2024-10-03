@@ -103,9 +103,9 @@ public class CommonMethods extends BasePage {
                 log(i +"-try to see the 'Waffle Icon' SF Title Page: "  +  " the 'Waffle Icon' is not showing up yet, re-try!");
                 log( "wait for 10 sec");
                 Thread.sleep(10000);
-                log( "Refresh the browser");
-                refreshBrowser();
-                Thread.sleep(5000);
+                //log( "Refresh the browser");
+                //refreshBrowser();
+                //Thread.sleep(5000);
             } else {
                 log("/*---The 'Waffle Icon' SF Title Page Page "  + "has shown up " + " --*/");
                 WaffleIconDisplayed = true;
