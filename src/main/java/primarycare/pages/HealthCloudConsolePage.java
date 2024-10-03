@@ -712,6 +712,29 @@ public class HealthCloudConsolePage extends BasePage {
         return false;
     }
 
+    public static boolean isRegisterSuccessfulPageDisplayed() throws InterruptedException {
+        boolean RegisterSuccessfulPageDisplayed = false;
+        for(int i = 1; i <= 40; i++ ) {
+            if (!isDisplayed(successfully_registered_page_validation)) {
+                log(i +"-try to see The 'Successfully registered!' Page: "  +  " the page is not showing up yet, re-try!");
+                log( "wait for 10 sec");
+                Thread.sleep(10000);
+                //log( "Refresh the browser");
+                //refreshBrowser();
+                //Thread.sleep(5000);
+            } else {
+                log("/*---The 'Successfully registered!' Page "  + "has shown up " + " --*/");
+                RegisterSuccessfulPageDisplayed = true;
+                break;
+            }
+        }
+        return RegisterSuccessfulPageDisplayed;
+    }
+
+    //public static void refreshBrowser() throws InterruptedException {
+    //driver.navigate().refresh();
+    //}
+
     public String getContactNameActualForValidation() throws InterruptedException {
         waitForElementToBeLocated(driver, caller_name_actual_field_value_1, 10);
         Thread.sleep(2000);
