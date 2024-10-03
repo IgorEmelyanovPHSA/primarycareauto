@@ -62,7 +62,7 @@ public class AdminInterface_Register_Person_In_Care_Attached_SYSAdmin extends Ba
 
         log("/*1.--- Login as an SysAdmin to Health Cloud Console of SF Admin side --*/");
         HealthCloudConsolePage healthCloudConsolePage = loginPage.loginAsSysAdmin();
-        Thread.sleep(15000);// wait for sf loading
+        Thread.sleep(5000);// wait for sf loading
 
         log("/*2.----Verify that the 'Waffle Icon' SF component has displayed --*/");
         CommonMethods common = new CommonMethods(getDriver());
