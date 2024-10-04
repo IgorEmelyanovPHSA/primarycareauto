@@ -284,6 +284,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement translation_language_actual_field_value;
     private By translation_language_actual_field_value_1 = By.xpath(".//flexipage-field[@data-field-id='RecordTranslation_Language_cField']//slot[1]//slot[1]/lightning-formatted-text[text()]");
 
+    @FindBy(xpath = "(.//a[text() = 'Activity'])[2]")
+    private WebElement case_Activity_tab;
+    private By case_Activity_tab_1 = By.xpath("(.//a[text() = 'Activity'])[2]");
 
     /*---------Constructor-------*/
     public HealthCloudConsolePage(WebDriver driver) {
@@ -895,6 +898,13 @@ public class HealthCloudConsolePage extends BasePage {
         return (translation_language_actual_field_value.getText());
     }
 
+    public void clickOnCaseActivityTab() throws InterruptedException {
+        WebElement element = driver.findElement(case_Activity_tab_1);
+        Thread.sleep(2000);
+        isDisplayed(case_Activity_tab_1);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
 
 
 
