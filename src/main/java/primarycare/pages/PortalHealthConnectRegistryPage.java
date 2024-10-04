@@ -212,6 +212,10 @@ public class PortalHealthConnectRegistryPage extends BasePage{
     private WebElement click_some_where;
     private By click_some_where_1 = By.xpath("//h1[contains(text(),'You are registering')]");
 
+    @FindBy(xpath = "//a[text()='Health Connect Registry – Confirmation of Registration']")
+    private static WebElement is_activity_history_record_displayed;
+    @FindBy(xpath = "//a[text()='Health Connect Registry – Confirmation of Registration']")
+    private static By is_activity_history_record_displayed_1 = By.xpath("//a[text()='Health Connect Registry – Confirmation of Registration']");
 
 
     /*---------Constructor-------*/
@@ -632,6 +636,18 @@ public class PortalHealthConnectRegistryPage extends BasePage{
         Thread.sleep(1000);
     }
 
+    public static boolean isActivityHistoryRecordDisplayed() throws InterruptedException {
+        boolean ActivityHistoryRecordDisplayed = false;
+        if (!isDisplayed(is_activity_history_record_displayed_1)) {
+                log( "Houston, we've got a problem.");
+                Thread.sleep(5000);
+            } else {
+                log("/*---The Case History Activity record 'Health Connect Registry – Confirmation of Registration' "  + "has shown up " + " --*/");
+                ActivityHistoryRecordDisplayed = true;
+                Thread.sleep(5000);
+            }
+        return ActivityHistoryRecordDisplayed;
+    }
 
 
 }
