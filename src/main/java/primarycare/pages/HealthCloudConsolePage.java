@@ -279,6 +279,9 @@ public class HealthCloudConsolePage extends BasePage {
     private WebElement seizures_or_epilepsy_radiobutton;
     private By seizures_or_epilepsy_radiobutton_1 = By.xpath(".//span[text() ='Seizures or Epilepsy']");
 
+    @FindBy(xpath = "(.//a[text() = 'Activity'])[2]")
+    private WebElement case_Activity_tab;
+    private By case_Activity_tab_1 = By.xpath("(.//a[text() = 'Activity'])[2]");
 
 
     /*---------Constructor-------*/
@@ -891,6 +894,13 @@ public class HealthCloudConsolePage extends BasePage {
         seizures_or_epilepsy_radiobutton.click();
     }
 
+    public void clickOnCaseActivityTab() throws InterruptedException {
+        WebElement element = driver.findElement(case_Activity_tab_1);
+        Thread.sleep(2000);
+        isDisplayed(case_Activity_tab_1);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
 
 
 

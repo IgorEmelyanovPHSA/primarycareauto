@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import primarycare.pages.PortalHealthConnectRegistryPage;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 @Listeners({TestListener.class})
 public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_PrimaryCare {
@@ -277,6 +278,14 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         String statusActual = healthCloudConsolePage.getStatusActualForValidation();
         log("/*---- Status actual is: " + statusActual + " --*/");
         assertEquals(statusActual, statusExpected);
+        Thread.sleep(2000);
+
+        log("/*51.---Go to the Case Activity Tab--*/");
+        healthCloudConsolePage.clickOnCaseActivityTab();
+        Thread.sleep(5000);
+
+        log("/*52.---- Validate Case has 'Activity History' email Registration record  - 'Health Connect Registry – Confirmation of Registration'  ---*/");
+        assertTrue(PortalHealthConnectRegistryPage.isActivityHistoryRecordDisplayed());
         Thread.sleep(2000);
 
     }
