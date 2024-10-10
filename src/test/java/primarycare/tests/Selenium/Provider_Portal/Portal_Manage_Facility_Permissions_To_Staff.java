@@ -147,6 +147,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
 
         log("/*5.----Checked 'Manage Facility' checkbox --*/");
         //verify that it is Checked, if not -> change to checked.
+        Thread.sleep(5000);
         providerPortalHomePage.checkedManageFacilityCheckBox();
         Thread.sleep(5000);
     }

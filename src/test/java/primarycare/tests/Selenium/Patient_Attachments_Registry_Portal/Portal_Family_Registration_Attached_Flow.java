@@ -394,7 +394,7 @@ public class Portal_Family_Registration_Attached_Flow extends BaseTest_PrimaryCa
         }
         /////////////////////
         log("/*54.2--- now we can Click on searched Patient   ---*/");
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         common.clickOnFondedHollisVioletteFamilyMember(familyMemberFirstName, familyMemberLastName);
         Thread.sleep(5000);
 
