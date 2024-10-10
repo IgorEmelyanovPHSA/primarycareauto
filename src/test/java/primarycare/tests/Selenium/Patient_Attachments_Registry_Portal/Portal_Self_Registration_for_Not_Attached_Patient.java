@@ -230,7 +230,7 @@ public class Portal_Self_Registration_for_Not_Attached_Patient extends BaseTest_
         }
         /////////////////////
         log("/*33.2--- now we can Click on searched Patient   ---*/");
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         common.clickOnFondedPatient(legalFirstName, legalLastName);
         Thread.sleep(5000);
 

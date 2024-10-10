@@ -234,7 +234,7 @@ public class CommonMethods extends BasePage {
 
     public boolean isPatientFoundValidation(String legalFirstName, String legalLastName) throws InterruptedException {
         boolean isPatientFound = false;
-        By patientFoundWithParameter = By.xpath("//a[@title='" + legalFirstName + " " + legalLastName + "']");
+        By patientFoundWithParameter = By.xpath("(//a[@title='" + legalFirstName + " " + legalLastName + "'])[2]");
         for(int i = 1; i <= 40; i++ ) {
             if (!isDisplayed(patientFoundWithParameter)) {
                 log(i +"-try to find Patient in list: " + legalFirstName + " " + legalLastName + " not found, re-try!");
