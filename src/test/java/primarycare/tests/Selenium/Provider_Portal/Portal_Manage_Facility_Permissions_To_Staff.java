@@ -135,7 +135,7 @@ public class Portal_Manage_Facility_Permissions_To_Staff extends BaseTest_Primar
 
         log("/*3.----Click on facility 'CASTLEGAR MED FAMILY CLINIC' --*/");
         providerPortalHomePage.clickOnFacility();
-        Thread.sleep(7000);
+        Thread.sleep(10000);
 
         log("/*4.----Click on Practitioner Facility 'Agnes Phillip | CASTLEGAR MED FAMILY CLINIC' --*/");
         providerPortalHomePage.clickOnMoAPractitionerFacilityCurrentStaffTableRow(MoA_practitionerFacilityName, practitionerMoASystemRole);
