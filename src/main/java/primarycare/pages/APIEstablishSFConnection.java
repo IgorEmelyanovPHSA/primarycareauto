@@ -11,10 +11,10 @@ public class APIEstablishSFConnection {
                 given().
                     urlEncodingEnabled(true)
                     .param("grant_type","password")
-                    .param("client_id","3MVG9696SH3dTknIjs9fMYRuEzlX8D6eI85vSpCGuIcP9AleYA_3qK4uA_2n1GUWsVrjTZ9b1ijpJ5a.iJNQs")
-                    .param("client_secret","1BCA00065BB10A53AD7F1D3D9A50A9F86C2E639BB6CF15F686E6955CA0719C2D")
+                    .param("client_id","3MVG9TZvGM_0NqB2NLX4uZf5RJrIBoSuqYdsACNf.BxLYgOuA_N5zscFXB115PJsfqhLIsWorqE3KR4XY2IAX")
+                    .param("client_secret","6747975396B797CA02EAA540FE96435994B98CF13755B9FA75794ABF5FB89D39")
                     .param("username","igor.emelyanov@phsa.ca.hlthbcqax")
-                    .param("password","Technology1990!!!!!!")
+                    .param("password","Technology1990!!!!!!@")
                     .header("Accept","application/json")
                     .header("Content-type","application/x-www-form-urlencoded").
                     when().
