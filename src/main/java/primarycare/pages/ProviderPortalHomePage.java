@@ -67,9 +67,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement max_new_requests_component;
     private By max_new_requests_component_1 = By.xpath("//input[@omnistudio-maskedinput_maskedinput_slds]");
 
-    @FindBy(xpath = "(//button[text()='Save'])[1]")
+    @FindBy(xpath = "(//span[text()='Save'])[1]")
     private WebElement save_button;
-    private By save_button_1 = By.xpath("(//button[text()='Save'])[1]");
+    private By save_button_1 = By.xpath("(//span[text()='Save'])[1]");
 
     @FindBy(xpath = "//omnistudio-block[@data-style-id='state0element1block_element2_child']//omnistudio-output-field[@data-style-id='state0element1block_element2block_element1block_element1_child']//span")
     private WebElement desired_panel_size_actual_field_value;
@@ -115,9 +115,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement practitioner_facility_name_link;
     private By practitioner_facility_name_link_1 = By.xpath("//a[contains(text(),'Kristine Fisher')]");
 
-    @FindBy(xpath = "//button[text()='Edit']")
+    @FindBy(xpath = "//div[text()='Edit']")
     private WebElement edit_practitioner_facility_button;
-    private By edit_practitioner_facility_button_1 = By.xpath("//button[text()='Edit']");
+    private By edit_practitioner_facility_button_1 = By.xpath("//div[text()='Edit']");
 
     @FindBy(xpath = "//div[@data-target-selection-name='sfdc:RecordField.HealthcarePractitionerFacility.EffectiveFrom']//input[@class=' input']")
     private WebElement effective_from_input;
@@ -223,9 +223,9 @@ public class ProviderPortalHomePage extends BasePage{
     private WebElement details_tab;
     private By details_tab_1 = By.xpath("//span[text()='Details']");
 
-    @FindBy(xpath = "//div[@data-target-selection-name='sfdc:RecordField.HealthcarePractitionerFacility.Manage_Facility__c']//span[@class='slds-checkbox_faux']")
+    @FindBy(xpath = "//div[@data-target-selection-name='sfdc:RecordField.HealthcarePractitionerFacility.Manage_Facility__c']//span[@class='uiImage uiOutputCheckbox']")
     private WebElement manage_facility_checkbox;
-    private By manage_facility_checkbox_1 = By.xpath("//div[@data-target-selection-name='sfdc:RecordField.HealthcarePractitionerFacility.Manage_Facility__c']//span[@class='slds-checkbox_faux']");
+    private By manage_facility_checkbox_1 = By.xpath("//div[@data-target-selection-name='sfdc:RecordField.HealthcarePractitionerFacility.Manage_Facility__c']//span[@class='uiImage uiOutputCheckbox']");
 
     @FindBy(xpath = "//button[@title='Edit Manage Facility']")
     private WebElement pencil_edit_button;
